@@ -22,54 +22,39 @@
 #    include "quantum.h"
 #    include "snowe.h"
 
-#    include <stdio.h>  // for keylog?
-
+#    include <stdio.h> // for keylog?
+uint32_t        oled_timer = 0;
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (!is_keyboard_master()) {
-        return OLED_ROTATION_270;  // flips the display 180 degrees if offhand
+        return OLED_ROTATION_270; // flips the display 180 degrees if offhand
     }
     return OLED_ROTATION_270;
 }
 
-#    define L_BASE 0
-#    define L_GAME 2
-#    define L_LOWER 4
-#    define L_RAISE 6
-#    define L_ADJUST 8
-
-void oled_render_layer_state(void) {
-    oled_write_P(PSTR("Layer"), false);
-    switch (layer_state) {
-        case L_BASE:
+static void print_status_narrow(void) {
+    // Print current layer
+    oled_write_P(PSTR("LAYER"), false);
+    switch (get_highest_layer(layer_state)) {
+        case 0:
             oled_write_ln_P(PSTR("Main"), false);
             break;
-        case L_GAME:
-            oled_write_ln_P(PSTR("Game"), false);
+        case 1:
+            oled_write_ln_P(PSTR("Syms"), false);
             break;
-        case L_LOWER:
-            oled_write_ln_P(PSTR("Bot"), false);
+        case 2:
+            oled_write_ln_P(PSTR("Func"), false);
             break;
-        case L_RAISE:
-            oled_write_ln_P(PSTR("Top"), false);
+        case 3:
+            oled_write_ln_P(PSTR("CUM"), false);
             break;
-//        case L_ADJUST:
-//        case L_ADJUST | L_LOWER:
-//        case L_ADJUST | L_RAISE:
-//        case L_ADJUST | L_LOWER | L_RAISE:
-//            oled_write_ln_P(PSTR("Comb"), false);
-//            break;
+        default:
+            oled_write_ln_P(PSTR("Undef"), false);
     }
 }
 
 char keylog_str[24] = {};
 
-const char code_to_name[60] = {
-    ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
-    'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-    'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-    'R', 'E', 'B', 'T', '_', '-', '=', '[', ']', '\\',
-    '#', ';', '\'', '`', ',', '.', '/', ' ', ' ', ' '};
+const char code_to_name[60] = {' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'R', 'E', 'B', 'T', '_', '-', '=', '[', ']', '\\', '#', ';', '\'', '`', ',', '.', '/', ' ', ' ', ' '};
 
 void set_keylog(uint16_t keycode, keyrecord_t *record) {
     char name = ' ';
@@ -84,7 +69,9 @@ void set_keylog(uint16_t keycode, keyrecord_t *record) {
     snprintf(keylog_str, sizeof(keylog_str), "%dx%d, k%2d : %c", record->event.key.row, record->event.key.col, keycode, name);
 }
 
-void oled_render_keylog(void) { oled_write(keylog_str, false); }
+void oled_render_keylog(void) {
+    oled_write(keylog_str, false);
+}
 
 // void render_bootmagic_status(bool status) {
 //    /* Show Ctrl-Gui Swap options */
@@ -127,14 +114,21 @@ void render_bootmagic_status(void) {
 
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
-        oled_render_layer_state();
-        oled_render_keylog();
-        render_bootmagic_status();
+        if (timer_elapsed32(oled_timer) > 120000) { // turn off after 3min
+            oled_off();
+            return false;
+        } else {
+            // oled_render_layer_state();
+            print_status_narrow();
+            oled_render_keylog();
+            render_bootmagic_status();
 
 #    ifdef LUNA_ENABLE
-        led_usb_state = host_keyboard_led_state();
-        render_luna(0, 13);
+            led_usb_state = host_keyboard_led_state();
+            render_luna(0, 13);
 #    endif
+        }
+
     } else {
 #    ifdef OCEAN_DREAM_ENABLE
         render_stars();
@@ -143,4 +137,4 @@ bool oled_task_user(void) {
     return false;
 }
 
-#endif  // OLED_ENABLE
+#endif // OLED_ENABLE

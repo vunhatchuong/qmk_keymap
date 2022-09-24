@@ -15,13 +15,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
 #pragma once
 #include QMK_KEYBOARD_H
 
-#ifndef QMK_FIRMWARE_SNOWE_H
-#    define QMK_FIRMWARE_SNOWE_H ;
-#endif  // QMK_FIRMWARE_SNOWE_H
+#ifndef QMK_FIRMWARE_RONNY_H
+#    define QMK_FIRMWARE_RONNY_H ;
+#endif // QMK_FIRMWARE_RONNY_H
 
 #include "wrappers.h"
 #include "keycode_aliases.h"
@@ -29,15 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IGNORE_MOD_TAP_INTERRUPT
 #undef PERMISSIVE_HOLD
 
-//#if defined(RGBLIGHT_ENABLE)
-//#    include "rgb_stuff.h"
-//#endif
-//#if defined(RGB_MATRIX_ENABLE)
-//#    include "rgb_matrix_stuff.h"
-//#endif
 #ifdef OLED_ENABLE
 #    include "oled_setup.h"
 #endif
-
 
 enum layers { _MAIN, _GAMING, _LOWER, _UPPER, _ADJUST };

@@ -215,15 +215,6 @@ void render_luna(int LUNA_X, int LUNA_Y) {
         current_wpm = get_current_wpm();
         animation_phase();
     }
-
-    // this fixes the screen on and off bug
-    if (current_wpm > 0) {
-        oled_on();
-        anim_sleep = timer_read32();
-    } else if(timer_elapsed32(anim_sleep) > OLED_TIMEOUT) {
-        oled_off();
-    }
-
 }
 
 // KEYBOARD PET END
