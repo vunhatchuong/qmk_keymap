@@ -93,7 +93,7 @@ void render_bootmagic_status(void) {
         {{0x97, 0x98, 0}, {0xb7, 0xb8, 0}},
         {{0x95, 0x96, 0}, {0xb5, 0xb6, 0}},
     };
-    oled_write_P(PSTR("BTMGK"), false);
+    // oled_write_P(PSTR("BTMGK"), false);
     oled_write_P(PSTR(""), false);
     if (!keymap_config.swap_lctl_lgui) {
         oled_write_P(logo[1][0], false);
@@ -112,16 +112,39 @@ void render_bootmagic_status(void) {
     oled_write_ln(wpm, false);
 }
 
+// void render_custom_func(void) {
+//    static const char PROGMEM snake_logo[] = {
+//         // 'python_20px', 20x20px
+//         0x00, 0x00, 0x80, 0x80, 0x80, 0x80, 0xbc, 0xbe, 0xb6, 0xbe, 0xbe, 0xfe, 0xfe, 0xfc, 0x00, 0xe0, 
+//         0xe0, 0xe0, 0xc0, 0x00, 0x00, 0x1f, 0x3f, 0x3f, 0x3f, 0x07, 0xf3, 0xf9, 0xfd, 0xdd, 0xdd, 0xdd, 
+//         0xdd, 0xdc, 0x1e, 0x1f, 0x1f, 0x1f, 0x0f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x07, 
+//         0x07, 0x07, 0x07, 0x06, 0x07, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+//    };
+//     oled_write_P(PSTR("STATE"), false);
+//     if(is_caps_word_on()) {
+//         oled_write_P(PSTR("SHOUT"), false);
+//     }
+//     else {
+//         oled_write_P(PSTR("     "), false);
+//     }
+//     if(get_xcase_state() == XCASE_ON)
+//     {
+//         oled_write_raw_P(snake_logo, sizeof(snake_logo));
+//     }
+//     else{
+//         oled_write_P(PSTR(" "), false);
+//     }
+// }
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         if (timer_elapsed32(oled_timer) > 120000) { // turn off after 3min
             oled_off();
             return false;
         } else {
-            // oled_render_layer_state();
             print_status_narrow();
             oled_render_keylog();
             render_bootmagic_status();
+            // render_custom_func();
 
 #    ifdef LUNA_ENABLE
             led_usb_state = host_keyboard_led_state();
