@@ -94,7 +94,7 @@ void render_bootmagic_status(void) {
         {{0x95, 0x96, 0}, {0xb5, 0xb6, 0}},
     };
     // oled_write_P(PSTR("BTMGK"), false);
-    oled_write_P(PSTR(""), false);
+    //oled_write_P(PSTR(""), false);
     if (!keymap_config.swap_lctl_lgui) {
         oled_write_P(logo[1][0], false);
         oled_write_P(PSTR("   "), false);
@@ -104,7 +104,7 @@ void render_bootmagic_status(void) {
         oled_write_P(PSTR("   "), false);
         oled_write_P(logo[0][1], false);
     }
-    oled_write_P(PSTR("   NKRO "), keymap_config.nkro);
+    // oled_write_P(PSTR("   NKRO "), keymap_config.nkro);
     oled_write_P(PSTR("WPM: "), false);
 
     char wpm[6];

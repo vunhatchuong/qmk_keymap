@@ -25,4 +25,7 @@ ifeq ($(strip $(OLED_ENABLE)), yes)
 		OPT_DEFS += -DLUNA_ENABLE
 	endif
 endif
-SRC += xcase.c
+
+ifdef XCASE_ENABLE
+	SRC += xcase.c
+endif
