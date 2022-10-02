@@ -71,7 +71,7 @@ bool process_normal_mode(uint16_t keycode, const keyrecord_t *record) {
     }
 #ifdef VIM_DOT_REPEAT
     bool should_record_action = true;
-#    define NO_RECORD_ACTION() should_record_action = false;
+#    define No_RECORD_ACTION() should_record_action = false;
 #else
 #    define NO_RECORD_ACTION()
 #endif
