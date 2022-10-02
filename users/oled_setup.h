@@ -28,3 +28,6 @@
 #ifdef OCEAN_DREAM_ENABLE
 #    include "ocean_dream.h"
 #endif
+#ifdef QMK_VIM_ENABLE
+#    include "./qmk-vim/src/modes.h"
+#endif

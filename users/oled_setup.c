@@ -94,7 +94,7 @@ void render_bootmagic_status(void) {
         {{0x95, 0x96, 0}, {0xb5, 0xb6, 0}},
     };
     // oled_write_P(PSTR("BTMGK"), false);
-    //oled_write_P(PSTR(""), false);
+    // oled_write_P(PSTR(""), false);
     if (!keymap_config.swap_lctl_lgui) {
         oled_write_P(logo[1][0], false);
         oled_write_P(PSTR("   "), false);
@@ -105,7 +105,7 @@ void render_bootmagic_status(void) {
         oled_write_P(logo[0][1], false);
     }
     // oled_write_P(PSTR("   NKRO "), keymap_config.nkro);
-    oled_write_P(PSTR("WPM: "), false);
+    oled_write_P(PSTR("   WPM: "), false);
 
     char wpm[6];
     itoa(get_current_wpm(), wpm, 10);
@@ -113,28 +113,52 @@ void render_bootmagic_status(void) {
 }
 
 // void render_custom_func(void) {
-//    static const char PROGMEM snake_logo[] = {
-//         // 'python_20px', 20x20px
-//         0x00, 0x00, 0x80, 0x80, 0x80, 0x80, 0xbc, 0xbe, 0xb6, 0xbe, 0xbe, 0xfe, 0xfe, 0xfc, 0x00, 0xe0, 
-//         0xe0, 0xe0, 0xc0, 0x00, 0x00, 0x1f, 0x3f, 0x3f, 0x3f, 0x07, 0xf3, 0xf9, 0xfd, 0xdd, 0xdd, 0xdd, 
-//         0xdd, 0xdc, 0x1e, 0x1f, 0x1f, 0x1f, 0x0f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x07, 
-//         0x07, 0x07, 0x07, 0x06, 0x07, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-//    };
+//     static const char PROGMEM snake_logo[] = {// 'python_20px', 20x20px
+//                                               0x00, 0x00, 0x80, 0x80, 0x80, 0x80, 0xbc, 0xbe, 0xb6, 0xbe, 0xbe, 0xfe, 0xfe, 0xfc, 0x00, 0xe0, 0xe0, 0xe0, 0xc0, 0x00, 0x00, 0x1f, 0x3f, 0x3f, 0x3f, 0x07, 0xf3, 0xf9, 0xfd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdc, 0x1e, 0x1f, 0x1f, 0x1f, 0x0f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x07, 0x07, 0x07, 0x07, 0x06, 0x07, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 //     oled_write_P(PSTR("STATE"), false);
-//     if(is_caps_word_on()) {
+//     if (is_caps_word_on()) {
 //         oled_write_P(PSTR("SHOUT"), false);
-//     }
-//     else {
+//     } else {
 //         oled_write_P(PSTR("     "), false);
 //     }
-//     if(get_xcase_state() == XCASE_ON)
-//     {
+//     if (get_xcase_state() == XCASE_ON) {
 //         oled_write_raw_P(snake_logo, sizeof(snake_logo));
-//     }
-//     else{
+//     } else {
 //         oled_write_P(PSTR(" "), false);
 //     }
 // }
+void display_features(void) {
+#    ifdef LEADER_DISPLAY_STR
+    static uint16_t timer = 0;
+    if (is_leading()) {
+        oled_write_ln(leader_display_str(), false);
+        timer = timer_read();
+    } else if (vim_mode_enabled()) {
+        switch (get_vim_mode()) {
+            case NORMAL_MODE:
+                oled_write_P(PSTR("NORM\n"), false);
+                break;
+            case INSERT_MODE:
+                oled_write_P(PSTR("INSRT\n"), false);
+                break;
+            case VISUAL_MODE:
+                oled_write_P(PSTR("VISUL\n"), false);
+                break;
+            case VISUAL_LINE_MODE:
+                oled_write_P(PSTR("VISLL\n"), false);
+                break;
+            default:
+                oled_write_P(PSTR("?????\n"), false);
+                break;
+        }
+    } else if (timer_elapsed(timer) < 175) {
+        oled_write_ln(leader_display_str(), false);
+    } else {
+        timer = timer_read() - 200; // prevent it from ever looping around
+        oled_write_ln("", false);
+    }
+#    endif
+}
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         if (timer_elapsed32(oled_timer) > 120000) { // turn off after 3min
@@ -144,6 +168,7 @@ bool oled_task_user(void) {
             print_status_narrow();
             oled_render_keylog();
             render_bootmagic_status();
+            display_features();
             // render_custom_func();
 
 #    ifdef LUNA_ENABLE

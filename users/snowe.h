@@ -26,9 +26,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keycode_aliases.h"
 
 #ifdef XCASE_ENABLE
-#include "xcase.h"
+#    include "xcase.h"
 #endif
 
+#ifdef QMK_VIM_ENABLE
+#    include "./qmk-vim/src/vim.h"
+#endif
+
+#ifdef ANDREW_LEADER_ENABLE
+#    include "andrewleader.h"
+#endif
 #define IGNORE_MOD_TAP_INTERRUPT
 #undef PERMISSIVE_HOLD
 
