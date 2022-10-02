@@ -106,7 +106,6 @@ bool process_vim_mode(uint16_t keycode, const keyrecord_t *record) {
         }
 
         const uint8_t mods = get_mods();
-        // const uint8_t oneshot_mods = get_oneshot_mods();
         // hoping this gets optimized away by the compiler
         const uint8_t all_mods = mods;
         // this takes mod bits adds them to to the keycode, but always as the left mod (lower 4 mod bits)
@@ -115,7 +114,6 @@ bool process_vim_mode(uint16_t keycode, const keyrecord_t *record) {
 
         // clear the mods
         clear_mods();
-        clear_oneshot_mods();
 
         // process the current keycode
         bool do_process_key = process_func(keycode, record);
@@ -127,10 +125,6 @@ bool process_vim_mode(uint16_t keycode, const keyrecord_t *record) {
 #endif
 
         set_mods(mods);
-        // only restore one shot mods if the key was passed through
-        if (do_process_key) {
-            set_oneshot_mods(oneshot_mods);
-        }
 
 #ifdef ONESHOT_VIM
         // this function checks for oneshot termination conditions and stops if applicable
