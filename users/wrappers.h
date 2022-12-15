@@ -27,13 +27,8 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #   define LAYOUT KEYMAP
 #endif
 
-//#define LAYOUT_ergodox_wrapper(...)          LAYOUT_ergodox(__VA_ARGS__)
-//#define LAYOUT_ergodox_pretty_wrapper(...)   LAYOUT_ergodox_pretty(__VA_ARGS__)
 #define KEYMAP_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
-//#define LAYOUT_ortho_4x12_wrapper(...)       LAYOUT_ortho_4x12(__VA_ARGS__)
-//#define LAYOUT_ortho_5x12_wrapper(...)       LAYOUT_ortho_5x12(__VA_ARGS__)
-//#define LAYOUT_gergo_wrapper(...)            LAYOUT_gergo(__VA_ARGS__)
 
 /*
 Blocks for each of the four major keyboard layouts
@@ -61,6 +56,14 @@ NOTE: These are all the same length.  If you do a search/replace
 //#define ________________NUMBER_RIGHT_______________       KC_6,    KC_7,    TD(TD_8_UP),    KC_9,    KC_0
 #define _________________FUNC_LEFT_________________       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
 #define _________________FUNC_RIGHT________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
+
+#define ______________COLEMAKDH_L1____________       KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
+#define ______________COLEMAKDHL2____________       KC_A,    KC_R,    KC_S,    KC_T,    KC_G
+#define ______________COLEMAKDHL3____________       KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
+
+#define ______________COLEMAKDH_R1____________       KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN
+#define ______________COLEMAKDH_R2____________       KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT
+#define ______________COLEMAKDH_R3____________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLASH
 
 #define ___________________BLANK___________________        _______, _______, _______, _______, _______
 
