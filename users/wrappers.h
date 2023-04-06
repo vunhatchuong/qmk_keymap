@@ -15,7 +15,8 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 
 // clang-format off
 
-#define ___________________BLANK___________________      _______, _______, _______, _______, _______
+#define ___________________TRANS___________________      _______, _______, _______, _______, _______
+#define ___________________EMPTY___________________      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #define _________________QWERTY_L1_________________      KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
 #define _________________QWERTY_L2_________________      KC_A,    KC_S,    KC_D,    KC_F,    KC_G
@@ -52,8 +53,10 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ________________NUMBER_LEFT________________      KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define ________________NUMBER_RIGHT_______________      KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 
-#define _________________FUNC_LEFT_________________      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define _________________FUNC_RIGHT________________      KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
+#define __________________FUNC_L1__________________      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
+#define __________________FUNC_R1__________________      KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
+#define __________________FUNC_L2__________________      KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15
+#define __________________FUNC_R2__________________      KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20
 
 #define _________________LOWER_L1__________________      KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
 #define _________________LOWER_L2__________________      _________________FUNC_LEFT_________________
@@ -76,12 +79,12 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________ADJUST_L3_________________      RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, _______
 
 #define _________________ADJUST_R1_________________      _______, _______, _______, _______, _______
-#define _________________ADJUST_R2_________________      RESET,   CG_TOGG, _______, _______, _______
+#define _________________ADJUST_R2_________________      KC_RESET,   CG_TOGG, _______, _______, _______
 #define _________________ADJUST_R3_________________      _______, KC_MNXT, KC_VOLU, KC_VOLD, KC_MPLY
 
-#define _________________MOUSE_NAV_________________      KC_NO,   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
-#define ________________MOUSE_WHEEL________________      KC_NO,   KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R
+#define _________________MOUSE_NAV_________________      KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO
+#define ________________MOUSE_WHEEL________________      KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_NO
 #define _________________MOUSE_BTN_________________      KC_BTN1, KC_BTN2, KC_BTN3, KC_NO,   KC_NO
 
-#define ____________________NAV____________________      _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+#define ____________________NAV____________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO
 // clang-format on

@@ -18,10 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 #include QMK_KEYBOARD_H
 
-#ifndef QMK_FIRMWARE_RONNY_H
-#    define QMK_FIRMWARE_RONNY_H ;
-#endif // QMK_FIRMWARE_RONNY_H
-
 #include "wrappers.h"
 #include "keycode_aliases.h"
 
@@ -37,14 +33,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    include "andrewleader.h"
 #endif
 
-#define IGNORE_MOD_TAP_INTERRUPT
-#undef PERMISSIVE_HOLD
-
 #ifdef OLED_ENABLE
 #    include "oled_setup.h"
 #endif
-
-enum layers { _MAIN, _GAMING, _LOWER, _UPPER, _ADJUST };
 
 enum layers_name {
     _QWERTY,
