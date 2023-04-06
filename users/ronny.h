@@ -36,6 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef ANDREW_LEADER_ENABLE
 #    include "andrewleader.h"
 #endif
+
 #define IGNORE_MOD_TAP_INTERRUPT
 #undef PERMISSIVE_HOLD
 
@@ -44,3 +45,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 enum layers { _MAIN, _GAMING, _LOWER, _UPPER, _ADJUST };
+
+enum layers_name {
+    _QWERTY,
+    _COLEMAK_DH,
+    _MOUSE,
+    _MEDIA,
+    _LOWER,
+    _RAISE,
+    _ADJUST,
+    _GAMING,
+};
