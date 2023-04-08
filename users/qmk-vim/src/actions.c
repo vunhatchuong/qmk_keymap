@@ -3,7 +3,6 @@
 #include "motions.h"
 #include "process_func.h"
 
-
 // Function pointer type for executing actions
 typedef void (*action_func_t)(void);
 
@@ -55,20 +54,15 @@ static bool process_vim_action(uint16_t keycode, const keyrecord_t *record) {
                 if (motion_counter > 0) {
                     tap_code16(LSFT(KC_RIGHT));
                     decrement_motion_counter();
-                    DO_NUMBERED_ACTION(
-                        tap_code16(LSFT(KC_DOWN));
-                    );
+                    DO_NUMBERED_ACTION(tap_code16(LSFT(KC_DOWN)););
                 }
 #endif
                 action_func();
-            }
-            else {
+            } else {
                 VIM_END();
                 tap_code(KC_RIGHT);
                 tap_code(KC_UP);
-                DO_NUMBERED_ACTION(
-                    tap_code16(LSFT(KC_DOWN));
-                );
+                DO_NUMBERED_ACTION(tap_code16(LSFT(KC_DOWN)););
                 action_func();
                 yanked_line = true;
             }
@@ -130,18 +124,18 @@ static bool process_around_object(uint16_t keycode, const keyrecord_t *record) {
 #ifdef _VIM_TEXT_OBJECTS
 bool process_text_objects(uint16_t keycode, const keyrecord_t *record) {
     if (record->event.pressed) {
-#ifdef VIM_I_TEXT_OBJECTS
+#    ifdef VIM_I_TEXT_OBJECTS
         if (keycode == KC_I) {
             process_func = process_in_object;
             return false;
         }
-#endif
-#ifdef VIM_A_TEXT_OBJECTS
+#    endif
+#    ifdef VIM_A_TEXT_OBJECTS
         if (keycode == KC_A) {
             process_func = process_around_object;
             return false;
         }
-#endif
+#    endif
     }
     return true;
 }
@@ -194,8 +188,7 @@ void paste_before_action(void) {
         VIM_END();
         tap_code(KC_RIGHT);
         tap_code(KC_UP);
-    }
-    else {
+    } else {
         tap_code(KC_LEFT);
     }
     tap_code16(VIM_PASTE);
@@ -205,20 +198,20 @@ void paste_before_action(void) {
 
 // Function to start a change action
 void start_change_action(void) {
-    action_key = KC_C;
-    action_func = change_action;
+    action_key   = KC_C;
+    action_func  = change_action;
     process_func = process_vim_action;
 }
 // Function to start a delete action
 void start_delete_action(void) {
-    action_key = KC_D;
-    action_func = delete_action;
+    action_key   = KC_D;
+    action_func  = delete_action;
     process_func = process_vim_action;
 }
 // Function to start a yank action
 void start_yank_action(void) {
-    action_key = KC_Y;
-    action_func = yank_action;
+    action_key   = KC_Y;
+    action_func  = yank_action;
     process_func = process_vim_action;
 }
 
@@ -229,7 +222,7 @@ static void visual_no_action(void) {
 }
 // Function to start a visual action
 void start_visual_action(void) {
-    action_key = KC_NO;
+    action_key  = KC_NO;
     action_func = visual_no_action;
     // Don't update the process_func, that should already be set to the
     // visual mode process func
@@ -255,9 +248,9 @@ void replace_action(void) {
 
 #ifdef VIM_DOT_REPEAT
 
-#ifndef VIM_REPEAT_BUF_SIZE
-#define VIM_REPEAT_BUF_SIZE 64
-#endif
+#    ifndef VIM_REPEAT_BUF_SIZE
+#        define VIM_REPEAT_BUF_SIZE 64
+#    endif
 
 typedef enum {
     INVALID_REPEAT = 0,
@@ -266,15 +259,15 @@ typedef enum {
     EXECUTING_REPEAT,
 } repeat_state_t;
 
-static repeat_state_t repeat_state = INVALID_REPEAT;
-static uint8_t repeat_buf_idx = 0;
+static repeat_state_t repeat_state   = INVALID_REPEAT;
+static uint8_t        repeat_buf_idx = 0;
 // if this gets much bigger you would probably want it in progmem
 static uint16_t repeat_buf[VIM_REPEAT_BUF_SIZE];
 
 void start_recording_repeat(void) {
     // if the state isn't recording or executing
     if (repeat_state <= VALID_REPEAT) {
-        repeat_state = RECORDING_REPEAT;
+        repeat_state   = RECORDING_REPEAT;
         repeat_buf_idx = 0;
     }
 }
@@ -287,8 +280,7 @@ void add_repeat_keycode(uint16_t keycode) {
             if (process_func == process_normal_mode) {
                 repeat_state = VALID_REPEAT;
             }
-        }
-        else {
+        } else {
             repeat_state = INVALID_REPEAT;
         }
     }

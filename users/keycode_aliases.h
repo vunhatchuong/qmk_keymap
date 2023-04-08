@@ -27,15 +27,15 @@
 #define RAISE MO(_UPPER)
 #define ADJUST MO(_ADJUST)
 #define TG_MODS TG(_MODS)
-//#define TG_GAME TG(_GAMEPAD)
-//#define OS_LWR OSL(_LOWER)
-//#define OS_RSE OSL(_UPPER)
+// #define TG_GAME TG(_GAMEPAD)
+// #define OS_LWR OSL(_LOWER)
+// #define OS_RSE OSL(_UPPER)
 
-//#define KC_SEC1 KC_SECRET_1
-//#define KC_SEC2 KC_SECRET_2
-//#define KC_SEC3 KC_SECRET_3
-//#define KC_SEC4 KC_SECRET_4
-//#define KC_SEC5 KC_SECRET_5
+// #define KC_SEC1 KC_SECRET_1
+// #define KC_SEC2 KC_SECRET_2
+// #define KC_SEC3 KC_SECRET_3
+// #define KC_SEC4 KC_SECRET_4
+// #define KC_SEC5 KC_SECRET_5
 
 #define QWERTY KC_QWERTY
 #define DVORAK KC_DVORAK
@@ -47,9 +47,9 @@
 
 #ifdef SWAP_HANDS_ENABLE
 #    define KC_C1R3 SH_TT
-#else  // SWAP_HANDS_ENABLE
+#else // SWAP_HANDS_ENABLE
 #    define KC_C1R3 KC_BSPC
-#endif  // SWAP_HANDS_ENABLE
+#endif // SWAP_HANDS_ENABLE
 
 #define BK_LWER LT(_LOWER, KC_BSPC)
 #define SP_LWER LT(_LOWER, KC_SPC)

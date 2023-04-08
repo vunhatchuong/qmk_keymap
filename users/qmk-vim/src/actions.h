@@ -4,8 +4,8 @@
 #include "motions.h"
 
 // If either of the text objects are defined, define this macro for both
-#if defined (VIM_I_TEXT_OBJECTS) || defined (VIM_A_TEXT_OBJECTS)
-#define _VIM_TEXT_OBJECTS
+#if defined(VIM_I_TEXT_OBJECTS) || defined(VIM_A_TEXT_OBJECTS)
+#    define _VIM_TEXT_OBJECTS
 #endif
 
 // Define a custom variable for the common shortcut modifier

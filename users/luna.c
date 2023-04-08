@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #include "quantum.h"
 #include "luna.h"
@@ -27,19 +27,15 @@
 
 // advanced settings
 #define ANIM_FRAME_DURATION 200 // how long each frame lasts in ms
-#define ANIM_SIZE 96 // number of bytes in array. If you change sprites, minimize for adequate firmware size. max is 1024
+#define ANIM_SIZE 96            // number of bytes in array. If you change sprites, minimize for adequate firmware size. max is 1024
 
 bool isSneaking = false;
-bool isJumping = false;
+bool isJumping  = false;
 bool showedJump = true;
 
 // status variables
-int current_wpm = 0;
-led_t led_usb_state = {
-    .num_lock = false,
-    .caps_lock = false,
-    .scroll_lock = false
-};
+int   current_wpm   = 0;
+led_t led_usb_state = {.num_lock = false, .caps_lock = false, .scroll_lock = false};
 
 // current frame
 uint8_t current_frame = 0;
@@ -50,10 +46,10 @@ uint32_t anim_sleep = 0;
 
 // logic
 void render_luna(int LUNA_X, int LUNA_Y) {
-
     // Sit
-    static const char PROGMEM sit[2][ANIM_SIZE] = {
-        // 'sit1', 32x22px
+    static const char PROGMEM sit[2][ANIM_SIZE] = {// 'sit1', 32x22px
+
+                                                   // clang-format off
         {
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x1c,
             0x02, 0x05, 0x02, 0x24, 0x04, 0x04, 0x02, 0xa9, 0x1e, 0xe0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -164,6 +160,8 @@ void render_luna(int LUNA_X, int LUNA_Y) {
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3f, 0x20, 0x30, 0x0c, 0x02, 0x05, 0x09, 0x12, 0x1e, 0x04,
             0x18, 0x10, 0x08, 0x10, 0x20, 0x28, 0x34, 0x06, 0x02, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00,
         }
+
+// clang-format off
     };
 
     // animation

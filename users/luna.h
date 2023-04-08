@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #pragma once
 
@@ -24,7 +24,6 @@ extern bool showedJump;
 
 // status variables
 extern led_t led_usb_state;
-//extern int current_wpm;
-
+// extern int current_wpm;
 
 void render_luna(int LUNA_X, int LUNA_Y);

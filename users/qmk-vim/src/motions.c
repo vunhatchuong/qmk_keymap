@@ -8,8 +8,7 @@ visual_direction_t visual_direction = V_NONE;
 
 void set_visual_direction(visual_direction_t dir) {
 #ifdef BETTER_VISUAL_MODE
-    if (visual_direction == V_NONE)
-        visual_direction = dir;
+    if (visual_direction == V_NONE) visual_direction = dir;
 #endif
 }
 
@@ -31,24 +30,21 @@ void register_motion(uint16_t keycode, const keyrecord_t *record) {
 bool process_motions(uint16_t keycode, const keyrecord_t *record, uint16_t qk_mods) {
     // This macro duplicates the code inside if VIM_FOR_ALL is enabled
     // Calling it on only a subset of the larger switch statement saves some space
-    VIM_REDUCE_MAC_NOMAC_TO_CONST(
-        switch (keycode) {
-           case VIM_B:
-               keycode = KC_B;
-               break;
-           case VIM_W:
-               keycode = KC_W;
-               break;
-           case VIM_0:
-               keycode = KC_0;
-               break;
-           case VIM_DLR:
-               keycode = KC_DLR;
-               break;
-        }
-    );
-    DO_NUMBERED_ACTION(
-        switch (keycode) {
+    VIM_REDUCE_MAC_NOMAC_TO_CONST(switch (keycode) {
+        case VIM_B:
+            keycode = KC_B;
+            break;
+        case VIM_W:
+            keycode = KC_W;
+            break;
+        case VIM_0:
+            keycode = KC_0;
+            break;
+        case VIM_DLR:
+            keycode = KC_DLR;
+            break;
+    });
+    DO_NUMBERED_ACTION(switch (keycode) {
         case KC_H:
         case VIM_H:
             set_visual_direction(V_BACKWARD);
@@ -103,7 +99,6 @@ bool process_motions(uint16_t keycode, const keyrecord_t *record, uint16_t qk_mo
         default:
             /* motion_counter = 0; */
             return true;
-        }
-    );
+    });
     return false;
 }

@@ -33,9 +33,8 @@
  *       if the default should be used.
  */
 
-
 #ifndef DEFAULT_XCASE_SEPARATOR
-#define DEFAULT_XCASE_SEPARATOR KC_UNDS
+#    define DEFAULT_XCASE_SEPARATOR KC_UNDS
 #endif
 
 #define IS_OSM(keycode) (keycode >= QK_ONE_SHOT_MOD && keycode <= QK_ONE_SHOT_MOD_MAX)
@@ -59,8 +58,8 @@ void enable_xcase(void) {
 
 // Enable xcase with the specified delimiter
 void enable_xcase_with(uint16_t delimiter) {
-    xcase_state = XCASE_ON;
-    xcase_delimiter = delimiter;
+    xcase_state            = XCASE_ON;
+    xcase_delimiter        = delimiter;
     distance_to_last_delim = -1;
 }
 
@@ -80,33 +79,31 @@ static void remove_delimiter(void) {
 }
 
 // overrideable function to determine whether the case mode should stop
-__attribute__ ((weak))
-bool terminate_case_modes(uint16_t keycode, const keyrecord_t *record) {
-        switch (keycode) {
-            // Keycodes to ignore (don't disable caps word)
-            case KC_A ... KC_Z:
-            case KC_1 ... KC_0:
-            case KC_MINS:
-            case KC_UNDS:
-            case KC_BSPC:
-                // If mod chording disable the mods
-                if (record->event.pressed && (get_mods() != 0)) {
-                    return true;
-                }
-                break;
-            default:
-                if (record->event.pressed) {
-                    return true;
-                }
-                break;
-        }
-        return false;
+__attribute__((weak)) bool terminate_case_modes(uint16_t keycode, const keyrecord_t *record) {
+    switch (keycode) {
+        // Keycodes to ignore (don't disable caps word)
+        case KC_A ... KC_Z:
+        case KC_1 ... KC_0:
+        case KC_MINS:
+        case KC_UNDS:
+        case KC_BSPC:
+            // If mod chording disable the mods
+            if (record->event.pressed && (get_mods() != 0)) {
+                return true;
+            }
+            break;
+        default:
+            if (record->event.pressed) {
+                return true;
+            }
+            break;
+    }
+    return false;
 }
 
 /* overrideable function to determine whether to use the default separator on
  * first keypress when waiting for the separator. */
-__attribute__ ((weak))
-bool use_default_xcase_separator(uint16_t keycode, const keyrecord_t *record) {
+__attribute__((weak)) bool use_default_xcase_separator(uint16_t keycode, const keyrecord_t *record) {
     // for example:
     /* switch (keycode) { */
     /*     case KC_A ... KC_Z: */
@@ -118,11 +115,9 @@ bool use_default_xcase_separator(uint16_t keycode, const keyrecord_t *record) {
 
 bool process_case_modes(uint16_t keycode, const keyrecord_t *record) {
     if (xcase_state) {
-        if ((QK_MOD_TAP <= keycode && keycode <= QK_MOD_TAP_MAX)
-            || (QK_LAYER_TAP <= keycode && keycode <= QK_LAYER_TAP_MAX)) {
+        if ((QK_MOD_TAP <= keycode && keycode <= QK_MOD_TAP_MAX) || (QK_LAYER_TAP <= keycode && keycode <= QK_LAYER_TAP_MAX)) {
             // Earlier return if this has not been considered tapped yet
-            if (record->tap.count == 0)
-                return true;
+            if (record->tap.count == 0) return true;
             keycode = keycode & 0xFF;
         }
 
@@ -135,13 +130,11 @@ bool process_case_modes(uint16_t keycode, const keyrecord_t *record) {
             // grab the next input to be the delimiter
             if (use_default_xcase_separator(keycode, record)) {
                 enable_xcase_with(DEFAULT_XCASE_SEPARATOR);
-            }
-            else if (record->event.pressed) {
+            } else if (record->event.pressed) {
                 // factor in mods
                 if (get_mods() & MOD_MASK_SHIFT) {
                     keycode = LSFT(keycode);
-                }
-                else if (get_mods() & MOD_BIT(KC_RALT)) {
+                } else if (get_mods() & MOD_BIT(KC_RALT)) {
                     keycode = RALT(keycode);
                 }
                 enable_xcase_with(keycode);
