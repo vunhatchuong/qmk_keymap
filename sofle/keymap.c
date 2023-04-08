@@ -27,7 +27,7 @@ enum sofle_layers {
     _NAV,
 };
 
-enum custom_keycodes { 
+enum custom_keycodes {
     KC_QWERTY = SAFE_RANGE,
     KC_COLEMAK,
     KC_LOWER,

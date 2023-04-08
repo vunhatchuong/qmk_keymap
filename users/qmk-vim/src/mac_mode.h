@@ -36,4 +36,3 @@ extern bool vim_for_mac;
 } while(0)
 
 #endif
-

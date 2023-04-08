@@ -26,5 +26,3 @@ void decrement_motion_counter(void);
         ACTION; \
     } while (0)
 #endif
-
-    

@@ -28,4 +28,3 @@ extern led_t led_usb_state;
 
 
 void render_luna(int LUNA_X, int LUNA_Y);
-
