@@ -20,7 +20,7 @@
 #ifdef ENCODER_ENABLE
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    switch(get_highest_layer(layer_state|default_layer_state)) {
+    switch (get_highest_layer(layer_state | default_layer_state)) {
         case 0:
             if (index == 0) {
                 if (clockwise) {

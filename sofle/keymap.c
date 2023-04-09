@@ -27,16 +27,7 @@ enum sofle_layers {
     _NAV,
 };
 
-enum custom_keycodes {
-    KC_QWERTY = SAFE_RANGE,
-    KC_COLEMAK,
-    KC_LOWER,
-    KC_RAISE,
-    KC_ADJUST,
-    SNAKECASE,
-    TOG_VIM,
-    ANDREW_LEADER
-};
+enum custom_keycodes { KC_QWERTY = SAFE_RANGE, KC_COLEMAK, KC_LOWER, KC_RAISE, KC_ADJUST, SNAKECASE, TOG_VIM, ANDREW_LEADER };
 // Default keymap. This can be changed in Via. Use oled.c and encoder.c to change beavior that Via cannot change.
 
 // Symbols chart
@@ -57,11 +48,11 @@ enum custom_keycodes {
     K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A  \
   ) \
   LAYOUT_wrapper( \
-    KC_TAB, 		________________NUMBER_LEFT________________,                ________________NUMBER_RIGHT_______________,          KC_DEL,   \
-    CTL_T(KC_ESC),  K01,     K02,     K03,     K04,     K05,                       K06,     K07,     K08,     K09,     K0A,           KC_BSPC,  \
-    KC_LSFT,        K11,     K12,     K13,     K14,     K15,                       K16,     K17,     K18,     K19,     LT(_NAV,K1A),  KC_QUOT,  \
-    KC_LCTL,       K21,     K22,     K23,     K24,     K25, KC_MUTE,     KC_MPLY, K26,     K27,     K28,     K29,     K2A,     RSFT_T(KC_ENT),  \
-                    KC_LCTL, KC_LALT, KC_LGUI, MO(_SYMS), KC_SPC,        	       KC_ENT, MO(_FUNC), KC_MINS,  C(KC_C), C(KC_V)                \
+    KC_TAB,         ________________NUMBER_LEFT________________,                ________________NUMBER_RIGHT_______________,        KC_DEL,          \
+    CTL_T(KC_ESC), K01,     K02,     K03,     K04,     K05,                       K06,     K07,     K08,     K09,     K0A,          KC_BSPC,         \
+    KC_LSFT,       K11,     K12,     K13,     K14,     K15,                       K16,     K17,     K18,     K19,     LT(_NAV,K1A), KC_QUOT,         \
+    KC_LCTL,       K21,     K22,     K23,     K24,     K25, KC_MUTE,     KC_MPLY, K26,     K27,     K28,     K29,     K2A,          RSFT_T(KC_ENT),  \
+                   KC_LCTL, KC_LALT, KC_LGUI, MO(_SYMS), KC_SPC,              KC_ENT, MO(_FUNC), KC_MINS,  C(KC_C), C(KC_V)                          \
     )
 
 #define LAYOUT_sofle_base_wrapper(...) LAYOUT_sofle_base(__VA_ARGS__)
@@ -111,11 +102,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     [_SYMS] = LAYOUT_wrapper(
-        KC_GRV,    ________________NUMBER_LEFT________________,                     		  ________________NUMBER_RIGHT_______________, 	      KC_DEL,
-        KC_TILD,   KC_LPRN,   KC_RPRN,   KC_PLUS,   KC_EQL,  KC_LT,                	  		  KC_GT,    KC_MINS,   XXXXXXX,   KC_LBRC,  KC_RBRC,  KC_BSLS,
-        _______,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,  KC_PERC,        		  		  KC_CIRC,  KC_AMPR,   KC_ASTR,   KC_LCBR,  KC_RCBR,  KC_PIPE,
+        KC_GRV,    ________________NUMBER_LEFT________________,                               ________________NUMBER_RIGHT_______________,        KC_DEL,
+        KC_TILD,   KC_LPRN,   KC_RPRN,   KC_PLUS,   KC_EQL,  KC_LT,                           KC_GT,    KC_MINS,   XXXXXXX,   KC_LBRC,  KC_RBRC,  KC_BSLS,
+        _______,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,  KC_PERC,                         KC_CIRC,  KC_AMPR,   KC_ASTR,   KC_LCBR,  KC_RCBR,  KC_PIPE,
         _______,  ___________________EMPTY___________________, _______,                    _______, ___________________EMPTY___________________,  RSFT_T(KC_ENT),
-                        _______,  _______,   _______,   XXXXXXX, _______,       			 _______,   XXXXXXX,   _______,   _______,  _______),
+                        _______,  _______,   _______,   XXXXXXX, _______,                    _______,   XXXXXXX,   _______,   _______,  _______),
 
     /* FUNC
      * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -133,8 +124,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_FUNC] = LAYOUT_wrapper(
         _______,   __________________FUNC_L1__________________,                          __________________FUNC_R1__________________,  KC_F11,
-        KC_LCTL,  ___________________EMPTY___________________,                     	 _________________MOUSE_NAV_________________,  KC_F12,
-        _______,   ___________________EMPTY___________________,                     	 ________________MOUSE_WHEEL________________,  XXXXXXX,
+        KC_LCTL,  ___________________EMPTY___________________,                           _________________MOUSE_NAV_________________,  KC_F12,
+        _______,   ___________________EMPTY___________________,                          ________________MOUSE_WHEEL________________,  XXXXXXX,
         _______,   ___________________EMPTY___________________, _______,       _______,  _________________MOUSE_BTN_________________,  RSFT_T(KC_ENT),
                    _______, _______, _______, XXXXXXX, _______,                       _______,  XXXXXXX, _______, _______, _______),
     /* CUM
@@ -153,10 +144,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_NAV] = LAYOUT_wrapper(
         _______,   KC_F13,   KC_F14,   KC_F15,   KC_F16,   KC_F17,                      KC_F18,   KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,
-        KC_LCTL,  ___________________EMPTY___________________,                      	___________________EMPTY___________________,  KC_F24,
+        KC_LCTL,  ___________________EMPTY___________________,                          ___________________EMPTY___________________,  KC_F24,
         _______,   _______,  _______,  _______,  _______,  KC_CAPS,                     ____________________NAV____________________,  XXXXXXX,
         _______,   ___________________EMPTY___________________, _______,       _______, ___________________EMPTY___________________,  RSFT_T(KC_ENT),
-                   _______, _______, _______,  XXXXXXX,  _______,       		   _______,   XXXXXXX,  _______,  _______,  _______)
+                   _______, _______, _______,  XXXXXXX,  _______,                  _______,   XXXXXXX,  _______,  _______,  _______)
 };
 // clang-formatter on
 
