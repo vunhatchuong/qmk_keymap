@@ -34,7 +34,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 static void print_status_narrow(void) {
     // Print current layer
     oled_write_P(PSTR("LAYER"), false);
-    switch (get_highest_layer(layer_state)) {
+    switch (get_highest_layer(layer_state | default_layer_state)) {
         case _QWERTY:
             oled_write_ln_P(PSTR("QWER"), false);
             break;

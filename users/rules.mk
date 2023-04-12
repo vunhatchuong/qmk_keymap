@@ -31,3 +31,7 @@ endif
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes) # +544
     SRC += $(USER_PATH)/tap_dance.c
 endif
+
+ifeq ($(strip $(ENCODER_ENABLE)), yes)
+    SRC += $(USER_PATH)/encoder.c
+endif
