@@ -39,11 +39,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 enum layers_name {
     _QWERTY,
-    _COLEMAK_DH,
-    _MOUSE,
-    _MEDIA,
-    _LOWER,
-    _RAISE,
-    _ADJUST,
+    _COLEMAKDH,
     _GAMING,
+    _NAV,
+    _MEDIA,
+    _SYM,
+    _FUNC,
+    _ADJUST,
 };

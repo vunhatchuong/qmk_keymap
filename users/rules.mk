@@ -13,16 +13,16 @@ ifeq ($(strip $(OLED_ENABLE)), yes)
 endif
 
 ifeq ($(strip $(XCASE_ENABLE)), yes)
-    SRC += xcase.c
+    SRC += $(USER_PATH)/features/xcase.c
     OPT_DEFS += -DXCASE_ENABLE
 endif
 
 ifeq ($(strip $(QMK_VIM_ENABLE)), yes)
-    include $(USER_PATH)/qmk-vim/rules.mk
+    include $(USER_PATH)/features/qmk-vim/rules.mk
     OPT_DEFS += -DQMK_VIM_ENABLE
 endif
 
 ifeq ($(strip $(ANDREW_LEADER_ENABLE)), yes)
-    SRC += andrewleader.c
+    SRC += $(USER_PATH)/features/andrewleader.c
     OPT_DEFS += -DANDREW_LEADER_ENABLE
 endif

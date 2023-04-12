@@ -21,11 +21,11 @@
 
 extern uint32_t oled_timer;
 
-enum sofle_layers {
-    _SYMS,
-    _FUNC,
-    _NAV,
-};
+// enum sofle_layers {
+//     _SYMS,
+//     _FUNC,
+//     _NAV,
+// };
 
 enum custom_keycodes { KC_QWERTY = SAFE_RANGE, KC_COLEMAK, KC_LOWER, KC_RAISE, KC_ADJUST, SNAKECASE, TOG_VIM, ANDREW_LEADER };
 // Default keymap. This can be changed in Via. Use oled.c and encoder.c to change beavior that Via cannot change.
@@ -52,7 +52,7 @@ enum custom_keycodes { KC_QWERTY = SAFE_RANGE, KC_COLEMAK, KC_LOWER, KC_RAISE, K
     CTL_T(KC_ESC), K01,     K02,     K03,     K04,     K05,                       K06,     K07,     K08,     K09,     K0A,          KC_BSPC,         \
     KC_LSFT,       K11,     K12,     K13,     K14,     K15,                       K16,     K17,     K18,     K19,     LT(_NAV,K1A), KC_QUOT,         \
     KC_LCTL,       K21,     K22,     K23,     K24,     K25, KC_MUTE,     KC_MPLY, K26,     K27,     K28,     K29,     K2A,          RSFT_T(KC_ENT),  \
-                   KC_LCTL, KC_LALT, KC_LGUI, MO(_SYMS), KC_SPC,              KC_ENT, MO(_FUNC), KC_MINS,  C(KC_C), C(KC_V)                          \
+                   KC_LCTL, KC_LALT, KC_LGUI, MO(_SYM), KC_SPC,              KC_ENT, MO(_FUNC), KC_MINS,  C(KC_C), C(KC_V)                          \
     )
 
 #define LAYOUT_sofle_base_wrapper(...) LAYOUT_sofle_base(__VA_ARGS__)
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _________________QWERTY_L3_________________, _________________QWERTY_R3_________________
     ),
 
-    [_COLEMAK_DH] = LAYOUT_sofle_base_wrapper(
+    [_COLEMAKDH] = LAYOUT_sofle_base_wrapper(
         ________________COLEMAK_DH_L1______________, ________________COLEMAK_DH_R1______________,
         ________________COLEMAK_DH_L2______________, ________________COLEMAK_DH_R2______________,
         ________________COLEMAK_DH_L3______________, ________________COLEMAK_DH_R3______________
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *            `-----------------------------------'           '------''---------------------------'
      */
 
-    [_SYMS] = LAYOUT_wrapper(
+    [_SYM] = LAYOUT_wrapper(
         KC_GRV,    ________________NUMBER_LEFT________________,                               ________________NUMBER_RIGHT_______________,        KC_DEL,
         KC_TILD,   KC_LPRN,   KC_RPRN,   KC_PLUS,   KC_EQL,  KC_LT,                           KC_GT,    KC_MINS,   XXXXXXX,   KC_LBRC,  KC_RBRC,  KC_BSLS,
         _______,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,  KC_PERC,                         KC_CIRC,  KC_AMPR,   KC_ASTR,   KC_LCBR,  KC_RCBR,  KC_PIPE,

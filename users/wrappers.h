@@ -34,22 +34,6 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ________________COLEMAK_DH_R2______________      KC_M,    KC_N,    KC_E,    KC_I,    KC_O
 #define ________________COLEMAK_DH_R3______________      KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLASH
 
-#define ____________QWERTY_HOME_MODE_L1____________      KC_Q,            KC_W,            KC_E,            KC_R,            KC_T
-#define ____________QWERTY_HOME_MODE_L2____________      LGUI_T(KC_A),    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),    KC_G
-#define ____________QWERTY_HOME_MODE_L3____________      KC_Z,            ALGR_T(KC_X),    KC_C,            KC_V,            KC_B
-
-#define ____________QWERTY_HOME_MODE_R1____________      KC_Y,            KC_U,            KC_I,            KC_O,            KC_P
-#define ____________QWERTY_HOME_MODE_R2____________      KC_H,            LSFT_T(KC_J),    LCTL_T(KC_K),    LALT_T(KC_L),    LGUI_T(KC_SCLN)
-#define ____________QWERTY_HOME_MODE_R3____________      KC_N,            KC_M,            KC_COMM,         ALGR_T(KC_DOT),  KC_SLASH
-
-#define __________COLEMAK_DH_HOME_MODE_L1__________      KC_Q,            KC_W,            KC_F,            KC_P,            KC_B
-#define __________COLEMAK_DH_HOME_MODE_L2__________      LGUI_T(KC_A),    LALT_T(KC_R),    LCTL_T(KC_S),    LSFT_T(KC_T),    KC_G
-#define __________COLEMAK_DH_HOME_MODE_L3__________      KC_Z,            ALGR_T(KC_X),    KC_C,            KC_D,            KC_V
-
-#define __________COLEMAK_DH_HOME_MODE_R1__________      KC_J,            KC_L,            KC_U,            KC_Y,            KC_SCLN
-#define __________COLEMAK_DH_HOME_MODE_R2__________      KC_M,            LSFT_T(KC_N),    LCTL_T(KC_E),    LALT_T(KC_I),    LGUI_T(KC_O)
-#define __________COLEMAK_DH_HOME_MODE_R3__________      KC_K,            KC_H,            KC_COMM,         ALGR_T(KC_DOT),  KC_SLASH
-
 #define ________________NUMBER_LEFT________________      KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define ________________NUMBER_RIGHT_______________      KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 
@@ -74,17 +58,17 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________RAISE_R2__________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______
 #define _________________RAISE_R3__________________      _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 
-#define _________________ADJUST_L1_________________      RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
-#define _________________ADJUST_L2_________________      MU_TOGG , TG(_GAMING), AU_ON,   AU_OFF,  AG_NORM
-#define _________________ADJUST_L3_________________      RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, _______
-
-#define _________________ADJUST_R1_________________      _______, _______, _______, _______, _______
-#define _________________ADJUST_R2_________________      KC_RESET,   CG_TOGG, _______, _______, _______
-#define _________________ADJUST_R3_________________      _______, KC_MNXT, KC_VOLU, KC_VOLD, KC_MPLY
-
 #define _________________MOUSE_NAV_________________      KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO
 #define ________________MOUSE_WHEEL________________      KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_NO
 #define _________________MOUSE_BTN_________________      KC_BTN1, KC_BTN2, KC_BTN3, KC_NO,   KC_NO
 
 #define ____________________NAV____________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO
+
+#define _________________ADJUST_L1_________________      RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
+#define _________________ADJUST_L2_________________      MU_TOGG , DF(_GAMING), AU_ON,   AU_OFF,  AG_NORM
+#define _________________ADJUST_L3_________________      RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, _______
+
+#define _________________ADJUST_R1_________________      _______, _______, _______, _______, _______
+#define _________________ADJUST_R2_________________      KC_RESET,   CG_TOGG, _______, _______, _______
+#define _________________ADJUST_R3_________________      _______, KC_MNXT, KC_VOLU, KC_VOLD, KC_MPLY
 // clang-format on

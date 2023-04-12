@@ -18,29 +18,55 @@
 
 #pragma once
 
+// ---
+// Layers
+#define QWERTY DF(_QWERTY)
+#define COLEMAKDH DF(_COLEMAKDH)
+#define NAV MO(_NAV)
+#define MEDIA MO(_MEDIA)
+#define GAMING DF(_GAMING)
+#define SYM MO(_SYM)
+#define FUNC MO(_FUNC)
+#define ADJUST MO(_ADJUST)
+
+// ---
+// QWERTY
+#define GUI_A LGUI_T(KC_A)
+#define ALT_S LALT_T(KC_S)
+#define SFT_D LSFT_T(KC_D)
+#define CTL_F LCTL_T(KC_F)
+
+// Right-hand home row mods
+#define CTL_J RCTL_T(KC_J)
+#define SFT_K RSFT_T(KC_K)
+#define ALT_L LALT_T(KC_L)
+#define GUI_SCLN RGUI_T(KC_SCLN)
+
+// COLEMAK DH
+// Left-hand home row mods
+#define ALT_R LALT_T(KC_R)
+#define SFT_S LSFT_T(KC_S)
+// Not using CTL_T because redefined error
+#define HOME_T LCTL_T(KC_T)
+
+// Right-hand home row mods
+#define CTL_N RCTL_T(KC_N)
+#define SFT_E RSFT_T(KC_E)
+#define ALT_I LALT_T(KC_I)
+#define GUI_O RGUI_T(KC_O)
+
+// ---
+// Shorcuts
 #define GUI_ESC GUI_T(KC_ESC)
 #define CTL_ESC CTL_T(KC_ESC)
 #define SH_BKSP SFT_T(KC_BSPC)
 #define SP_RAIS LT(_UPPER, KC_SPC)
 
-#define LOWER MO(_LOWER)
-#define RAISE MO(_UPPER)
-#define ADJUST MO(_ADJUST)
-#define TG_MODS TG(_MODS)
-// #define TG_GAME TG(_GAMEPAD)
-// #define OS_LWR OSL(_LOWER)
-// #define OS_RSE OSL(_UPPER)
-
-// #define KC_SEC1 KC_SECRET_1
-// #define KC_SEC2 KC_SECRET_2
-// #define KC_SEC3 KC_SECRET_3
-// #define KC_SEC4 KC_SECRET_4
-// #define KC_SEC5 KC_SECRET_5
-
-#define QWERTY KC_QWERTY
-#define DVORAK KC_DVORAK
-#define COLEMAK KC_COLEMAK
-#define WORKMAN KC_WORKMAN
+#define UNDO LCTL(KC_Z)
+#define REDO LCTL(KC_Y)
+#define COPY LCTL(KC_C)
+#define PASTE LCTL(KC_V)
+#define CUT LCTL(KC_X)
 
 #define KC_RESET QK_BOOT
 #define KC_RST KC_RESET
