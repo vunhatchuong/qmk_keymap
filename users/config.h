@@ -6,3 +6,9 @@
 #undef PERMISSIVE_HOLD
 
 #define HOLD_ON_OTHER_KEY_PRESS
+
+#ifdef MOUSEKEY_ENABLE
+#    define MK_KINETIC_SPEED
+#    define MOUSEKEY_INITIAL_SPEED 20
+#    define MK_VARIANT MK_TYPE_KINETIC
+#endif

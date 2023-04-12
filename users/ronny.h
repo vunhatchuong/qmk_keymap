@@ -44,7 +44,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum layer_names {
     _QWERTY,
     _COLEMAKDH,
-    _GAMING,
+    _GAME,
     _NAV,
     _MEDIA,
     _SYM,

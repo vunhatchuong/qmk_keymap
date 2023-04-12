@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,    ________________NUMBER_LEFT________________,                               ________________NUMBER_RIGHT_______________,        KC_BSPC,
         KC_TILD,   O_PRQOT,   KC_LBRC,   KC_LCBR,   KC_LPRN, KC_EQL,                          KC_PLUS,  KC_RPRN,   KC_RCBR,   KC_RBRC,  C_PRQOT,  KC_BSLS,
         _______,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,  KC_PERC,  _______,     _______,  KC_CIRC,  KC_AMPR,   KC_ASTR,   O_BRQOT,  C_BRQOT,  KC_PIPE,
-                        _______,  _______,   _______,   XXXXXXX, _______,                    _______,   XXXXXXX,   _______,   _______,  _______
+                        _______,  _______,   _______,   _______, _______,                    _______,   _______,   _______,   _______,  _______
     ),
 
     /* NAV
@@ -109,15 +109,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL,   ___________________EMPTY___________________,                         _________________MOUSE_NAV_________________,  KC_WH_L,
         _______,   _______,  _______,  _______,  _______,  KC_CAPS,                     ___________________ARROW___________________,  KC_WH_R,
         _______,   ___________________EMPTY___________________, _______,       _______, _________________VIM_ARROW_________________,  RSFT_T(KC_ENT),
-                   _______, _______, _______,  XXXXXXX,  _______,                  _______,   XXXXXXX,  _______,  _______,  _______
+                   _______, _______, _______,  _______,  _______,                  _______,   _______,  _______,  _______,  _______
     ),
 
     [_ADJUST] = LAYOUT_wrapper(
-        TD_BOOT,   TD_QWERTY, TD_COLEMAKDH, TD_GAMING, XXXXXXX, XXXXXXX,                ___________________EMPTY___________________,  XXXXXXX,
+        TD_BOOT,   TD_QWERTY, TD_COLEMAKDH, TD_GAME, XXXXXXX, XXXXXXX,                ___________________EMPTY___________________,  XXXXXXX,
         _______,   ___________________EMPTY___________________,                         ___________________EMPTY___________________,  XXXXXXX,
         _______,   _______,  _______,  _______,  _______,  KC_CAPS,                     ___________________ARROW___________________,  XXXXXXX,
         _______,   ___________________EMPTY___________________, _______,       _______, _________________ADJUST_R3_________________,  _______,
-                   _______, _______, _______,  XXXXXXX,  _______,                  _______,   XXXXXXX,  _______,  _______,  _______
+                   _______, _______, _______,  _______,  _______,                  _______,   _______,  _______,  _______,  _______
     )
 };
 // clang-formatter on

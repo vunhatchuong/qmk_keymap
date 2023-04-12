@@ -8,22 +8,23 @@ void td_fn_boot(tap_dance_state_t *state, void *user_data) {
 
 void td_change_to_qwerty(tap_dance_state_t *state, void *user_data) {
     if (state->count >= 2) {
-        default_layer_set(1UL << _QWERTY);
+        default_layer_set((layer_state_t)1 << _QWERTY);
     }
 }
+
 void td_change_to_colemakdh(tap_dance_state_t *state, void *user_data) {
     if (state->count >= 2) {
-        default_layer_set(1UL < _COLEMAKDH);
+        default_layer_set((layer_state_t)1 << _COLEMAKDH);
     }
 }
-void td_change_to_gaming(tap_dance_state_t *state, void *user_data) {
+void td_change_to_game(tap_dance_state_t *state, void *user_data) {
     if (state->count >= 2) {
-        default_layer_set(1UL < _GAMING);
+        default_layer_set((layer_state_t)1 << _GAME);
     }
 }
 tap_dance_action_t tap_dance_actions[] = {
-    [TD_BOOT]      = ACTION_TAP_DANCE_FN(td_fn_boot),
-    [TD_QWERTY]    = ACTION_TAP_DANCE_FN(td_change_to_qwerty),
-    [TD_COLEMAKDH] = ACTION_TAP_DANCE_FN(td_change_to_colemakdh),
-    [TD_GAMING]    = ACTION_TAP_DANCE_FN(td_change_to_gaming),
+    [BOOT_TD]      = ACTION_TAP_DANCE_FN(td_fn_boot),
+    [QWERTY_TD]    = ACTION_TAP_DANCE_FN(td_change_to_qwerty),
+    [COLEMAKDH_TD] = ACTION_TAP_DANCE_FN(td_change_to_colemakdh),
+    [GAME_TD]      = ACTION_TAP_DANCE_FN(td_change_to_game),
 };

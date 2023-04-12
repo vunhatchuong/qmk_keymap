@@ -36,10 +36,10 @@ static void print_status_narrow(void) {
     oled_write_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-            oled_write_ln_P(PSTR("Main"), false);
+            oled_write_ln_P(PSTR("QWER"), false);
             break;
         case _COLEMAKDH:
-            oled_write_ln_P(PSTR("Main"), false);
+            oled_write_ln_P(PSTR("CLMK"), false);
             break;
         case _SYM:
             oled_write_ln_P(PSTR("Syms"), false);

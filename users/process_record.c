@@ -146,7 +146,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _SYM, _FUNC, _ADJUST);
-    state = update_tri_layer_state(state, _SYM, _NAV, _ADJUST);
+    state = update_tri_layer_state(state, _SYM, _FUNC, _ADJUST) | update_tri_layer_state(state, _SYM, _NAV, _ADJUST);
     return state;
 }

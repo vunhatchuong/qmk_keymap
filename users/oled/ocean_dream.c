@@ -502,9 +502,10 @@ static void animate_shooting_stars(void) {
  * Calls all different animations at different rates
  */
 void render_stars(void) {
-    current_wpm = get_current_wpm();
+    if (timer_elapsed32(starry_night_anim_timer) > STARRY_NIGHT_ANIM_FRAME_DURATION) {
+        starry_night_anim_timer = timer_read32();
+        current_wpm             = get_current_wpm();
 
-    void render_stars_anim(void) {
 #ifdef ENABLE_ISLAND
         animate_island();
 #endif
@@ -541,23 +542,5 @@ void render_stars(void) {
 #endif
 
         animation_counter = increment_counter(animation_counter, NUMBER_OF_FRAMES);
-    }
-
-    // Turn screen on/off based on typing and timeout
-    if (current_wpm > 0 && timer_elapsed32(starry_night_anim_timer) > STARRY_NIGHT_ANIM_FRAME_DURATION) {
-        starry_night_anim_timer = timer_read32();
-        oled_on();
-        render_stars_anim();
-        starry_night_anim_sleep = timer_read32();
-    } else if (timer_elapsed32(starry_night_anim_sleep) > OLED_TIMEOUT) {
-        oled_off();
-    }
-
-    // this fixes the screen on and off bug
-    if (current_wpm > 0) {
-        oled_on();
-        starry_night_anim_sleep = timer_read32();
-    } else if (timer_elapsed32(starry_night_anim_sleep) > OLED_TIMEOUT) {
-        oled_off();
     }
 }
