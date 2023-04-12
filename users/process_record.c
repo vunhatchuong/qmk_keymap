@@ -37,7 +37,7 @@ void *leader_start_func(uint16_t keycode) {
             return NULL;
         case KC_R:
             reset_keyboard(); // here LDR r will reset the keyboard
-            return NULL; // signal that we're done
+            return NULL;      // signal that we're done
         default:
             return NULL;
     }
@@ -111,13 +111,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 #endif
-// #ifdef QMK_VIM_ENABLE
-//         case TOG_VIM:
-//             if(record->event.pressed){
-//                 toggle_vim_mode();
-//             }
-//             return false;
-// #endif
+            // #ifdef QMK_VIM_ENABLE
+            //         case TOG_VIM:
+            //             if(record->event.pressed){
+            //                 toggle_vim_mode();
+            //             }
+            //             return false;
+            // #endif
         case KC_LCTL:
         case KC_RCTL:
 #ifdef OCEAN_DREAM_ENABLE
@@ -143,4 +143,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
     return true;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    state = update_tri_layer_state(state, _SYM, _FUNC, _ADJUST);
+    state = update_tri_layer_state(state, _SYM, _NAV, _ADJUST);
+    return state;
 }

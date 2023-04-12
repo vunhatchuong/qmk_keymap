@@ -1,4 +1,4 @@
-// Setting up what encoder rotation does. If your encoder can be pressed as a button, that function can be set in Via.
+// Setting up what encoder rotation does. If your encoder can be pressed as a button, set that in keymap.c
 
 #ifdef ENCODER_ENABLE
 

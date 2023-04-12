@@ -70,6 +70,6 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________ADJUST_L3_________________      RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, _______
 
 #define _________________ADJUST_R1_________________      _______, _______, _______, _______, _______
-#define _________________ADJUST_R2_________________      KC_RESET,   CG_TOGG, _______, _______, _______
+#define _________________ADJUST_R2_________________      KC_RST,  CG_TOGG, _______, _______, _______
 #define _________________ADJUST_R3_________________      _______, KC_MNXT, KC_VOLU, KC_VOLD, KC_MPLY
 // clang-format on

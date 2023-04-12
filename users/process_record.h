@@ -45,20 +45,21 @@ enum custom_keycodes {
 #define ADJUST MO(_ADJUST)
 
 // ---
-// QWERTY
+// QWERTY home row mods
+// Left-hand
 #define GUI_A LGUI_T(KC_A)
 #define ALT_S LALT_T(KC_S)
 #define SFT_D LSFT_T(KC_D)
 #define CTL_F LCTL_T(KC_F)
 
-// Right-hand home row mods
+// Right-hand
 #define CTL_J RCTL_T(KC_J)
 #define SFT_K RSFT_T(KC_K)
 #define ALT_L LALT_T(KC_L)
 #define GUI_SCLN RGUI_T(KC_SCLN)
 
-// COLEMAK DH
-// Left-hand home row mods
+// COLEMAK DH home row mods
+// Left-hand
 #define ALT_R LALT_T(KC_R)
 #define SFT_S LSFT_T(KC_S)
 // Not using CTL_T because redefined error
@@ -70,7 +71,7 @@ enum custom_keycodes {
 #define ALT_I LALT_T(KC_I)
 #define GUI_O RGUI_T(KC_O)
 
-// ---
+// ----------------------------------------------------------------
 // Shorcuts
 #define GUI_ESC GUI_T(KC_ESC)
 #define CTL_ESC CTL_T(KC_ESC)

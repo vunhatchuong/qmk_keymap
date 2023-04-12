@@ -6,5 +6,6 @@ enum {
     TD_BOOT,
     TD_QWERTY,
     TD_COLEMAKDH,
+    TD_GAMING,
 };
 #endif
