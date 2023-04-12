@@ -19,25 +19,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 #include "wrappers.h"
-#include "keycode_aliases.h"
+#include "process_record.h"
 
 #ifdef XCASE_ENABLE
-#    include "xcase.h"
+#    include "feature/xcase.h"
 #endif
 
 #ifdef QMK_VIM_ENABLE
-#    include "./qmk-vim/src/vim.h"
+#    include "feature/qmk-vim/src/vim.h"
 #endif
 
 #ifdef ANDREW_LEADER_ENABLE
-#    include "andrewleader.h"
+#    include "features/andrewleader.h"
 #endif
 
 #ifdef OLED_ENABLE
-#    include "oled_setup.h"
+#    include "oled/oled_setup.h"
 #endif
 
-enum layers_name {
+#ifdef TAP_DANCE_ENABLE
+#    include "tap_dance.h"
+#endif
+
+enum layer_names {
     _QWERTY,
     _COLEMAKDH,
     _GAMING,

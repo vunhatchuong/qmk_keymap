@@ -12,6 +12,7 @@ MOUSEKEY_ENABLE = yes
 ENCODER_ENABLE = yes
 EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
 VIA_ENABLE = no             # +2140
+TAP_DANCE_ENABLE = yes      # +544
 
 # External Features
 XCASE_ENABLE = no           # +626
