@@ -39,7 +39,7 @@ enum custom_keycodes {
 #define COLEMAKDH DF(_COLEMAKDH)
 #define NAV MO(_NAV)
 #define MEDIA MO(_MEDIA)
-#define GAMING DF(_GAMING)
+#define GAME DF(_GAME)
 #define SYM MO(_SYM)
 #define FUNC MO(_FUNC)
 #define ADJUST MO(_ADJUST)

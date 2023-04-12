@@ -42,13 +42,13 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define __________________FUNC_L2__________________      KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15
 #define __________________FUNC_R2__________________      KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20
 
-#define _________________LOWER_L1__________________      KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
-#define _________________LOWER_L2__________________      _________________FUNC_LEFT_________________
-#define _________________LOWER_L3__________________      _________________FUNC_RIGHT________________
+#define _________________SYMBOL_L1_________________      ________________NUMBER_LEFT________________
+#define _________________SYMBOL_L2_________________      O_PRQOT, KC_LBRC, KC_LCBR, KC_LPRN, KC_EQL
+#define _________________SYMBOL_L3_________________      KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
 
-#define _________________LOWER_R1__________________      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN
-#define _________________LOWER_R2__________________      _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR
-#define _________________LOWER_R3__________________      _______, KC_LEFT, KC_UP  , KC_DOWN, KC_RGHT
+#define _________________SYMBOL_R1_________________      ________________NUMBER_RIGHT_______________
+#define _________________SYMBOL_R2_________________      KC_PLUS, KC_RPRN, KC_RCBR, KC_RBRC, C_PRQOT
+#define _________________SYMBOL_R3_________________      KC_CIRC, KC_AMPR, KC_ASTR, O_BRQOT, C_BRQOT
 
 #define _________________RAISE_L1__________________      ________________NUMBER_LEFT________________
 #define _________________RAISE_L2__________________      _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC
@@ -66,7 +66,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________VIM_ARROW_________________      VIM_B,   KC_END, KC_HOME,  VIM_W,   KC_PGDN
 
 #define _________________ADJUST_L1_________________      RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
-#define _________________ADJUST_L2_________________      MU_TOGG , GAMING, AU_ON,   AU_OFF,  AG_NORM
+#define _________________ADJUST_L2_________________      MU_TOGG , GAME, AU_ON,   AU_OFF,  AG_NORM
 #define _________________ADJUST_L3_________________      RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, _______
 
 #define _________________ADJUST_R1_________________      _______, _______, _______, _______, _______
