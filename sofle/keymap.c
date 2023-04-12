@@ -27,19 +27,30 @@ extern uint32_t oled_timer;
 //     _NAV,
 // };
 
-enum custom_keycodes { KC_QWERTY = SAFE_RANGE, KC_COLEMAK, KC_LOWER, KC_RAISE, KC_ADJUST, SNAKECASE, TOG_VIM, ANDREW_LEADER };
-// Default keymap. This can be changed in Via. Use oled.c and encoder.c to change beavior that Via cannot change.
+// clang-format off
+enum custom_keycodes {
+    KC_QWERTY = SAFE_RANGE,
+    // Macro for: ("
+    O_PRQOT,
+    // Macro for: ")
+    C_PRQOT,
+    // Macro for: ["
+    O_BRQOT,
+    // Macro for: "]
+    C_BRQOT,
+    // SNAKECASE,
+    // TOG_VIM,
+    // ANDREW_LEADER,
+    };
 
-// Symbols chart
-// ↯ hyper key (ctrl, alt, shift, super)
-// ⌘ command
-// ⌥ option
-// ⌃ control
-// ⇧ shift
-// ⌫ backspace
-// ⌦ delete
-// ⎋ escape
-// ↩ enter
+enum {
+    TD_BOOT,
+    TD_QWERTY,
+    TD_COLEMAKDH,
+};
+// clang-format on
+
+// Default keymap. This can be changed in Via. Use oled.c and encoder.c to change beavior that Via cannot change.
 
 // clang-format off
 #define LAYOUT_sofle_base( \
@@ -49,7 +60,7 @@ enum custom_keycodes { KC_QWERTY = SAFE_RANGE, KC_COLEMAK, KC_LOWER, KC_RAISE, K
   ) \
   LAYOUT_wrapper( \
     KC_TAB,         ________________NUMBER_LEFT________________,                ________________NUMBER_RIGHT_______________,        KC_DEL,          \
-    CTL_ESC, K01,     K02,     K03,     K04,     K05,                       K06,     K07,     K08,     K09,     K0A,          KC_BSPC,         \
+    CTL_ESC,       K01,     K02,     K03,     K04,     K05,                       K06,     K07,     K08,     K09,     K0A,          KC_BSPC,         \
     KC_LSFT,       K11,     K12,     K13,     K14,     K15,                       K16,     K17,     K18,     K19,     LT(_NAV,K1A), KC_QUOT,         \
     KC_LCTL,       K21,     K22,     K23,     K24,     K25, KC_MUTE,     KC_MPLY, K26,     K27,     K28,     K29,     K2A,          RSFT_T(KC_ENT),  \
                    KC_LCTL, KC_LALT, KC_LGUI, SYM, KC_SPC,              KC_ENT, FUNC, KC_MINS,  COPY, PASTE                          \
@@ -102,11 +113,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     [_SYM] = LAYOUT_wrapper(
-        KC_GRV,    ________________NUMBER_LEFT________________,                               ________________NUMBER_RIGHT_______________,        KC_DEL,
-        KC_TILD,   KC_LPRN,   KC_RPRN,   KC_PLUS,   KC_EQL,  KC_LT,                           KC_GT,    KC_MINS,   XXXXXXX,   KC_LBRC,  KC_RBRC,  KC_BSLS,
-        _______,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,  KC_PERC,                         KC_CIRC,  KC_AMPR,   KC_ASTR,   KC_LCBR,  KC_RCBR,  KC_PIPE,
-        _______,  ___________________EMPTY___________________, _______,                    _______, ___________________EMPTY___________________,  RSFT_T(KC_ENT),
-                        _______,  _______,   _______,   XXXXXXX, _______,                    _______,   XXXXXXX,   _______,   _______,  _______),
+        KC_F12,    __________________FUNC_L1__________________,                               __________________FUNC_R1__________________,        KC_F11,
+        KC_GRV,    ________________NUMBER_LEFT________________,                               ________________NUMBER_RIGHT_______________,        KC_BSPC,
+        KC_TILD,   O_PRQOT,   KC_LBRC,   KC_LCBR,   KC_LPRN, KC_EQL,                          KC_PLUS,  KC_RPRN,   KC_RCBR,   KC_RBRC,  C_PRQOT,  KC_BSLS,
+        _______,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,  KC_PERC,  _______,     _______,  KC_CIRC,  KC_AMPR,   KC_ASTR,   O_BRQOT,  C_BRQOT,  KC_PIPE,
+                        _______,  _______,   _______,   XXXXXXX, _______,                    _______,   XXXXXXX,   _______,   _______,  _______
+    ),
 
     /* FUNC
      * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -124,10 +136,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_FUNC] = LAYOUT_wrapper(
         _______,   __________________FUNC_L1__________________,                          __________________FUNC_R1__________________,  KC_F11,
-        KC_LCTL,  ___________________EMPTY___________________,                           _________________MOUSE_NAV_________________,  KC_F12,
+        KC_LCTL,   ___________________EMPTY___________________,                           _________________MOUSE_NAV_________________, KC_F12,
         _______,   ___________________EMPTY___________________,                          ________________MOUSE_WHEEL________________,  XXXXXXX,
         _______,   ___________________EMPTY___________________, _______,       _______,  _________________MOUSE_BTN_________________,  RSFT_T(KC_ENT),
-                   _______, _______, _______, XXXXXXX, _______,                       _______,  XXXXXXX, _______, _______, _______),
+                   _______, _______, _______, XXXXXXX, _______,                       _______,  XXXXXXX, _______, _______, _______
+    ),
     /* CUM
      * ,-----------------------------------------.                    ,-----------------------------------------.
      * |      |  F13 |  F14 |  F15 |  F16 |  F17 |                    |  F18 |  F19 |  F20 |  F21 |  F22 | F23  |
@@ -142,12 +155,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *            |      |      |      |      |/       /         \      \ |      |     |      |       |
      *            `-----------------------------------'           '------''---------------------------'
      */
+
     [_NAV] = LAYOUT_wrapper(
         _______,   KC_F13,   KC_F14,   KC_F15,   KC_F16,   KC_F17,                      KC_F18,   KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,
-        KC_LCTL,  ___________________EMPTY___________________,                          ___________________EMPTY___________________,  KC_F24,
-        _______,   _______,  _______,  _______,  _______,  KC_CAPS,                     ____________________NAV____________________,  XXXXXXX,
-        _______,   ___________________EMPTY___________________, _______,       _______, ___________________EMPTY___________________,  RSFT_T(KC_ENT),
-                   _______, _______, _______,  XXXXXXX,  _______,                  _______,   XXXXXXX,  _______,  _______,  _______)
+        KC_LCTL,   ___________________EMPTY___________________,                         ___________________EMPTY___________________,  KC_F24,
+        _______,   _______,  _______,  _______,  _______,  KC_CAPS,                     ___________________ARROW___________________,  XXXXXXX,
+        _______,   ___________________EMPTY___________________, _______,       _______, _________________VIM_ARROW_________________,  RSFT_T(KC_ENT),
+                   _______, _______, _______,  XXXXXXX,  _______,                  _______,   XXXXXXX,  _______,  _______,  _______
+    ),
+
+    [_ADJUST] = LAYOUT_wrapper(
+        _______,   KC_F13,   KC_F14,   KC_F15,   KC_F16,   KC_F17,                      KC_F18,   KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,
+        KC_LCTL,   ___________________EMPTY___________________,                         ___________________EMPTY___________________,  KC_F24,
+        _______,   _______,  _______,  _______,  _______,  KC_CAPS,                     ___________________ARROW___________________,  XXXXXXX,
+        _______,   ___________________EMPTY___________________, _______,       _______, _________________VIM_ARROW_________________,  RSFT_T(KC_ENT),
+                   _______, _______, _______,  XXXXXXX,  _______,                  _______,   XXXXXXX,  _______,  _______,  _______
+    )
 };
 // clang-formatter on
 
@@ -220,6 +243,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     if (record->event.pressed) oled_timer_reset();
     switch (keycode) {
+        case O_BRQOT:
+            if (record->event.pressed) {
+                tap_code(KC_LEFT_BRACKET);
+                tap_code16(KC_DOUBLE_QUOTE);
+            }
+            return false;
+        case C_BRQOT:
+            if (record->event.pressed) {
+                tap_code16(KC_DOUBLE_QUOTE);
+                tap_code(KC_RIGHT_BRACKET);
+            }
+            return false;
+        case O_PRQOT:
+            if (record->event.pressed) {
+                tap_code16(KC_LEFT_PAREN);
+                tap_code16(KC_DOUBLE_QUOTE);
+            }
+            return false;
+        case C_PRQOT:
+            if (record->event.pressed) {
+                tap_code16(KC_DOUBLE_QUOTE);
+                tap_code16(KC_RIGHT_PAREN);
+            }
+            return false;
+
 #ifdef ANDREW_LEADER_ENABLE
         case ANDREW_LEADER:
             if (record->event.pressed) {
@@ -267,3 +315,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+
+void td_fn_boot(tap_dance_state_t *state, void *user_data) {
+    if (state->count >= 2) {
+        reset_keyboard();
+    }
+}
+
+void td_change_to_qwerty(tap_dance_state_t *state, void *user_data) {
+    if (state->count >= 2) {
+        default_layer_set(1UL<<_QWERTY);
+    }
+}
+void td_change_to_colemakdh(tap_dance_state_t *state, void *user_data) {
+    if (state->count >= 2) {
+        default_layer_set(1UL<_COLEMAKDH);
+    }
+}
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_BOOT] = ACTION_TAP_DANCE_FN(td_fn_boot),
+    [TD_QWERTY] = ACTION_TAP_DANCE_FN(td_change_to_qwerty),
+    [TD_COLEMAKDH] = ACTION_TAP_DANCE_FN(td_change_to_colemakdh),
+};

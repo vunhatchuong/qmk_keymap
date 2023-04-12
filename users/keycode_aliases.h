@@ -105,3 +105,6 @@
 
 #define UC_IRNY UC(0x2E2E)
 #define UC_CLUE UC(0x203D)
+
+#define VIM_B LCTL(KC_LEFT)
+#define VIM_W LCTL(KC_RIGHT)

@@ -35,17 +35,23 @@ static void print_status_narrow(void) {
     // Print current layer
     oled_write_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case 0:
+        case _QWERTY:
             oled_write_ln_P(PSTR("Main"), false);
             break;
-        case 1:
+        case _COLEMAKDH:
+            oled_write_ln_P(PSTR("Main"), false);
+            break;
+        case _SYM:
             oled_write_ln_P(PSTR("Syms"), false);
             break;
-        case 2:
+        case _FUNC:
             oled_write_ln_P(PSTR("Func"), false);
             break;
-        case 3:
-            oled_write_ln_P(PSTR("CUM"), false);
+        case _NAV:
+            oled_write_ln_P(PSTR("NAV"), false);
+            break;
+        case _ADJUST:
+            oled_write_ln_P(PSTR("ADJ"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);

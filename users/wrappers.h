@@ -62,10 +62,11 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ________________MOUSE_WHEEL________________      KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_NO
 #define _________________MOUSE_BTN_________________      KC_BTN1, KC_BTN2, KC_BTN3, KC_NO,   KC_NO
 
-#define ____________________NAV____________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO
+#define ___________________ARROW___________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGUP
+#define _________________VIM_ARROW_________________      VIM_B,   KC_END, KC_HOME,  VIM_W,   KC_PGDN
 
 #define _________________ADJUST_L1_________________      RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
-#define _________________ADJUST_L2_________________      MU_TOGG , DF(_GAMING), AU_ON,   AU_OFF,  AG_NORM
+#define _________________ADJUST_L2_________________      MU_TOGG , GAMING, AU_ON,   AU_OFF,  AG_NORM
 #define _________________ADJUST_L3_________________      RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, _______
 
 #define _________________ADJUST_R1_________________      _______, _______, _______, _______, _______

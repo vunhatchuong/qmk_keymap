@@ -26,3 +26,5 @@ ifeq ($(strip $(ANDREW_LEADER_ENABLE)), yes)
     SRC += $(USER_PATH)/features/andrewleader.c
     OPT_DEFS += -DANDREW_LEADER_ENABLE
 endif
+
+TAP_DANCE_ENABLE = yes
