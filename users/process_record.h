@@ -1,21 +1,3 @@
-/*
- * Copyright 2020 Drashna Jaelre <@drashna>
- * Copyright 2021 Tyler Thrailkill <@snowe/@snowe2010>
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #pragma once
 #include "ronny.h"
 
@@ -30,7 +12,6 @@ enum custom_keycodes {
     // Macro for: "]
     C_BRQOT,
     };
-
 // clang-format on
 
 // ---
@@ -73,10 +54,7 @@ enum custom_keycodes {
 
 // ----------------------------------------------------------------
 // Shorcuts
-#define GUI_ESC GUI_T(KC_ESC)
 #define CTL_ESC CTL_T(KC_ESC)
-#define SH_BKSP SFT_T(KC_BSPC)
-#define SP_RAIS LT(_UPPER, KC_SPC)
 
 #define UNDO LCTL(KC_Z)
 #define REDO LCTL(KC_Y)
@@ -86,38 +64,6 @@ enum custom_keycodes {
 
 #define KC_RESET QK_BOOT
 #define KC_RST KC_RESET
-
-#ifdef SWAP_HANDS_ENABLE
-#    define KC_C1R3 SH_TT
-#else // SWAP_HANDS_ENABLE
-#    define KC_C1R3 KC_BSPC
-#endif // SWAP_HANDS_ENABLE
-
-#define BK_LWER LT(_LOWER, KC_BSPC)
-#define SP_LWER LT(_LOWER, KC_SPC)
-#define DL_RAIS LT(_UPPER, KC_DEL)
-#define ET_RAIS LT(_UPPER, KC_ENTER)
-#define SFT_ENT SFT_T(KC_ENTER)
-#define SP_RAIS LT(_UPPER, KC_SPC)
-
-/* OSM keycodes, to keep things clean and easy to change */
-#define KC_MLSF OSM(MOD_LSFT)
-#define KC_MRSF OSM(MOD_RSFT)
-
-#define OS_LGUI OSM(MOD_LGUI)
-#define OS_RGUI OSM(MOD_RGUI)
-#define OS_LSFT OSM(MOD_LSFT)
-#define OS_RSFT OSM(MOD_RSFT)
-#define OS_LCTL OSM(MOD_LCTL)
-#define OS_RCTL OSM(MOD_RCTL)
-#define OS_LALT OSM(MOD_LALT)
-#define OS_RALT OSM(MOD_RALT)
-#define OS_MEH OSM(MOD_MEH)
-#define OS_HYPR OSM(MOD_HYPR)
-
-#define ALT_APP ALT_T(KC_APP)
-
-#define MG_NKRO MAGIC_TOGGLE_NKRO
 
 #define VIM_B LCTL(KC_LEFT)
 #define VIM_W LCTL(KC_RIGHT)
