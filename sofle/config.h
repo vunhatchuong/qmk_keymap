@@ -17,31 +17,13 @@
 
 #pragma once
 
-/* The way how "handedness" is decided (which half is which),
-see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness
-for more options.
-*/
-#ifdef TAPPING_TERM
-#    undef TAPPING_TERM
-#endif
-#define TAPPING_TERM 200
-#undef PERMISSIVE_HOLD
-
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 #define OLED_DISABLE_TIMEOUT
 #define SPLIT_OLED_ENABLE
 #define LAYER_STATE_8BIT
 #define SPLIT_WPM_ENABLE
 
-#define MK_KINETIC_SPEED
-#define MOUSEKEY_INITIAL_SPEED 20
-#define MK_VARIANT MK_TYPE_KINETIC
-
-#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 #define NO_ACTION_ONESHOT // +658
-
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
 
 // ----- Extra features not from QMK ------
 

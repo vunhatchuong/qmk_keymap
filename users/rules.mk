@@ -1,13 +1,18 @@
 SRC += $(USER_PATH)/process_record.c
+
+ifeq ($(strip $(ENCODER_ENABLE)), yes)
+    SRC += $(USER_PATH)/encoder.c
+endif
+
 ifeq ($(strip $(OLED_ENABLE)), yes)
     SRC += $(USER_PATH)/oled/oled_setup.c
 
-    ifeq ($(strip $(OCEAN_DREAM_ENABLE)), yes)
+    ifeq ($(strip $(OCEAN_DREAM_ENABLE)), yes)  # +2804
         SRC += $(USER_PATH)/oled/ocean_dream.c
         OPT_DEFS += -DOCEAN_DREAM_ENABLE
     endif
 
-    ifeq ($(strip $(LUNA_ENABLE)), yes)
+    ifeq ($(strip $(LUNA_ENABLE)), yes)         # +1458
         SRC += $(USER_PATH)/oled/luna.c
         OPT_DEFS += -DLUNA_ENABLE
     endif
@@ -32,6 +37,6 @@ ifeq ($(strip $(TAP_DANCE_ENABLE)), yes) # +544
     SRC += $(USER_PATH)/tap_dance.c
 endif
 
-ifeq ($(strip $(ENCODER_ENABLE)), yes)
-    SRC += $(USER_PATH)/encoder.c
+ifeq ($(strip $(COMBO_ENABLE)), yes)    ## +1888
+    SRC += combo.c
 endif

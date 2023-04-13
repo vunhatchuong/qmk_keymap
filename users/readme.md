@@ -4,7 +4,6 @@ Welcome to my userspace.
 
 A lot of the code for my wrappers/keymaps came from other users, see the [Resources](#resources) section.
 
-
 ## Resources
 
 - [Ocean Dream](https://github.com/qmk/qmk_firmware/tree/master/users/snowe) cool OLED.

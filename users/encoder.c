@@ -1,4 +1,4 @@
-// Setting up what encoder rotation does. If your encoder can be pressed as a button, set that in keymap.c
+// If your encoder can be pressed as a button, set that in keymap.c
 #include "ronny.h"
 bool encoder_update_user(uint8_t index, bool clockwise) {
     switch (get_highest_layer(layer_state | default_layer_state)) {
