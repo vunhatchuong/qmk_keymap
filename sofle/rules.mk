@@ -21,7 +21,7 @@ ANDREW_LEADER_ENABLE = no   # +372 not include LED
 
 #Optimize firmware size
 LTO_ENABLE = yes
-SWAP_HANDS_ENABLE = no      # one-hand typing
+SWAP_HANDS_ENABLE = yes      # one-hand typing (+490)
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no           # Enabled For VIA (+796)
