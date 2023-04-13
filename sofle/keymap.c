@@ -17,6 +17,7 @@
 
 #include QMK_KEYBOARD_H
 #include "ronny.h"
+#include "g/keymap_combo.h"
 
 // clang-format off
 #define LAYOUT_sofle_base( \
@@ -113,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT_wrapper(
         KC_F12,    __________________FUNC_L1__________________,                         __________________FUNC_R1__________________,  KC_F11,
-        KC_LCTL,   ___________________EMPTY___________________,                         _________________MOUSE_NAV_________________,  KC_WH_L,
+        KC_LCTL,   _______,  CS_TAB,   C_T,      C_W,      C_TAB,                       _________________MOUSE_NAV_________________,  KC_WH_L,
         _______,   _______,  _______,  _______,  _______,  KC_CAPS,                     ___________________ARROW___________________,  KC_WH_R,
         _______,   ___________________EMPTY___________________, _______,       _______, _________________VIM_ARROW_________________,  RSFT_T(KC_ENT),
                    _______, _______, _______,  _______,  _______,                  _______,   _______,  _______,  _______,  _______

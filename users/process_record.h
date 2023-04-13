@@ -67,3 +67,11 @@ enum custom_keycodes {
 
 #define VIM_B LCTL(KC_LEFT)
 #define VIM_W LCTL(KC_RIGHT)
+
+// Tabs navigation
+#define C_TAB C(KC_TAB)
+#define CS_TAB C(S(KC_TAB))
+#define C_W C(KC_W)
+#define CS_T C(S(KC_T))
+#define C_T C(KC_T)
+
