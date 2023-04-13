@@ -74,4 +74,3 @@ enum custom_keycodes {
 #define C_W C(KC_W)
 #define CS_T C(S(KC_T))
 #define C_T C(KC_T)
-

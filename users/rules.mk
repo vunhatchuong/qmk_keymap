@@ -41,3 +41,11 @@ endif
 ifeq ($(strip $(COMBO_ENABLE)), yes)    ## +1888
     VPATH +=  keyboards/gboards/
 endif
+
+ifeq ($(strip $(AUTO_SHIFT_ENABLE)), yes) # +2596
+    SRC += $(USER_PATH)/auto_shift.c
+endif
+
+ifeq ($(strip $(LEADER_ENABLE)), yes) # +1050
+    SRC += $(USER_PATH)/leader.c
+endif
