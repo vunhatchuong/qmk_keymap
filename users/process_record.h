@@ -24,6 +24,7 @@ enum custom_keycodes {
 #define SYM MO(_SYM)
 #define FUNC MO(_FUNC)
 #define ADJUST MO(_ADJUST)
+#define SPC_FUNC LT(_FUNC, KC_SPC)
 
 // ---
 // QWERTY home row mods
