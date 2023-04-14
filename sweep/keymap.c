@@ -9,10 +9,10 @@
     K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A  \
   ) \
   LAYOUT_wrapper( \
-    K01,     K02,     K03,     K04,     K05,                       K06,     K07,     K08,     K09,     K0A,  \
-    K11,     K12,     K13,     K14,     K15,                       K16,     K17,     K18,     K19,     K1A,  \
-    K21,     K22,     K23,     K24,     K25,                       K26,     K27,     K28,     K29,     K2A,  \
-                               SYM,     SPC_FUNC,            ENT_NUMPAD,    NAV                              \
+    K01,   K02,   K03,   K04,   K05,                       K06,   K07,   K08,   K09,   K0A,  \
+    K11,   K12,   K13,   K14,   K15,                       K16,   K17,   K18,   K19,   K1A,  \
+    K21,   K22,   K23,   K24,   K25,                       K26,   K27,   K28,   K29,   K2A,  \
+                         SYM,   SPC_FUNC,         ENT_NUMPAD,     NAV                        \
     )
 
 #define LAYOUT_ferris_base_wrapper(...) LAYOUT_ferris_base(__VA_ARGS__)
@@ -33,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Find better location to put GRV, TILD, BSLS, PIPE, UNDS. MINS
     [_SYM] = LAYOUT_wrapper(
         KC_GRV, KC_TILD, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, KC_PIPE,
-        _________________SYMBOL_L3_________________, _________________SYMBOL_R3_________________,
         _________________SYMBOL_L2_________________, _________________SYMBOL_R2_________________,
-                            XXXXXXX,     XXXXXXX,      KC_UNDS,     KC_MINS
+        _________________SYMBOL_L3_________________, _________________SYMBOL_R3_________________,
+                            XXXXXXX,     XXXXXXX,    KC_UNDS,     KC_MINS
     ),
 
     [_FUNC] = LAYOUT_ferris_base_wrapper(

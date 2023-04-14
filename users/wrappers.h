@@ -49,7 +49,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 
 #define _________________FUNCPAD_R1_________________     XXXXXXX, KC_F5,   KC_F6,   KC_F7,   KC_F8
 #define _________________FUNCPAD_R2_________________     XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F4
-#define _________________FUNCPAD_R3_________________     XXXXXXX, KC_F9,   KC_F11,  KC_F10,  KC_F12
+#define _________________FUNCPAD_R3_________________     XXXXXXX, KC_F9,   KC_F10,  KC_F11,  KC_F12
 
 #define _________________SYMBOL_L1_________________      ________________NUMBER_LEFT________________
 #define _________________SYMBOL_L2_________________      O_PRQOT, KC_LBRC, KC_LCBR, KC_LPRN, KC_EQL
@@ -82,7 +82,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________ADJUST_R2_________________      _______, _______, _______, _______, _______
 #define _________________ADJUST_R3_________________      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY
 
-#define __________________TAB_NAV__________________      _______, CS_TAB,  C_T,     C_W,     C_TAB
+#define __________________TAB_NAV__________________      CS_T,    CS_TAB,  C_T,     C_W,     C_TAB
 #define __________________WWW_NAV__________________      KC_WSCH, KC_BACK, _______, _______, KC_FWD
 
 #define _________________NUMPAD_L1_________________      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
