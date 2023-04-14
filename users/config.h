@@ -3,7 +3,7 @@
 #ifdef TAPPING_TERM
 #    undef TAPPING_TERM
 #endif
-#define TAPPING_TERM 200 // 175 or 170 seems popular default: 200
+#define TAPPING_TERM 170 // 175 or 170 seems popular default: 200
 #undef PERMISSIVE_HOLD
 
 #define HOLD_ON_OTHER_KEY_PRESS
@@ -17,7 +17,7 @@
 #ifdef COMBO_ENABLE
 // #define COMBO_STRICT_TIMER
 // #define EXTRA_SHORT_COMBOS
-// #define COMBO_TERM 50 // or precondition: 70 default: 50
+#    define COMBO_TERM 35 // or precondition: 70 default: 50
 #    define COMBO_ONLY_FROM_LAYER 0
 #endif
 
