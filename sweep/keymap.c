@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "ronny.h"
+#include "g/keymap_combo.h"
 
 // clang-format off
 #define LAYOUT_ferris_base( \
@@ -32,25 +33,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM] = LAYOUT_ferris_base_wrapper(
         ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________,
         _________________SYMBOL_L3_________________, _________________SYMBOL_R3_________________,
-        _________________SYMBOL_L2_________________, _________________SYMBOL_R2_________________,
+        _________________SYMBOL_L2_________________, _________________SYMBOL_R2_________________
     ),
 
     [_FUNC] = LAYOUT_ferris_base_wrapper(
         __________________FUNC_L1__________________, __________________FUNC_R1__________________,
         ___________________EMPTY___________________, ___________________EMPTY___________________,
-        ___________________EMPTY___________________, ___________________EMPTY___________________,
+        ___________________EMPTY___________________, ___________________EMPTY___________________
     ),
 
     [_NAV] = LAYOUT_ferris_base_wrapper(
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
     [_ADJUST] = LAYOUT_ferris_base_wrapper(
         _________________ADJUST_L1_________________, ___________________EMPTY___________________,
         _________________ADJUST_L2_________________, ___________________ARROW___________________,
-        _________________ADJUST_L3_________________, _________________ADJUST_R3_________________,
+        _________________ADJUST_L3_________________, _________________ADJUST_R3_________________
     )
 };
 // clang-formatter on

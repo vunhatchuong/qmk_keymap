@@ -44,9 +44,11 @@ void *leader_start_func(uint16_t keycode) {
 }
 #endif
 
+#ifdef OLED_ENABLE
 void oled_timer_reset(void) {
     oled_timer = timer_read32();
 }
+#endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef ANDREW_LEADER_ENABLE
@@ -70,7 +72,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 #endif
 
-    if (record->event.pressed) oled_timer_reset();
+    if (record->event.pressed)
+#ifdef OLED_ENABLE
+        oled_timer_reset();
+#endif
     switch (keycode) {
         case O_BRQOT:
             if (record->event.pressed) {
