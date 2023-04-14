@@ -1,0 +1,6 @@
+//   name         result    chord keys
+COMB(WE_ESC,      KC_ESC,   KC_W, KC_E)
+COMB(XC_TAB,      KC_TAB,   KC_X, KC_C)
+COMB(IO_BSPC,     KC_BSPC,  KC_I, KC_O)
+COMB(COMMDOT_DEL, KC_DEL,   KC_COMM, KC_DOT)
+COMB(LEADER,      QK_LEAD,  SYM, NAV)

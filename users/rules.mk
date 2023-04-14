@@ -37,6 +37,15 @@ ifeq ($(strip $(TAP_DANCE_ENABLE)), yes) # +544
     SRC += $(USER_PATH)/tap_dance.c
 endif
 
+# Combos dictionary management, remember to add #include "g/keymap_combo.h" in keymap.c
 ifeq ($(strip $(COMBO_ENABLE)), yes)    ## +1888
-    SRC += combo.c
+    VPATH +=  keyboards/gboards/
+endif
+
+ifeq ($(strip $(AUTO_SHIFT_ENABLE)), yes) # +2596
+    SRC += $(USER_PATH)/auto_shift.c
+endif
+
+ifeq ($(strip $(LEADER_ENABLE)), yes) # +1050
+    SRC += $(USER_PATH)/leader.c
 endif
