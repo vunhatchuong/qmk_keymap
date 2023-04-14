@@ -29,8 +29,8 @@ enum layer_names {
     _COLEMAKDH,
     _GAME,
     _NAV,
-    _MEDIA,
     _SYM,
     _FUNC,
+    _NUMPAD,
     _ADJUST,
 };

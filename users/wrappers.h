@@ -46,6 +46,11 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define __________________FUNC_L2__________________      KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15
 #define __________________FUNC_R2__________________      KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20
 
+
+#define _________________FUNCPAD_R1_________________     XXXXXXX, KC_F5,   KC_F6,   KC_F7,   KC_F8
+#define _________________FUNCPAD_R2_________________     XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F4
+#define _________________FUNCPAD_R3_________________     XXXXXXX, KC_F9,   KC_F11,  KC_F10,  KC_F12
+
 #define _________________SYMBOL_L1_________________      ________________NUMBER_LEFT________________
 #define _________________SYMBOL_L2_________________      O_PRQOT, KC_LBRC, KC_LCBR, KC_LPRN, KC_EQL
 #define _________________SYMBOL_L3_________________      KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
@@ -67,16 +72,26 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________MOUSE_BTN_________________      KC_BTN1, KC_BTN2, KC_BTN3, KC_NO,   KC_NO
 
 #define ___________________ARROW___________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGUP
-#define _________________VIM_ARROW_________________      VIM_B,   KC_END, KC_HOME,  VIM_W,   KC_PGDN
+#define _________________VIM_ARROW_________________      VIM_B,   KC_END,  KC_HOME, VIM_W,   KC_PGDN
 
-#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH, TD_GAME, XXXXXXX
-#define _________________ADJUST_L2_________________      KC_NUM,  KC_SCRL, KC_INS,   KC_PSCR,  CW_TOGG
-#define _________________ADJUST_L3_________________      UNDO,    REDO,    CUT,     COPY,    PASTE
+#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH,   TD_GAME,  XXXXXXX
+#define _________________ADJUST_L2_________________      KC_NUM,  KC_SCRL,         KC_INS,   KC_PSCR,  CW_TOGG
+#define _________________ADJUST_L3_________________      UNDO,    REDO,               CUT,      COPY,    PASTE
 
 #define _________________ADJUST_R1_________________      EE_CLR,  _______, _______, _______, _______
 #define _________________ADJUST_R2_________________      _______, _______, _______, _______, _______
 #define _________________ADJUST_R3_________________      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY
 
 #define __________________TAB_NAV__________________      _______, CS_TAB,  C_T,     C_W,     C_TAB
-#define __________________WWW_NAV__________________      KC_WSCH, KC_WBAK, _______, _______, KC_WFWD
+#define __________________WWW_NAV__________________      KC_WSCH, KC_BACK, _______, _______, KC_FWD
+
+#define _________________NUMPAD_L1_________________      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________NUMPAD_L2_________________      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_EQL
+#define _________________NUMPAD_L3_________________      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define ___NUMPAD_LT___                                 _______, _______
+
+#define _________________NUMPAD_R1_________________      _______,  KC_4,  KC_5,  KC_6,  KC_PERC
+#define _________________NUMPAD_R2_________________      KC_PLUS,  KC_1,  KC_2,  KC_3,  KC_DLR
+#define _________________NUMPAD_R3_________________      _______,  KC_7,  KC_8,  KC_9,  KC_DOT
+#define ___NUMPAD_RT___                                  _______,  KC_0
 // clang-format on
