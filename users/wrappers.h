@@ -69,9 +69,6 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ___________________ARROW___________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGUP
 #define _________________VIM_ARROW_________________      VIM_B,   KC_END, KC_HOME,  VIM_W,   KC_PGDN
 
-// #define _________________ADJUST_L1_________________      RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
-// #define _________________ADJUST_L2_________________      MU_TOGG , GAME, AU_ON,   AU_OFF,  AG_NORM
-// #define _________________ADJUST_L3_________________      RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, _______
 #define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH, TD_GAME, XXXXXXX
 #define _________________ADJUST_L2_________________      KC_NUM,  KC_SCRL, KC_INS,   KC_PSCR,  CW_TOGG
 #define _________________ADJUST_L3_________________      UNDO,    REDO,    CUT,     COPY,    PASTE
@@ -79,4 +76,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________ADJUST_R1_________________      EE_CLR,  _______, _______, _______, _______
 #define _________________ADJUST_R2_________________      _______, _______, _______, _______, _______
 #define _________________ADJUST_R3_________________      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY
+
+#define __________________TAB_NAV__________________      _______, CS_TAB,  C_T,     C_W,     C_TAB
+#define __________________WWW_NAV__________________      KC_WSCH, KC_WBAK, _______, _______, KC_WFWD
 // clang-format on

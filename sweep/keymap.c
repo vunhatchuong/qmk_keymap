@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NAV] = LAYOUT_ferris_base_wrapper(
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+        __________________TAB_NAV__________________, _________________MOUSE_NAV_________________,
+        __________________WWW_NAV__________________, ___________________ARROW___________________,
+        ________________MOUSE_WHEEL________________, _________________VIM_ARROW_________________
     ),
 
     [_ADJUST] = LAYOUT_ferris_base_wrapper(
