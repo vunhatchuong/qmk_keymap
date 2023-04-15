@@ -3,10 +3,9 @@
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 #define OLED_DISABLE_TIMEOUT
 #define SPLIT_OLED_ENABLE
-#define LAYER_STATE_8BIT
 #define SPLIT_WPM_ENABLE
 
-#define NO_ACTION_ONESHOT // +658
+#define LAYER_STATE_8BIT
 
 // ----- Extra features not from QMK ------
 

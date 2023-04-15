@@ -1,4 +1,6 @@
 #pragma once
 
 #define LAYER_STATE_8BIT
-#define NO_ACTION_ONESHOT // +658
+
+#define STENO_LITE_ENABLE
+#define COMBO_SYMBOL_ENABLE
