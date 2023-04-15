@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ________________COLEMAK_DH_L3______________, ________________COLEMAK_DH_R3______________
     ),
 
-// Find better location to put GRV, TILD, BSLS, PIPE, UNDS. MINS
+// Find better location to put GRV-TILD, BSLS-PIPE, UNDS-MINS
     [_SYM] = LAYOUT_wrapper(
         KC_GRV, KC_TILD, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, KC_PIPE,
         _________________SYMBOL_L2_________________, _________________SYMBOL_R2_________________,

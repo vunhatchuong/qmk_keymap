@@ -1,36 +1,53 @@
-//   name              result                   chord keys
-COMB(WE_ESC,           KC_ESC,                  KC_W, KC_E     )
-COMB(XC_TAB,           KC_TAB,                  KC_X, KC_C     )
-COMB(IO_BSPC,          KC_BSPC,                 KC_I, KC_O     )
-COMB(COMMDOT_DEL,      KC_DEL,                  KC_COMM, KC_DOT)
-COMB(LEADER,           QK_LEAD,                 SYM, NAV       )
-COMB(EM_EMAIL,         "ronnyvu321@gmail.com",  KC_E, KC_M     )
+//   name                 result                   chord keys
+COMB(WE_ESC,              KC_ESC,                  KC_W, KC_E     )
+COMB(XC_TAB,              KC_TAB,                  KC_X, KC_C     )
+COMB(IO_BSPC,             KC_BSPC,                 KC_I, KC_O     )
+COMB(COMMDOT_DEL,         KC_DEL,                  KC_COMM, KC_DOT)
+COMB(LEADER,              QK_LEAD,                 SYM, NAV       )
+SUBS(EM_EMAIL,            "ronnyvu321@gmail.com",  KC_E, KC_M     )
 
+#ifdef STENO_LITE_ENABLE
 // Shamelessly steal from precondition steno-lite
 // https://github.com/precondition/dactyl-manuform-keymap/blob/main/combos.c
 
-// COMB(BSPCEV_EVERY,     "every",    ,    )
-// COMB(BSPCU_YOU,        "you",      ,    )
-// COMB(BSPCA_AND,        "and",      ,    )
-// COMB(BSPCW_WITH,       "with",     ,    )
-// COMB(BSPCF_FOR,        "for",      ,    )
-// COMB(BSPCH_HERE,       "here",     ,    )
-// COMB(BSPCT_THE,        "the",      ,    )
-// COMB(BSPCM_MENT,       "ment",     ,    )
-// COMB(BSPCG_ING,        "ing",      ,    )
-// COMB(BSPCO_OUGH,       "ough",     ,    )
-// COMB(BSPCOL_OULD,      "ould",     ,    )
-// COMB(BSPCI_ION,        "ion",      ,    )
-// COMB(BSPCIS_IONS,      "ions",     ,    )
-// COMB(BSPCTA_THAT,      "that",     ,    )
-// COMB(BSPCK_KEY,        "key",      ,    )
-// COMB(BSPCTS_THIS,      "this",     ,    )
-// COMB(BSPCDN_DONT,      "don't",    ,    )
-// COMB(BSPCIT_IN_THE,    "in the",   ,    )
+// COMB(BSPCEV_EVERY,     "every",    ,   ,   )
+// COMB(BSPCU_YOU,        "you",      ,   ,   )
+// COMB(BSPCA_AND,        "and",      ,   ,   )
+// COMB(BSPCW_WITH,       "with",     ,   ,   )
+// COMB(BSPCF_FOR,        "for",      ,   ,   )
+// COMB(BSPCH_HERE,       "here",     ,   ,   )
+// COMB(BSPCT_THE,        "the",      ,   ,   )
+// COMB(BSPCM_MENT,       "ment",     ,   ,   )
+// COMB(BSPCG_ING,        "ing",      ,   ,   )
+// COMB(BSPCO_OUGH,       "ough",     ,   ,   )
+// COMB(BSPCOL_OULD,      "ould",     ,   ,   )
+// COMB(BSPCI_ION,        "ion",      ,   ,   )
+// COMB(BSPCIS_IONS,      "ions",     ,   ,   )
+// COMB(BSPCTA_THAT,      "that",     ,   ,   )
+// COMB(BSPCK_KEY,        "key",      ,   ,   )
+// COMB(BSPCTS_THIS,      "this",     ,   ,   )
+// COMB(BSPCDN_DONT,      "don't",    ,   ,   )
+// COMB(BSPCIT_IN_THE,    "in the",   ,   ,   )
 
 // Other steno-lite combos
 // Additional steno-lite combos for common words and n-grams
-// COMB(HV_HAVE,           "have",    ,    )
-// COMB(QK_QMK,            "qmk",     ,    )
-// COMB(KB_KEYBOARD,       "keyboard",,    )
-// COMB(WA_WHAT,           "what",    ,    )
+// COMB(HV_HAVE,          "have",     ,   ,   )
+// COMB(QK_QMK,           "qmk",      ,   ,   )
+// COMB(KB_KEYBOARD,      "keyboard", ,   ,   )
+// COMB(WA_WHAT,          "what",     ,   ,   )
+#endif
+
+#ifdef COMBO_SYMBOL_ENABLE
+//Right hand side
+COMB(PSCLN_BSLS,          KC_BSLS,                 KC_P, KC_SCLN     )
+COMB(SCLNSLASH_PIPE,      KC_PIPE,                 KC_SCLN, KC_SLASH )
+COMB(HJ_MINS,             KC_MINS,                 KC_H, KC_J        )
+COMB(NM_UNDS,             KC_UNDS,                 KC_N, KC_M        )
+
+//Left hand side
+COMB(QA_GRV,              KC_GRV,                  KC_Q, KC_A        )
+COMB(AZ_TILD,             KC_TILD,                 KC_A, KC_Z        )
+    // Home-row version
+COMB(HOMEQA_GRV,          KC_GRV,                  KC_Q, GUI_A       )
+COMB(HOMEAZ_TILD,         KC_TILD,                 GUI_A, KC_Z       )
+#endif
