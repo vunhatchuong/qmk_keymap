@@ -52,11 +52,11 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________FUNCPAD_R3_________________     XXXXXXX, KC_F9,   KC_F10,  KC_F11,  KC_F12
 
 #define _________________SYMBOL_L1_________________      ________________NUMBER_LEFT________________
-#define _________________SYMBOL_L2_________________      O_PRQOT, KC_LBRC, KC_LCBR, KC_LPRN, KC_EQL
+#define _________________SYMBOL_L2_________________      O_PRQOT, KC_LCBR, KC_LBRC, KC_LPRN, KC_EQL
 #define _________________SYMBOL_L3_________________      KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
 
 #define _________________SYMBOL_R1_________________      ________________NUMBER_RIGHT_______________
-#define _________________SYMBOL_R2_________________      KC_PLUS, KC_RPRN, KC_RCBR, KC_RBRC, C_PRQOT
+#define _________________SYMBOL_R2_________________      KC_PLUS, KC_RPRN, KC_RBRC, KC_RCBR, C_PRQOT
 #define _________________SYMBOL_R3_________________      KC_CIRC, KC_AMPR, KC_ASTR, O_BRQOT, C_BRQOT
 
 #define _________________RAISE_L1__________________      ________________NUMBER_LEFT________________
@@ -90,8 +90,11 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________NUMPAD_L3_________________      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define ___NUMPAD_LT___                                 _______, _______
 
-#define _________________NUMPAD_R1_________________      _______,  KC_4,  KC_5,  KC_6,  KC_PERC
-#define _________________NUMPAD_R2_________________      KC_PLUS,  KC_1,  KC_2,  KC_3,  KC_DLR
-#define _________________NUMPAD_R3_________________      _______,  KC_7,  KC_8,  KC_9,  KC_DOT
-#define ___NUMPAD_RT___                                  _______,  KC_0
+#define _________________NUMPAD_R1_________________      _______, KC_4,    KC_5,    KC_6,    KC_PERC
+#define _________________NUMPAD_R2_________________      KC_PLUS, KC_1,    KC_2,    KC_3,    KC_DLR
+#define _________________NUMPAD_R3_________________      _______, KC_7,    KC_8,    KC_9,    KC_DOT
+#define ___NUMPAD_RT___                                  _______, KC_0
+
+#define _________________ARTSEY_L1_________________      XXXXXXX, KC_O,    KC_I,    KC_E,    KC_N
+#define _________________ARTSEY_L2_________________      XXXXXXX, KC_A,    KC_R,    KC_S,    KC_T
 // clang-format on

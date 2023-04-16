@@ -35,4 +35,4 @@
 // Disable unnecessary features to save firmware size
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
-#define NO_ACTION_ONESHOT // +658
+// #define NO_ACTION_ONESHOT // +658

@@ -79,4 +79,16 @@ enum custom_keycodes {
 #define C_W         C(KC_W)
 #define CS_T        C(S(KC_T))
 #define C_T         C(KC_T)
+
+/* OSM keycodes, to keep things clean and easy to change */
+#define OSM_LGUI OSM(MOD_LGUI)
+#define OSM_RGUI OSM(MOD_RGUI)
+#define OSM_LSFT OSM(MOD_LSFT)
+#define OSM_RSFT OSM(MOD_RSFT)
+#define OSM_LCTL OSM(MOD_LCTL)
+#define OSM_RCTL OSM(MOD_RCTL)
+#define OSM_LALT OSM(MOD_LALT)
+#define OSM_RALT OSM(MOD_RALT)
+#define OSM_MEH OSM(MOD_MEH)
+#define OSM_HYPR OSM(MOD_HYPR)
 // clang-format on

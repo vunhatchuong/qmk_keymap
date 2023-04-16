@@ -1,53 +1,105 @@
-//   name                 result                   chord keys
-COMB(WE_ESC,              KC_ESC,                  KC_W, KC_E     )
-COMB(XC_TAB,              KC_TAB,                  KC_X, KC_C     )
-COMB(IO_BSPC,             KC_BSPC,                 KC_I, KC_O     )
-COMB(COMMDOT_DEL,         KC_DEL,                  KC_COMM, KC_DOT)
-COMB(LEADER,              QK_LEAD,                 SYM, NAV       )
-SUBS(EM_EMAIL,            "ronnyvu321@gmail.com",  KC_E, KC_M     )
+//   NAME                            RESULT                         CHORD KEYS
+COMB(WE_ESC,                         KC_ESC,                        KC_W,    KC_E     )
+COMB(XC_TAB,                         KC_TAB,                        KC_X,    KC_C     )
+COMB(IO_BSPC,                        KC_BSPC,                       KC_I,    KC_O     )
+COMB(COMMDOT_DEL,                    KC_DEL,                        KC_COMM, KC_DOT   )
+COMB(LEADER,                         QK_LEAD,                       SYM,     NAV      )
+SUBS(EM_EMAIL,                       "ronnyvu321@gmail.com",        KC_E,    KC_M     )
 
 #ifdef STENO_LITE_ENABLE
 // Shamelessly steal from precondition steno-lite
 // https://github.com/precondition/dactyl-manuform-keymap/blob/main/combos.c
 
-// COMB(BSPCEV_EVERY,     "every",    ,   ,   )
-// COMB(BSPCU_YOU,        "you",      ,   ,   )
-// COMB(BSPCA_AND,        "and",      ,   ,   )
-// COMB(BSPCW_WITH,       "with",     ,   ,   )
-// COMB(BSPCF_FOR,        "for",      ,   ,   )
-// COMB(BSPCH_HERE,       "here",     ,   ,   )
-// COMB(BSPCT_THE,        "the",      ,   ,   )
-// COMB(BSPCM_MENT,       "ment",     ,   ,   )
-// COMB(BSPCG_ING,        "ing",      ,   ,   )
-// COMB(BSPCO_OUGH,       "ough",     ,   ,   )
-// COMB(BSPCOL_OULD,      "ould",     ,   ,   )
-// COMB(BSPCI_ION,        "ion",      ,   ,   )
-// COMB(BSPCIS_IONS,      "ions",     ,   ,   )
-// COMB(BSPCTA_THAT,      "that",     ,   ,   )
-// COMB(BSPCK_KEY,        "key",      ,   ,   )
-// COMB(BSPCTS_THIS,      "this",     ,   ,   )
-// COMB(BSPCDN_DONT,      "don't",    ,   ,   )
-// COMB(BSPCIT_IN_THE,    "in the",   ,   ,   )
+// COMB(SPCEV_EVERY,                 "every",                       KC_SPC,  KC_E,KC_V  )
+// COMB(SPCU_YOU,                    "you",                         KC_SPC,  KC_U       )
+// COMB(SPCA_AND,                    "and",                         KC_SPC,  KC_A       )
+// COMB(SPCW_WITH,                   "with",                        KC_SPC,  KC_W       )
+// COMB(SPCF_FOR,                    "for",                         KC_SPC,  KC_F       )
+// COMB(SPCH_HERE,                   "here",                        KC_SPC,  KC_H       )
+// COMB(SPCT_THE,                    "the",                         KC_SPC,  KC_T       )
+// COMB(SPCM_MENT,                   "ment",                        KC_SPC,  KC_M       )
+// COMB(SPCG_ING,                    "ing",                         KC_SPC,  KC_G       )
+// COMB(SPCO_OUGH,                   "ough",                        KC_SPC,  KC_O       )
+// COMB(SPCOL_OULD,                  "ould",                        KC_SPC,  KC_O,KC_L  )
+// COMB(SPCI_ION,                    "ion",                         KC_SPC,  KC_I       )
+// COMB(SPCIS_IONS,                  "ions",                        KC_SPC,  KC_I,KC_S  )
+// COMB(SPCTA_THAT,                  "that",                        KC_SPC,  KC_T,KC_A  )
+// COMB(SPCK_KEY,                    "key",                         KC_SPC,  KC_K       )
+// COMB(SPCTS_THIS,                  "this",                        KC_SPC,  KC_T,KC_S  )
+// COMB(SPCDN_DONT,                  "don't",                       KC_SPC,  KC_D,KC_N  )
+// COMB(SPCIT_IN_THE,                "in the",                      KC_SPC,  KC_I,KC_T  )
 
-// Other steno-lite combos
 // Additional steno-lite combos for common words and n-grams
-// COMB(HV_HAVE,          "have",     ,   ,   )
-// COMB(QK_QMK,           "qmk",      ,   ,   )
-// COMB(KB_KEYBOARD,      "keyboard", ,   ,   )
-// COMB(WA_WHAT,          "what",     ,   ,   )
+// COMB(HV_HAVE,                     "have",                        KC_H,    KC_V       )
+// COMB(QK_QMK,                      "qmk",                         KC_Q,    KC_K       )
+// COMB(KB_KEYBOARD,                 "keyboard",                    KC_K,    KC_B       )
+// COMB(WA_WHAT,                     "what",                        KC_W,    KC_A       )
 #endif
 
 #ifdef COMBO_SYMBOL_ENABLE
 //Right hand side
-COMB(PSCLN_BSLS,          KC_BSLS,                 KC_P, KC_SCLN     )
-COMB(SCLNSLASH_PIPE,      KC_PIPE,                 KC_SCLN, KC_SLASH )
-COMB(HJ_MINS,             KC_MINS,                 KC_H, KC_J        )
-COMB(NM_UNDS,             KC_UNDS,                 KC_N, KC_M        )
+COMB(PSCLN_BSLS,                     KC_BSLS,                       KC_P,    KC_SCLN     )
+COMB(SCLNSLASH_PIPE,                 KC_PIPE,                       KC_SCLN, KC_SLASH    )
+COMB(HJ_MINS,                        KC_MINS,                       KC_H,    KC_J        )
+COMB(NM_UNDS,                        KC_UNDS,                       KC_N,    KC_M        )
 
 //Left hand side
-COMB(QA_GRV,              KC_GRV,                  KC_Q, KC_A        )
-COMB(AZ_TILD,             KC_TILD,                 KC_A, KC_Z        )
+COMB(QA_GRV,                         KC_GRV,                        KC_Q,    KC_A        )
+COMB(AZ_TILD,                        KC_TILD,                       KC_A,    KC_Z        )
+
     // Home-row version
-COMB(HOMEQA_GRV,          KC_GRV,                  KC_Q, GUI_A       )
-COMB(HOMEAZ_TILD,         KC_TILD,                 GUI_A, KC_Z       )
+COMB(HOMEQA_GRV,                     KC_GRV,                        KC_Q,    GUI_A       )
+COMB(HOMEAZ_TILD,                    KC_TILD,                       GUI_A,   KC_Z        )
+#endif
+
+#if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
+// Custom ARTSEY version with colemak https://github.com/purple-rw/artsey-keyboard
+
+//Letters
+COMBO_REF_LAYER(_ARTSEY, _ARTSEY) // explicit reference to self instead of the default.
+COMB(combo_b,                        KC_B,                          KC_A,    KC_T)
+COMB(combo_c,                        KC_C,                          KC_S,    KC_T)
+//COMB(combo_n,                      KC_N,                        KC_B3,     KC_B4)
+COMB(combo_f,                        KC_F,                          KC_E,    KC_N)
+COMB(combo_g,                        KC_G,                          KC_I,    KC_E)
+COMB(combo_u,                        KC_U,                          KC_R,    KC_S)
+COMB(combo_h,                        KC_H,                          KC_R,    KC_T)
+COMB(combo_v,                        KC_V,                          KC_O,    KC_E)
+COMB(combo_j,                        KC_J,                          KC_O,    KC_I)
+COMB(combo_w,                        KC_W,                          KC_O,    KC_N)
+COMB(combo_k,                        KC_K,                          KC_A,    KC_S)
+COMB(combo_m,                        KC_M,                          KC_A,    KC_R,    KC_S)
+COMB(combo_d,                        KC_D,                          KC_I,    KC_E,    KC_N)
+COMB(combo_p,                        KC_P,                          KC_A,    KC_R,    KC_T)
+COMB(combo_q,                        KC_Q,                          KC_O,    KC_I,    KC_N)
+COMB(combo_x,                        KC_X,                          KC_O,    KC_I,    KC_E)
+COMB(combo_l,                        KC_L,                          KC_R,    KC_S,    KC_T)
+COMB(combo_z,                        KC_Z,                          KC_O,    KC_I,    KC_E,    KC_N)
+
+//Control
+COMB(combo_backspace,                KC_BSPC,                       KC_E,    KC_T)
+COMB(combo_delete,                   KC_DEL,                        KC_E,    KC_R)
+COMB(combo_tab,                      KC_TAB,                        KC_I,    KC_E,     KC_N,     KC_A)
+COMB(combo_space,                    KC_SPACE,                      KC_A,    KC_R,     KC_S,     KC_T)
+
+//Mods
+COMB(combo_enter,                    KC_ENT,                        KC_N,    KC_T)
+COMB(combo_control,                  OSM_CTRL,                      KC_O,    KC_T)
+COMB(combo_gui,                      OSM_GUI,                       KC_O,    KC_S)
+COMB(combo_alt,                      OSM_ALT,                       KC_O,    KC_S)
+COMB(combo_esc,                      KC_ESC,                        KC_E,    KC_N,     KC_A)
+//COMB(combo_shift_lock,             LCK_SHIFT,                     KC_T2,   KC_B2                   )
+COMB(combo_shift,                    OSM_LSFT ,                     KC_O,    KC_I,     KC_E,     KC_T)
+COMB(combo_caps,                     KC_CAPS,                       KC_A,    KC_R,     KC_S,     KC_N)
+
+//Symbols
+COMB(combo_comma,                    KC_COMM,                       KC_S,    KC_N)
+COMB(combo_period,                   KC_DOT,                        KC_R,    KC_N)
+COMB(combo_slash,                    KC_SLSH,                       KC_A,    KC_N)
+COMB(combo_single_quote,             KC_QUOT,                       KC_R,    KC_S,     KC_N)
+COMB(combo_double_quote,             KC_DQUO,                       KC_A,    KC_R,     KC_N)
+COMB(combo_question,                 KC_QUES,                       KC_I,    KC_N,     KC_A)
+COMB(combo_semicolon,                KC_SCLN,                       KC_I,    KC_A)
+COMB(combo_colon,                    KC_COLN,                       KC_E,    KC_A)
+COMB(combo_exclamation,              KC_EXLM,                       KC_I,    KC_R)
 #endif

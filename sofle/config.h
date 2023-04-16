@@ -5,7 +5,9 @@
 #define SPLIT_OLED_ENABLE
 #define SPLIT_WPM_ENABLE
 
-#define LAYER_STATE_8BIT
+#define LAYER_STATE_16BIT
+#define STENO_LITE_ENABLE
+#define COMBO_SYMBOL_ENABLE
 
 // ----- Extra features not from QMK ------
 
