@@ -146,6 +146,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
 #endif
             break;
+        case PANIC: {
+#ifndef NO_ACTION_ONESHOT
+            clear_oneshot_mods();
+#endif
+            clear_keyboard();
+            layer_move(_QWERTY);
+#ifdef CAPS_WORD_ENABLE
+            caps_word_off();
+#endif
+            return false;
+        }
     }
     return true;
 }

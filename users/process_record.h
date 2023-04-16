@@ -11,6 +11,7 @@ enum custom_keycodes {
     O_BRQOT,
     // Macro for: "]
     C_BRQOT,
+    PANIC,
     };
 
 // ---

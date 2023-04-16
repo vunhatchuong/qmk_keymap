@@ -18,7 +18,7 @@
 // #define COMBO_STRICT_TIMER
 // #define EXTRA_SHORT_COMBOS
 #    define COMBO_TERM 30 // or precondition: 70 default: 50
-#    define COMBO_ONLY_FROM_LAYER 0
+// #    define COMBO_ONLY_FROM_LAYER 0
 #endif
 
 #ifdef CAPS_WORD_ENABLE
@@ -30,6 +30,14 @@
 #    define LEADER_TIMEOUT 250
 #    define LEADER_NO_TIMEOUT
 
+#endif
+
+#ifndef ONESHOT_TAP_TOGGLE
+#    define ONESHOT_TAP_TOGGLE 2 // Default: 5
+#endif
+
+#ifndef ONESHOT_TIMEOUT
+#    define ONESHOT_TIMEOUT 3000 // Default: 5000
 #endif
 
 // Disable unnecessary features to save firmware size

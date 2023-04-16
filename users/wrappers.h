@@ -78,7 +78,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________ADJUST_L2_________________      KC_NUM,  KC_SCRL,         KC_INS,   KC_PSCR,  CW_TOGG
 #define _________________ADJUST_L3_________________      UNDO,    REDO,               CUT,      COPY,    PASTE
 
-#define _________________ADJUST_R1_________________      EE_CLR,  _______, _______, _______, _______
+#define _________________ADJUST_R1_________________      EE_CLR,  PANIC, _______, _______, _______
 #define _________________ADJUST_R2_________________      _______, _______, _______, _______, _______
 #define _________________ADJUST_R3_________________      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY
 
@@ -95,6 +95,6 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________NUMPAD_R3_________________      _______, KC_7,    KC_8,    KC_9,    KC_DOT
 #define ___NUMPAD_RT___                                  _______, KC_0
 
-#define _________________ARTSEY_L1_________________      XXXXXXX, KC_O,    KC_I,    KC_E,    KC_N
-#define _________________ARTSEY_L2_________________      XXXXXXX, KC_A,    KC_R,    KC_S,    KC_T
+#define _________________ARTSEY_L1_________________      KC_O,    KC_I,    KC_E,    KC_N,    XXXXXXX
+#define _________________ARTSEY_L2_________________      KC_A,    KC_R,    KC_S,    KC_T,    XXXXXXX
 // clang-format on
