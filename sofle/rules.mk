@@ -4,7 +4,7 @@ OLED_ENABLE = yes
 OLED_DRIVER = SSD1306
 WPM_ENABLE = yes
 OCEAN_DREAM_ENABLE = no     # +2804
-LUNA_ENABLE = yes           # +1458
+LUNA_ENABLE = no           # +1458
 
 
 # QMK Features

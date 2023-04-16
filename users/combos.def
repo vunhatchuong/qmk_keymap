@@ -84,9 +84,9 @@ COMB(combo_space,                    KC_SPACE,                      KC_A,    KC_
 
 //Mods
 COMB(combo_enter,                    KC_ENT,                        KC_N,    KC_T)
-COMB(combo_control,                  OSM_CTRL,                      KC_O,    KC_T)
-COMB(combo_gui,                      OSM_GUI,                       KC_O,    KC_S)
-COMB(combo_alt,                      OSM_ALT,                       KC_O,    KC_S)
+COMB(combo_control,                  OSM_LCTL,                      KC_O,    KC_T)
+COMB(combo_gui,                      OSM_LGUI,                       KC_O,    KC_S)
+COMB(combo_alt,                      OSM_LALT,                       KC_O,    KC_S)
 COMB(combo_esc,                      KC_ESC,                        KC_E,    KC_N,     KC_A)
 //COMB(combo_shift_lock,             LCK_SHIFT,                     KC_T2,   KC_B2                   )
 COMB(combo_shift,                    OSM_LSFT ,                     KC_O,    KC_I,     KC_E,     KC_T)

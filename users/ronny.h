@@ -33,4 +33,5 @@ enum layer_names {
     _FUNC,
     _NUMPAD,
     _ADJUST,
+    _ARTSEY,
 };
