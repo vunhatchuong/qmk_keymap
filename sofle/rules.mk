@@ -14,7 +14,7 @@ VIA_ENABLE = no             # +2140
 TAP_DANCE_ENABLE = yes      # +544
 CAPS_WORD_ENABLE = no      # Hit both keys to enable cap for one word | +482
 COMBO_ENABLE = yes          # + 1888
-SWAP_HANDS_ENABLE = yes     # one-hand typing (+490)
+SWAP_HANDS_ENABLE = no     # one-hand typing (+490)
 
 
 # External Features

@@ -12,6 +12,10 @@ A lot of the code for my wrappers/keymaps came from other users, see the [Resour
 - Combos to access modifier keys.
 - Leader key.
 
+### Combos
+
+With `combos.def` I can't find a way to use `combo_should_trigger` and `combo_ref_layer`, doesn't seem to work at all.
+
 ## Resources
 
 These are the resources that inspired me to create these features, there might be too many to list all of them.

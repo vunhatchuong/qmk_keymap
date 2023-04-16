@@ -10,6 +10,7 @@
 #define COMBO_SYMBOL_ENABLE
 // #define ARTSEY_ENABLE
 #define SECRET_COMBO_ENABLE
+// #define COMBO_SHOULD_TRIGGER
 
 // ----- Extra features not from QMK ------
 
