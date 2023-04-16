@@ -37,4 +37,4 @@ tap_dance_action_t tap_dance_actions[] = {
     [GAME_TD] = ACTION_TAP_DANCE_FN(td_change_to_game),
     [ARTSEY_TD] = ACTION_TAP_DANCE_FN(td_change_to_artsey)
 };
-/clang-format on
+//clang-format on
