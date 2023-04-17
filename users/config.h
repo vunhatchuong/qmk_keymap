@@ -18,7 +18,8 @@
 // #define COMBO_STRICT_TIMER
 // #define EXTRA_SHORT_COMBOS
 #    define COMBO_TERM 25 // or precondition: 70 default: 50
-#    define COMBO_ONLY_FROM_LAYER 0
+// #    define COMBO_ONLY_FROM_LAYER 0
+#    define COMBO_REF_LAYER_ENABLE
 #endif
 
 #ifdef CAPS_WORD_ENABLE

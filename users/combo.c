@@ -1,5 +1,15 @@
 #include "ronny.h"
 
+uint8_t combo_ref_from_layer(uint8_t layer) {
+    switch (get_highest_layer(layer_state)) {
+        case _ARTSEY:
+            return _ARTSEY;
+        default:
+            return _QWERTY;
+    }
+    return layer; // important if default is not in case.
+}
+
 //clang-format off
 enum combo_events {
     WE_ESC,
@@ -80,8 +90,8 @@ enum combo_events {
     ARTSEY_SCLN,
     ARTSEY_COLN,
     ARTSEY_EXLM,
-    COMBO_LENGTH
 #endif
+    COMBO_LENGTH
 };
 
 uint16_t COMBO_LEN = COMBO_LENGTH;
@@ -385,47 +395,9 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
     /* Enable ARTSEY combos on layer `_ARTSEY` */
     switch (combo_index) {
 #if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
-        case ARTSEY_B:
-        case ARTSEY_C:
-        case ARTSEY_D:
-        case ARTSEY_F:
-        case ARTSEY_G:
-        case ARTSEY_H:
-        case ARTSEY_J:
-        case ARTSEY_K:
-        case ARTSEY_L:
-        case ARTSEY_M:
-        case ARTSEY_P:
-        case ARTSEY_Q:
-        case ARTSEY_U:
-        case ARTSEY_V:
-        case ARTSEY_W:
-        case ARTSEY_X:
-        case ARTSEY_Z:
-        case ARTSEY_BSPC:
-        case ARTSEY_DEL:
-        case ARTSEY_TAB:
-        case ARTSEY_SPC:
-        case ARTSEY_ENT:
-        case ARTSEY_LCTRL:
-        case ARTSEY_LGUI:
-        case ARTSEY_LALT:
-        case ARTSEY_ESC:
-        case ARTSEY_LSFT:
-        case ARTSEY_CAPS:
-        case ARTSEY_COMM:
-        case ARTSEY_DOT:
-        case ARTSEY_SLSH:
-        case ARTSEY_QUOT:
-        case ARTSEY_DQUO:
-        case ARTSEY_QUES:
-        case ARTSEY_SCLN:
-        case ARTSEY_COLN:
-        case ARTSEY_EXLM:
-            if (layer_state_is(_ARTSEY)) {
-                return true;
-            } else
-                return false;
+        case ARTSEY_B ... ARTSEY_EXLM:
+            return layer_state_is(_ARTSEY);
+
 #endif
     }
     return true;

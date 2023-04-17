@@ -8,9 +8,9 @@
 #define LAYER_STATE_16BIT
 #define STENO_LITE_ENABLE
 #define COMBO_SYMBOL_ENABLE
-// #define ARTSEY_ENABLE
-#define SECRET_COMBO_ENABLE
-// #define COMBO_SHOULD_TRIGGER
+#define ARTSEY_ENABLE
+// #define SECRET_COMBO_ENABLE
+#define COMBO_SHOULD_TRIGGER
 
 // ----- Extra features not from QMK ------
 
