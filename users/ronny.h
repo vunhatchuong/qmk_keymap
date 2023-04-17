@@ -8,14 +8,6 @@
 #    include "feature/xcase.h"
 #endif
 
-#ifdef QMK_VIM_ENABLE
-#    include "feature/qmk-vim/src/vim.h"
-#endif
-
-#ifdef ANDREW_LEADER_ENABLE
-#    include "features/andrewleader.h"
-#endif
-
 #ifdef OLED_ENABLE
 #    include "oled/oled_setup.h"
 #endif

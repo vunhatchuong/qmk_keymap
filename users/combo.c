@@ -1,5 +1,13 @@
 #include "ronny.h"
 
+uint8_t combo_ref_from_layer(uint8_t layer){
+    switch (get_highest_layer(layer_state)){
+        case _ARTSEY: return _ARTSEY;
+        default: return _QWERTY;
+    }
+    return layer;  // important if default is not in case.
+}
+
 //clang-format off
 enum combo_events {
     WE_ESC,
@@ -8,6 +16,7 @@ enum combo_events {
     COMMDOT_DEL,
     LEADER,
     EM_EMAIL,
+    DOTSLASH_UPDIR,
 #ifdef STENO_LITE_ENABLE
     ENTEV_EVERY,
     ENTU_YOU,
@@ -92,6 +101,7 @@ const uint16_t PROGMEM I_O_COMBO[]      = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM COMM_DOT_COMBO[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM LEADER_COMBO[]   = {SYM, NAV, COMBO_END};
 const uint16_t PROGMEM email_combo[]    = {KC_E, KC_M, COMBO_END};
+const uint16_t PROGMEM DOT_SLASH_COMBO[]  = {KC_DOT,   KC_SLSH, COMBO_END};
 
 #ifdef STENO_LITE_ENABLE
 const uint16_t PROGMEM ENT_E_V_COMBO[] = {KC_ENT, KC_E, KC_V, COMBO_END};
@@ -187,6 +197,7 @@ combo_t key_combos[] = {
     [COMMDOT_DEL] = COMBO(COMM_DOT_COMBO, KC_DEL),
     [LEADER]      = COMBO(LEADER_COMBO, QK_LEAD),
     [EM_EMAIL]    = COMBO_ACTION(email_combo),
+    [DOTSLASH_UPDIR]  = COMBO_ACTION(DOT_SLASH_COMBO),
 #ifdef STENO_LITE_ENABLE
     [ENTEV_EVERY]  = COMBO_ACTION(ENT_E_V_COMBO),
     [ENTU_YOU]     = COMBO_ACTION(ENT_U_COMBO),
@@ -250,11 +261,11 @@ combo_t key_combos[] = {
     [ARTSEY_SPC]  = COMBO(ARTSEY_SPC_COMBO, KC_SPC),
     // Mods
     [ARTSEY_ENT]   = COMBO(ARTSEY_ENT_COMBO, KC_ENT),
-    [ARTSEY_LCTRL] = COMBO(ARTSEY_LCTRL_COMBO, OSM_LCTL),
-    [ARTSEY_LGUI]  = COMBO(ARTSEY_LGUI_COMBO, OSM_LGUI),
-    [ARTSEY_LALT]  = COMBO(ARTSEY_LALT_COMBO, OSM_LALT),
+    [ARTSEY_LCTRL] = COMBO(ARTSEY_LCTRL_COMBO, OS_LCTL),
+    [ARTSEY_LGUI]  = COMBO(ARTSEY_LGUI_COMBO, OS_LGUI),
+    [ARTSEY_LALT]  = COMBO(ARTSEY_LALT_COMBO, OS_LALT),
     [ARTSEY_ESC]   = COMBO(ARTSEY_ESC_COMBO, KC_ESC),
-    [ARTSEY_LSFT]  = COMBO(ARTSEY_LSFT_COMBO, OSM_LSFT),
+    [ARTSEY_LSFT]  = COMBO(ARTSEY_LSFT_COMBO, OS_LSFT),
     [ARTSEY_CAPS]  = COMBO(ARTSEY_CAPS_COMBO, KC_CAPS),
     // Symbols
     [ARTSEY_COMM] = COMBO(ARTSEY_COMM_COMBO, KC_COMM),
@@ -270,6 +281,24 @@ combo_t key_combos[] = {
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
+#ifdef CONSOLE_ENABLE
+    combo_t *combo = &key_combos[combo_index];
+    uint8_t idx = 0;
+    uint16_t combo_keycode;
+    while ((combo_keycode = pgm_read_word(&combo->keys[idx])) != COMBO_END) {
+        uprintf("0x%04X,%u,%u,%u,%u,0x%02X,0x%02X,0\n",
+            combo_keycode,
+            KEYLOC_COMBO,
+            KEYLOC_COMBO,
+            get_highest_layer(layer_state),
+            pressed,
+            get_mods(),
+            get_oneshot_mods()
+            /* tap_count */
+        );
+        idx++;
+    }
+#endif
     switch (combo_index) {
         case EM_EMAIL:
             if (pressed) {
@@ -378,6 +407,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
             }
             break;
 #endif
+        case DOTSLASH_UPDIR:
+            if (pressed) {
+                SEND_STRING("../");
+            }
+        break;
     }
 };
 
@@ -385,47 +419,8 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
     /* Enable ARTSEY combos on layer `_ARTSEY` */
     switch (combo_index) {
 #if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
-        case ARTSEY_B:
-        case ARTSEY_C:
-        case ARTSEY_D:
-        case ARTSEY_F:
-        case ARTSEY_G:
-        case ARTSEY_H:
-        case ARTSEY_J:
-        case ARTSEY_K:
-        case ARTSEY_L:
-        case ARTSEY_M:
-        case ARTSEY_P:
-        case ARTSEY_Q:
-        case ARTSEY_U:
-        case ARTSEY_V:
-        case ARTSEY_W:
-        case ARTSEY_X:
-        case ARTSEY_Z:
-        case ARTSEY_BSPC:
-        case ARTSEY_DEL:
-        case ARTSEY_TAB:
-        case ARTSEY_SPC:
-        case ARTSEY_ENT:
-        case ARTSEY_LCTRL:
-        case ARTSEY_LGUI:
-        case ARTSEY_LALT:
-        case ARTSEY_ESC:
-        case ARTSEY_LSFT:
-        case ARTSEY_CAPS:
-        case ARTSEY_COMM:
-        case ARTSEY_DOT:
-        case ARTSEY_SLSH:
-        case ARTSEY_QUOT:
-        case ARTSEY_DQUO:
-        case ARTSEY_QUES:
-        case ARTSEY_SCLN:
-        case ARTSEY_COLN:
-        case ARTSEY_EXLM:
-            if (layer_state_is(_ARTSEY)) {
-                return true;
-            } else
-                return false;
+        case ARTSEY_B ... ARTSEY_EXLM:
+            return layer_state_is(_ARTSEY);
 #endif
     }
     return true;

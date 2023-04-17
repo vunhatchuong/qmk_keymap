@@ -1,5 +1,3 @@
-#include QMK_KEYBOARD_H
-
 void leader_start_user(void) {
     // Do something when the leader key is pressed
 }

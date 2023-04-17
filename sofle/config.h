@@ -8,16 +8,8 @@
 #define LAYER_STATE_16BIT
 #define STENO_LITE_ENABLE
 #define COMBO_SYMBOL_ENABLE
-// #define ARTSEY_ENABLE
-#define SECRET_COMBO_ENABLE
-// #define COMBO_SHOULD_TRIGGER
+#define ARTSEY_ENABLE
+// #define SECRET_COMBO_ENABLE
+#define COMBO_SHOULD_TRIGGER
 
 // ----- Extra features not from QMK ------
-
-// #define LEADER_DISPLAY_STR // +232
-
-// #define BETTER_VISUAL_MODE      // +174
-// #define VIM_W_BEGINNING_OF_WORD // +108
-// #define VIM_REPLACE             // +76
-// #define VIM_PASTE_BEFORE        // +60
-// #define VIM_G_MOTIONS           // +116

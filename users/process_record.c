@@ -51,27 +51,24 @@ void oled_timer_reset(void) {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-#ifdef ANDREW_LEADER_ENABLE
-    // Process leader key sequences MUST BE AT THE TOP
-    if (!process_leader(keycode, record)) {
-        return false;
-    }
-#endif
-
+    #ifdef CONSOLE_ENABLE
+        uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
+             keycode,
+             record->event.key.row,
+             record->event.key.col,
+             get_highest_layer(layer_state),
+             record->event.pressed,
+             get_mods(),
+             get_oneshot_mods(),
+             record->tap.count
+             );
+    #endif
 #ifdef XCASE_ENABLE
     // Process case modes
     if (!process_case_modes(keycode, record)) {
         return false;
     }
 #endif
-
-#ifdef QMK_VIM_ENABLE
-    // Process case modes
-    if (!process_vim_mode(keycode, record)) {
-        return false;
-    }
-#endif
-
     if (record->event.pressed)
 #ifdef OLED_ENABLE
         oled_timer_reset();
@@ -102,13 +99,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-#ifdef ANDREW_LEADER_ENABLE
-        case ANDREW_LEADER:
-            if (record->event.pressed) {
-                start_leading();
-            }
-            return false;
-#endif
 #ifdef XCASE_ENABLE
         case SNAKECASE:
             if (record->event.pressed) {
