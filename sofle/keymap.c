@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_COLEMAKDH] = LAYOUT_sofle_base_wrapper(
         ________________COLEMAK_DH_L1______________, ________________COLEMAK_DH_R1______________,
-        ________________COLEMAK_DH_L2______________, ________________COLEMAK_DH_R2______________,
+        __________COLEMAK_DH_HOME_MODE_L2__________, __________COLEMAK_DH_HOME_MODE_R2__________,
         ________________COLEMAK_DH_L3______________, ________________COLEMAK_DH_R3______________
     ),
 

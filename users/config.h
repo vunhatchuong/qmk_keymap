@@ -4,9 +4,11 @@
 #    undef TAPPING_TERM
 #endif
 #define TAPPING_TERM 170 // 175 or 170 seems popular default: 200
-#undef PERMISSIVE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD
+// #undef PERMISSIVE_HOLD
 
-#define HOLD_ON_OTHER_KEY_PRESS
+// #define HOLD_ON_OTHER_KEY_PRESS
 
 #ifdef MOUSEKEY_ENABLE
 #    define MK_KINETIC_SPEED
