@@ -11,10 +11,15 @@ A lot of the code for my wrappers/keymaps came from other users, see the [Resour
 - Uses `update_tri_layer_state` for better layer accessibility.
 - Combos to access modifier keys.
 - Leader key.
+- xcase.
 
 ### Combos
 
 With `combos.def` I can't find a way to use `combo_should_trigger` and `combo_ref_layer`, doesn't seem to work at all.
+
+- Steno-lite combos.
+- Symbol combos.
+- ARTSEY colemak combos.
 
 ## Resources
 

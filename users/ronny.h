@@ -4,8 +4,8 @@
 #include "wrappers.h"
 #include "process_record.h"
 
-#ifdef XCASE_ENABLE
-#    include "feature/xcase.h"
+#ifdef CASEMODES_ENABLE
+#    include "features/casemodes.h"
 #endif
 
 #ifdef OLED_ENABLE

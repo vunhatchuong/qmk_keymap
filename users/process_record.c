@@ -2,48 +2,6 @@
 
 extern uint32_t oled_timer;
 
-#ifdef ANDREW_LEADER_ENABLE
-// void *leader_layers_app(uint16_t keycode) {
-//     switch (keycode) {
-//         case KC_F:
-//             tap_code16(KC_F20);
-//             break;
-//         case KC_W:
-//             tap_code16(KC_F14);
-//             break;
-//         case KC_C:
-//             tap_code16(KC_F23);
-//             break;
-//         default:
-//             break;
-//     }
-//     return NULL; // this function is always an endpoint
-// }
-void *leader_start_func(uint16_t keycode) {
-    switch (keycode) {
-        case KC_W:
-            tap_code(KC_F14);
-            return NULL;
-        case KC_F:
-            tap_code(KC_F20);
-            return NULL;
-        case KC_C:
-            tap_code(KC_F23);
-            return NULL;
-        // case KC_A:
-        //     return leader_layers_app; // app launcher func
-        case KC_V:
-            toggle_vim_mode();
-            return NULL;
-        case KC_R:
-            reset_keyboard(); // here LDR r will reset the keyboard
-            return NULL;      // signal that we're done
-        default:
-            return NULL;
-    }
-}
-#endif
-
 #ifdef OLED_ENABLE
 void oled_timer_reset(void) {
     oled_timer = timer_read32();
@@ -51,19 +9,10 @@ void oled_timer_reset(void) {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    #ifdef CONSOLE_ENABLE
-        uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
-             keycode,
-             record->event.key.row,
-             record->event.key.col,
-             get_highest_layer(layer_state),
-             record->event.pressed,
-             get_mods(),
-             get_oneshot_mods(),
-             record->tap.count
-             );
-    #endif
-#ifdef XCASE_ENABLE
+#ifdef CONSOLE_ENABLE
+    uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n", keycode, record->event.key.row, record->event.key.col, get_highest_layer(layer_state), record->event.pressed, get_mods(), get_oneshot_mods(), record->tap.count);
+#endif
+#ifdef CASEMODES_ENABLE
     // Process case modes
     if (!process_case_modes(keycode, record)) {
         return false;
@@ -99,20 +48,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-#ifdef XCASE_ENABLE
+#ifdef CASEMODES_ENABLE
         case SNAKECASE:
             if (record->event.pressed) {
-                enable_xcase();
+                enable_xcase_with(KC_UNDS);
             }
             return false;
 #endif
-            // #ifdef QMK_VIM_ENABLE
-            //         case TOG_VIM:
-            //             if(record->event.pressed){
-            //                 toggle_vim_mode();
-            //             }
-            //             return false;
-            // #endif
         case KC_LCTL:
         case KC_RCTL:
 #ifdef OCEAN_DREAM_ENABLE

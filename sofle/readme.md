@@ -9,5 +9,3 @@ Layout in [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/#/gists
 - OLED from snowe shows Luna and Ocean Dreams with Layer name, WPM.
 - Move mouse with kinetic speed.
 - Encoder keymaps for each layer including Mouse Wheel and Media Control.
-- Caps to word.
-- X_Case.

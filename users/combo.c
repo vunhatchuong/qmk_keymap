@@ -1,11 +1,13 @@
 #include "ronny.h"
 
-uint8_t combo_ref_from_layer(uint8_t layer){
-    switch (get_highest_layer(layer_state)){
-        case _ARTSEY: return _ARTSEY;
-        default: return _QWERTY;
+uint8_t combo_ref_from_layer(uint8_t layer) {
+    switch (get_highest_layer(layer_state)) {
+        case _ARTSEY:
+            return _ARTSEY;
+        default:
+            return _QWERTY;
     }
-    return layer;  // important if default is not in case.
+    return layer; // important if default is not in case.
 }
 
 //clang-format off
@@ -95,13 +97,13 @@ enum combo_events {
 
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
-const uint16_t PROGMEM W_E_COMBO[]      = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM X_C_COMBO[]      = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM I_O_COMBO[]      = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM COMM_DOT_COMBO[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM LEADER_COMBO[]   = {SYM, NAV, COMBO_END};
-const uint16_t PROGMEM email_combo[]    = {KC_E, KC_M, COMBO_END};
-const uint16_t PROGMEM DOT_SLASH_COMBO[]  = {KC_DOT,   KC_SLSH, COMBO_END};
+const uint16_t PROGMEM W_E_COMBO[]       = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM X_C_COMBO[]       = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM I_O_COMBO[]       = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM COMM_DOT_COMBO[]  = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM LEADER_COMBO[]    = {SYM, NAV, COMBO_END};
+const uint16_t PROGMEM email_combo[]     = {KC_E, KC_M, COMBO_END};
+const uint16_t PROGMEM DOT_SLASH_COMBO[] = {KC_DOT, KC_SLSH, COMBO_END};
 
 #ifdef STENO_LITE_ENABLE
 const uint16_t PROGMEM ENT_E_V_COMBO[] = {KC_ENT, KC_E, KC_V, COMBO_END};
@@ -191,13 +193,13 @@ const uint16_t PROGMEM ARTSEY_EXLM_COMBO[] = {KC_I, KC_R, COMBO_END};
 
 combo_t key_combos[] = {
     // Controls
-    [WE_ESC]      = COMBO(W_E_COMBO, KC_ESC),
-    [XC_TAB]      = COMBO(X_C_COMBO, KC_TAB),
-    [IO_BSPC]     = COMBO(I_O_COMBO, KC_BSPC),
-    [COMMDOT_DEL] = COMBO(COMM_DOT_COMBO, KC_DEL),
-    [LEADER]      = COMBO(LEADER_COMBO, QK_LEAD),
-    [EM_EMAIL]    = COMBO_ACTION(email_combo),
-    [DOTSLASH_UPDIR]  = COMBO_ACTION(DOT_SLASH_COMBO),
+    [WE_ESC]         = COMBO(W_E_COMBO, KC_ESC),
+    [XC_TAB]         = COMBO(X_C_COMBO, KC_TAB),
+    [IO_BSPC]        = COMBO(I_O_COMBO, KC_BSPC),
+    [COMMDOT_DEL]    = COMBO(COMM_DOT_COMBO, KC_DEL),
+    [LEADER]         = COMBO(LEADER_COMBO, QK_LEAD),
+    [EM_EMAIL]       = COMBO_ACTION(email_combo),
+    [DOTSLASH_UPDIR] = COMBO_ACTION(DOT_SLASH_COMBO),
 #ifdef STENO_LITE_ENABLE
     [ENTEV_EVERY]  = COMBO_ACTION(ENT_E_V_COMBO),
     [ENTU_YOU]     = COMBO_ACTION(ENT_U_COMBO),
@@ -283,18 +285,11 @@ combo_t key_combos[] = {
 void process_combo_event(uint16_t combo_index, bool pressed) {
 #ifdef CONSOLE_ENABLE
     combo_t *combo = &key_combos[combo_index];
-    uint8_t idx = 0;
+    uint8_t  idx   = 0;
     uint16_t combo_keycode;
     while ((combo_keycode = pgm_read_word(&combo->keys[idx])) != COMBO_END) {
-        uprintf("0x%04X,%u,%u,%u,%u,0x%02X,0x%02X,0\n",
-            combo_keycode,
-            KEYLOC_COMBO,
-            KEYLOC_COMBO,
-            get_highest_layer(layer_state),
-            pressed,
-            get_mods(),
-            get_oneshot_mods()
-            /* tap_count */
+        uprintf("0x%04X,%u,%u,%u,%u,0x%02X,0x%02X,0\n", combo_keycode, KEYLOC_COMBO, KEYLOC_COMBO, get_highest_layer(layer_state), pressed, get_mods(), get_oneshot_mods()
+                /* tap_count */
         );
         idx++;
     }
@@ -411,7 +406,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
             if (pressed) {
                 SEND_STRING("../");
             }
-        break;
+            break;
     }
 };
 

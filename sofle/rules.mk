@@ -18,9 +18,7 @@ SWAP_HANDS_ENABLE = yes     # one-hand typing (+490)
 
 
 # External Features
-XCASE_ENABLE = no           # +626
-QMK_VIM_ENABLE = no         # +2358
-ANDREW_LEADER_ENABLE = no   # +372 not include LED
+CASEMODES_ENABLE = yes           # +420
 
 
 #Optimize firmware size

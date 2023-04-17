@@ -79,7 +79,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________ADJUST_L3_________________      UNDO,    REDO,               CUT,      COPY,    PASTE
 
 #define _________________ADJUST_R1_________________      EE_CLR,  PANIC, _______, _______, _______
-#define _________________ADJUST_R2_________________      _______, _______, _______, _______, _______
+#define _________________ADJUST_R2_________________      SNAKECASE, _______, _______, _______, _______
 #define _________________ADJUST_R3_________________      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY
 
 #define __________________TAB_NAV__________________      CS_T,    CS_TAB,  C_T,     C_W,     C_TAB

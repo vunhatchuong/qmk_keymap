@@ -1,7 +1,7 @@
-#    include "quantum.h"
-#    include "ronny.h"
+#include "quantum.h"
+#include "ronny.h"
 
-uint32_t        oled_timer = 0;
+uint32_t oled_timer = 0;
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (!is_keyboard_master()) {
@@ -55,16 +55,16 @@ bool oled_task_user(void) {
         } else {
             print_status_narrow();
             render_wpm();
-#    ifdef LUNA_ENABLE
+#ifdef LUNA_ENABLE
             led_usb_state = host_keyboard_led_state();
             render_luna(0, 13);
-#    endif
+#endif
         }
 
     } else {
-#    ifdef OCEAN_DREAM_ENABLE
+#ifdef OCEAN_DREAM_ENABLE
         render_stars();
-#    endif
+#endif
     }
     return false;
 }

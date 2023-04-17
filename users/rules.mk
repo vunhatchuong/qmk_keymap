@@ -18,9 +18,9 @@ ifeq ($(strip $(OLED_ENABLE)), yes)
     endif
 endif
 
-ifeq ($(strip $(XCASE_ENABLE)), yes) # +626
-    SRC += $(USER_PATH)/features/xcase.c
-    OPT_DEFS += -DXCASE_ENABLE
+ifeq ($(strip $(CASEMODES_ENABLE)), yes) # +420
+    SRC += $(USER_PATH)/features/casemodes.c
+    OPT_DEFS += -DCASEMODES_ENABLE
 endif
 
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes) # +544
