@@ -89,8 +89,8 @@ enum combo_events {
     ARTSEY_SCLN,
     ARTSEY_COLN,
     ARTSEY_EXLM,
-    COMBO_LENGTH
 #endif
+    COMBO_LENGTH
 };
 
 uint16_t COMBO_LEN = COMBO_LENGTH;
