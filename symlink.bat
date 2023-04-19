@@ -1,14 +1,22 @@
 @ECHO OFF
+SET SCRIPT_DIR=%~dp0
+FOR %%A IN ("%~dp0.") DO SET QMK_FIRMWARE_DIR=%%~dpAqmk_firmware
+
 ECHO ----------
 ECHO Making Symlink for userspace:
-mklink /D D:\qmk_firmware\users\ronny D:\qmk_keymap\users
+MKLINK /D %QMK_FIRMWARE_DIR%\users\ronny %SCRIPT_DIR%users
 
+ECHO:
 ECHO ----------
 ECHO Making Symlink for Sofle:
-mklink /D D:\qmk_firmware\keyboards\sofle\keymaps\ronny D:\qmk_keymap\sofle
+MKLINK /D %QMK_FIRMWARE_DIR%\keyboards\sofle\keymaps\ronny %SCRIPT_DIR%sofle
 
+ECHO:
 ECHO ----------
 ECHO Making Symlink for Ferris Sweep:
-mklink /D D:\qmk_firmware\keyboards\ferris\keymaps\ronny D:\qmk_keymap\sweep
+MKLINK /D %QMK_FIRMWARE_DIR%\keyboards\ferris\keymaps\ronny %SCRIPT_DIR%sweep
+
+ECHO:
+ECHO -------------------------------- FINISHED --------------------------------
 
 PAUSE
