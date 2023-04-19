@@ -1,6 +1,8 @@
 #include "ronny.h"
 // #include "g/keymap_combo.h"
-
+#ifdef CONSOLE_ENABLE
+#    include "print.h"
+#endif
 // clang-format off
 #define LAYOUT_ferris_base( \
     K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, \
@@ -51,7 +53,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ________________COLEMAK_DH_L3______________, ________________COLEMAK_DH_R3______________
     ),
 
-// Find better location to put GRV-TILD, BSLS-PIPE, UNDS-MINS
     [_SYM] = LAYOUT_wrapper(
     /* ,----------------------------------.                  ,----------------------------------.
     * |  `   |  ~   |      |      |      |                  |      |      |      | \ |  |  |   |

@@ -61,7 +61,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 
 #define _________________RAISE_L1__________________      ________________NUMBER_LEFT________________
 #define _________________RAISE_L2__________________      _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC
-#define _________________RAISE_L3__________________      ___________________BLANK___________________
+#define _________________RAISE_L3__________________      ___________________TRANS___________________
 
 #define _________________RAISE_R1__________________      ________________NUMBER_RIGHT_______________
 #define _________________RAISE_R2__________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______

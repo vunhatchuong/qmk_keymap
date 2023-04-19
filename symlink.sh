@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# dir of script 
+# dir of script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 # parent dir of that dir
 QMK_FIRMWARE_DIR="${SCRIPT_DIR%/*}/qmk_firmware"

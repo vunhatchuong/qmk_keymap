@@ -10,7 +10,6 @@ uint8_t combo_ref_from_layer(uint8_t layer) {
     return layer; // important if default is not in case.
 }
 
-//clang-format off
 enum combo_events {
     WE_ESC,
     XC_TAB,
@@ -420,4 +419,3 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
     }
     return true;
 }
-//clang-format on

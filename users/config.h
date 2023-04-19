@@ -46,3 +46,7 @@
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 // #define NO_ACTION_ONESHOT // +658
+
+// Save firmware space
+// Strip away all prints except `uprintf`
+#define USER_PRINT
