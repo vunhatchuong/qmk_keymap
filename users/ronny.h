@@ -20,7 +20,6 @@ enum layer_names {
     _QWERTY,
     _COLEMAKDH,
     _ARTSEY,
-    _GAME,
     _NAV,
     _SYM,
     _FUNC,
