@@ -13,7 +13,7 @@
   LAYOUT_wrapper( \
     KC_TAB,   ________________NUMBER_LEFT________________,               ________________NUMBER_RIGHT_______________,       KC_DEL,         \
     CTL_ESC,  K01,      K02,      K03,      K04,      K05,                       K06,     K07,     K08,     K09,     K0A,   KC_BSPC,        \
-    OS_LSFT , K11,      K12,      K13,      K14,      K15,                       K16,     K17,     K18,     K19,     K1A,   KC_QUOT,        \
+    KC_LSFT , K11,      K12,      K13,      K14,      K15,                       K16,     K17,     K18,     K19,     K1A,   KC_QUOT,        \
     KC_LCTL,  K21,      K22,      K23,      K24,      K25, KC_MUTE,     KC_MPLY, K26,     K27,     K28,     K29,     K2A,   RSFT_T(KC_ENT), \
               SH_OS,  KC_LALT,  KC_LGUI,  SYM,      KC_SPC,                 KC_ENT,     NAV,     KC_MINS, COPY,    PASTE                    \
     )
