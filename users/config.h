@@ -20,6 +20,7 @@
 // #define COMBO_STRICT_TIMER
 // #define EXTRA_SHORT_COMBOS
 #    define COMBO_TERM 25 // or precondition: 70 default: 50
+#    define COMBO_SHOULD_TRIGGER
 // #    define COMBO_ONLY_FROM_LAYER 0
 #endif
 

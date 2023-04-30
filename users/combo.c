@@ -11,9 +11,10 @@ uint8_t combo_ref_from_layer(uint8_t layer) {
 }
 
 enum combo_events {
-    WE_ESC,
+    // Combo events will be with colemak homerow mod as base.
+    WF_ESC,
     XC_TAB,
-    IO_BSPC,
+    UY_BSPC,
     COMMDOT_DEL,
     LEADER,
     EM_EMAIL,
@@ -43,16 +44,14 @@ enum combo_events {
     WA_WHAT,
 #endif
 #ifdef COMBO_SYMBOL_ENABLE
-    PSCLN_BSLS,
-    SCLNSLASH_PIPE,
-    HJ_MINS,
-    NM_UNDS,
+    SCLNO_BSLS,
+    OSLASH_PIPE,
+    MN_MINS,
+    KH_UNDS,
     QA_GRV,
     AZ_TILD,
-    HOMEQA_GRV,
-    HOMEAZ_TILD,
 #endif
-#if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
+#if defined(ARTSEY_ENABLE)
     ARTSEY_B,
     ARTSEY_C,
     ARTSEY_D,
@@ -96,9 +95,9 @@ enum combo_events {
 
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
-const uint16_t PROGMEM W_E_COMBO[]       = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM W_F_COMBO[]       = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM X_C_COMBO[]       = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM I_O_COMBO[]       = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM U_Y_COMBO[]       = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM COMM_DOT_COMBO[]  = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM LEADER_COMBO[]    = {SYM, NAV, COMBO_END};
 const uint16_t PROGMEM email_combo[]     = {KC_E, KC_M, COMBO_END};
@@ -131,21 +130,17 @@ const uint16_t PROGMEM W_A_COMBO[]     = {KC_W, KC_A, COMBO_END};
 
 #ifdef COMBO_SYMBOL_ENABLE
 // Right hand side
-const uint16_t PROGMEM P_SCLN_COMBO[]     = {KC_P, KC_SCLN, COMBO_END};
-const uint16_t PROGMEM SCLN_SLASH_COMBO[] = {KC_SCLN, KC_SLASH, COMBO_END};
-const uint16_t PROGMEM H_J_COMBO[]        = {KC_H, KC_J, COMBO_END};
-const uint16_t PROGMEM N_M_COMBO[]        = {KC_W, KC_A, COMBO_END};
+const uint16_t PROGMEM SCLN_O_COMBO[]  = {KC_SCLN, GUI_O, COMBO_END};
+const uint16_t PROGMEM O_SLASH_COMBO[] = {GUI_O, KC_SLASH, COMBO_END};
+const uint16_t PROGMEM M_N_COMBO[]     = {KC_M, CTL_N, COMBO_END};
+const uint16_t PROGMEM K_H_COMBO[]     = {KC_K, KC_H, COMBO_END};
 
 // Left hand side
-const uint16_t PROGMEM Q_A_COMBO[] = {KC_Q, KC_A, COMBO_END};
-const uint16_t PROGMEM A_Z_COMBO[] = {KC_A, KC_Z, COMBO_END};
-
-// Home-row version
-const uint16_t PROGMEM Q_GUIA_COMBO[] = {KC_Q, GUI_A, COMBO_END};
-const uint16_t PROGMEM GUIA_Z_COMBO[] = {GUI_A, KC_Z, COMBO_END};
+const uint16_t PROGMEM Q_A_COMBO[] = {KC_Q, GUI_A, COMBO_END};
+const uint16_t PROGMEM A_Z_COMBO[] = {GUI_A, KC_Z, COMBO_END};
 #endif
 
-#if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
+#if defined(ARTSEY_ENABLE)
 // Custom ARTSEY version with colemak https://github.com/purple-rw/artsey-keyboard
 // Letters
 const uint16_t PROGMEM ARTSEY_B_COMBO[] = {KC_A, KC_T, COMBO_END};
@@ -192,9 +187,9 @@ const uint16_t PROGMEM ARTSEY_EXLM_COMBO[] = {KC_I, KC_R, COMBO_END};
 
 combo_t key_combos[] = {
     // Controls
-    [WE_ESC]         = COMBO(W_E_COMBO, KC_ESC),
+    [WF_ESC]         = COMBO(W_F_COMBO, KC_ESC),
     [XC_TAB]         = COMBO(X_C_COMBO, KC_TAB),
-    [IO_BSPC]        = COMBO(I_O_COMBO, KC_BSPC),
+    [UY_BSPC]        = COMBO(U_Y_COMBO, KC_BSPC),
     [COMMDOT_DEL]    = COMBO(COMM_DOT_COMBO, KC_DEL),
     [LEADER]         = COMBO(LEADER_COMBO, QK_LEAD),
     [EM_EMAIL]       = COMBO_ACTION(email_combo),
@@ -225,18 +220,15 @@ combo_t key_combos[] = {
 #endif
 #ifdef COMBO_SYMBOL_ENABLE
     // Right hand side
-    [PSCLN_BSLS]     = COMBO(P_SCLN_COMBO, KC_BSLS),
-    [SCLNSLASH_PIPE] = COMBO(SCLN_SLASH_COMBO, KC_PIPE),
-    [HJ_MINS]        = COMBO(H_J_COMBO, KC_MINS),
-    [NM_UNDS]        = COMBO(N_M_COMBO, KC_UNDS),
+    [SCLNO_BSLS]  = COMBO(SCLN_O_COMBO, KC_BSLS),
+    [OSLASH_PIPE] = COMBO(O_SLASH_COMBO, KC_PIPE),
+    [MN_MINS]     = COMBO(M_N_COMBO, KC_MINS),
+    [KH_UNDS]     = COMBO(K_H_COMBO, KC_UNDS),
     // Left hand side
     [QA_GRV]  = COMBO(Q_A_COMBO, KC_GRV),
     [AZ_TILD] = COMBO(A_Z_COMBO, KC_TILD),
-    // Home-row version
-    [HOMEQA_GRV]  = COMBO(Q_GUIA_COMBO, KC_GRV),
-    [HOMEAZ_TILD] = COMBO(GUIA_Z_COMBO, KC_TILD),
 #endif
-#if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
+#if defined(ARTSEY_ENABLE)
     // Letters
     [ARTSEY_B] = COMBO(ARTSEY_B_COMBO, KC_B),
     [ARTSEY_C] = COMBO(ARTSEY_C_COMBO, KC_C),
@@ -412,7 +404,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
     /* Enable ARTSEY combos on layer `_ARTSEY` */
     switch (combo_index) {
-#if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
+#if defined(ARTSEY_ENABLE)
         case ARTSEY_B ... ARTSEY_EXLM:
             return layer_state_is(_ARTSEY);
 #endif
