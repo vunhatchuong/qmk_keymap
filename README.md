@@ -7,6 +7,12 @@ Ronny is the legacy branch of this repo.
 
 The `.clang-format` file is a copy of QMK's in my fork master branch.
 
+## QMK Breaking Changes - 2023 May 28 Notes
+
+As of the Breaking Changes - 2023 May 28, combos in a separate file now doesn't work anymore, you have to put it into `keymap.c`.
+
+Combos.def still works.
+
 ## Custom ARTSEY Colemak
 
 **Currently not able to make layer independent combos so it will conflict with other combos.**

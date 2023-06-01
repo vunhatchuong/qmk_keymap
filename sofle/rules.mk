@@ -13,7 +13,7 @@ EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
 VIA_ENABLE = no             # +2140
 TAP_DANCE_ENABLE = yes      # +544
 CAPS_WORD_ENABLE = yes      # Hit both keys to enable cap for one word | +482
-COMBO_ENABLE = yes          # + 1888
+# COMBO_ENABLE = yes          # + 1888
 SWAP_HANDS_ENABLE = yes     # one-hand typing (+490)
 
 
