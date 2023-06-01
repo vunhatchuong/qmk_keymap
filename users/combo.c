@@ -90,10 +90,7 @@ enum combo_events {
     ARTSEY_COLN,
     ARTSEY_EXLM,
 #endif
-    COMBO_LENGTH
 };
-
-uint16_t COMBO_LEN = COMBO_LENGTH;
 
 const uint16_t PROGMEM W_F_COMBO[]       = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM X_C_COMBO[]       = {KC_X, KC_C, COMBO_END};
@@ -276,11 +273,18 @@ combo_t key_combos[] = {
 void process_combo_event(uint16_t combo_index, bool pressed) {
 #ifdef CONSOLE_ENABLE
     combo_t *combo = &key_combos[combo_index];
-    uint8_t  idx   = 0;
+    uint8_t idx = 0;
     uint16_t combo_keycode;
     while ((combo_keycode = pgm_read_word(&combo->keys[idx])) != COMBO_END) {
-        uprintf("0x%04X,%u,%u,%u,%u,0x%02X,0x%02X,0\n", combo_keycode, KEYLOC_COMBO, KEYLOC_COMBO, get_highest_layer(layer_state), pressed, get_mods(), get_oneshot_mods()
-                /* tap_count */
+        uprintf("0x%04X\t%u\t%u\t0x%X\t%u\t0x%02X\t0x%02X\t0\n",
+            combo_keycode,
+            254,
+            254,
+            layer_state|default_layer_state,
+            pressed,
+            get_mods(),
+            get_oneshot_mods()
+            /* tap_count==0 */
         );
         idx++;
     }
