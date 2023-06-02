@@ -13,3 +13,6 @@ ln -s $SCRIPT_DIR/sofle $QMK_FIRMWARE_DIR/keyboards/sofle/keymaps/ronny
 
 printf "\nMaking Symlink for Ferris Sweep:"
 ln -s $SCRIPT_DIR/sweep $QMK_FIRMWARE_DIR/keyboards/ferris/keymaps/ronny
+
+printf "\nMaking Symlink for Dactyl Manuform 5x6:"
+ln -s $SCRIPT_DIR/dactyl_manuform_5x6 $QMK_FIRMWARE_DIR/keyboards/handwired/dactyl_manuform/5x6/keymaps/ronny
