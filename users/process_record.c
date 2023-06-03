@@ -9,6 +9,7 @@ void oled_timer_reset(void) {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+// clang-format off
 #ifdef CONSOLE_ENABLE
     const bool is_combo = record->event.type == COMBO_EVENT;
     uprintf("0x%04X\t%u\t%u\t0x%X\t%u\t0x%02X\t0x%02X\t%u\n",
@@ -22,6 +23,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
          record->tap.count
          );
 #endif
+// clang-format on
 #ifdef CASEMODES_ENABLE
     // Process case modes
     if (!process_case_modes(keycode, record)) {

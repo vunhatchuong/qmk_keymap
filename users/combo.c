@@ -271,6 +271,7 @@ combo_t key_combos[] = {
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
+// clang-format off
 #ifdef CONSOLE_ENABLE
     combo_t *combo = &key_combos[combo_index];
     uint8_t idx = 0;
@@ -289,6 +290,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         idx++;
     }
 #endif
+    // clang-format on
     switch (combo_index) {
         case EM_EMAIL:
             if (pressed) {
