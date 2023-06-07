@@ -13,6 +13,10 @@ As of the Breaking Changes - 2023 May 28, combos in a separate file now doesn't 
 
 Combos.def still works.
 
+### Solution
+
+Instead of `SRC+=combo.c`, you can use `INTROSPECTION_KEYMAP_C = combo.c`.
+
 ## Custom ARTSEY Colemak
 
 **Currently not able to make layer independent combos so it will conflict with other combos.**
