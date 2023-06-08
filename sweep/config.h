@@ -5,9 +5,9 @@
 // #define COMBO_SYMBOL_ENABLE
 
 #ifdef ARTSEY_ENABLE
-    #define LAYER_STATE_16BIT
+#    define LAYER_STATE_16BIT
 #else
-    #define LAYER_STATE_8BIT
+#    define LAYER_STATE_8BIT
 #endif
 
 // ----- Extra features not from QMK ------

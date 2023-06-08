@@ -20,11 +20,11 @@ static void print_status_narrow(void) {
         case _COLEMAKDH:
             oled_write_ln_P(PSTR("CLMK"), false);
             break;
-    #ifdef ARTSEY_ENABLE
+#ifdef ARTSEY_ENABLE
         case _ARTSEY:
             oled_write_ln_P(PSTR("ARTS"), false);
             break;
-    #endif
+#endif
         case _SYM:
             oled_write_ln_P(PSTR("Syms"), false);
             break;

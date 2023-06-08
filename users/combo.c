@@ -2,10 +2,10 @@
 
 uint8_t combo_ref_from_layer(uint8_t layer) {
     switch (get_highest_layer(layer_state)) {
-    #ifdef ARTSEY_ENABLE
+#ifdef ARTSEY_ENABLE
         case _ARTSEY:
             return _ARTSEY;
-    #endif
+#endif
         default:
             return _QWERTY;
     }
