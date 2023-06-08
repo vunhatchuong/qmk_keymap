@@ -19,7 +19,9 @@
 enum layer_names {
     _QWERTY,
     _COLEMAKDH,
+#ifdef ARTSEY_ENABLE
     _ARTSEY,
+#endif
     _NAV,
     _SYM,
     _FUNC,
