@@ -11,16 +11,7 @@ void oled_timer_reset(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
     const bool is_combo = record->event.type == COMBO_EVENT;
-    uprintf("0x%04X\t%u\t%u\t0x%X\t%u\t0x%02X\t0x%02X\t%u\n",
-         keycode,
-         is_combo ? 254 : record->event.key.row,
-         is_combo ? 254 : record->event.key.col,
-         layer_state|default_layer_state,
-         record->event.pressed,
-         get_mods(),
-         get_oneshot_mods(),
-         record->tap.count
-         );
+    uprintf("0x%04X\t%u\t%u\t0x%X\t%u\t0x%02X\t0x%02X\t%u\n", keycode, is_combo ? 254 : record->event.key.row, is_combo ? 254 : record->event.key.col, layer_state | default_layer_state, record->event.pressed, get_mods(), get_oneshot_mods(), record->tap.count);
 #endif
 #ifdef CASEMODES_ENABLE
     // Process case modes
