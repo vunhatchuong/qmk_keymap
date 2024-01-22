@@ -7,11 +7,25 @@ Ronny is the legacy branch of this repo.
 
 The `.clang-format` file is a copy of QMK's in my fork master branch.
 
-## QMK Breaking Changes - 2023 May 28 Notes
+## Compile
 
-As of the Breaking Changes - 2023 May 28, combos in a separate file now doesn't work anymore, you have to put it into `keymap.c`.
+Sofle:
 
-Combos.def still works.
+```bash
+qmk compile -kb sofle -km ronny
+```
+
+Ferris Sweep:
+
+```bash
+qmk compile -kb ferris/sweep -km ronny
+```
+
+Dactyl-Manuform 5x6:
+
+```bash
+qmk compile -kb handwired/dactyl_manuform/5x6 -km ronny
+```
 
 ## External softwares
 
