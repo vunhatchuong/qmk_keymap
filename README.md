@@ -7,25 +7,25 @@ Ronny is the legacy branch of this repo.
 
 The `.clang-format` file is a copy of QMK's in my fork master branch.
 
-## QMK Breaking Changes - 2023 May 28 Notes
+## Compile
 
-As of the Breaking Changes - 2023 May 28, combos in a separate file now doesn't work anymore, you have to put it into `keymap.c`.
+Sofle:
 
-Combos.def still works.
+```bash
+qmk compile -kb sofle -km ronny
+```
 
-### Solution
+Ferris Sweep:
 
-Instead of `SRC+=combo.c`, you can use `INTROSPECTION_KEYMAP_C = combo.c`.
+```bash
+qmk compile -kb ferris/sweep -km ronny
+```
 
-## Custom ARTSEY Colemak
+Dactyl-Manuform 5x6:
 
-**Currently not able to make layer independent combos so it will conflict with other combos.**
-
-Taken from [purple](https://github.com/purple-rw/artsey-keyboard).
-
-[KLE](http://www.keyboard-layout-editor.com/#/gists/028a856fb6454e3ef3e8c133488c0abd)
-
-![KLE_image](artsey-mod-colemak.png)
+```bash
+qmk compile -kb handwired/dactyl_manuform/5x6 -km ronny
+```
 
 ## External softwares
 

@@ -94,7 +94,4 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________NUMPAD_R2_________________      KC_PLUS, KC_1,    KC_2,    KC_3,    KC_DLR
 #define _________________NUMPAD_R3_________________      _______, KC_7,    KC_8,    KC_9,    KC_DOT
 #define ___NUMPAD_RT___                                  _______, KC_0
-
-#define _________________ARTSEY_L1_________________      KC_O,    KC_I,    KC_E,    KC_N,    XXXXXXX
-#define _________________ARTSEY_L2_________________      KC_A,    KC_R,    KC_S,    KC_T,    XXXXXXX
 // clang-format on

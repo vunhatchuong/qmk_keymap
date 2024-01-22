@@ -12,23 +12,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // clang-format off
 #ifdef CONSOLE_ENABLE
     const bool is_combo = record->event.type == COMBO_EVENT;
-    uprintf("0x%04X\t%u\t%u\t0x%X\t%u\t0x%02X\t0x%02X\t%u\n",
-         keycode,
-         is_combo ? 254 : record->event.key.row,
-         is_combo ? 254 : record->event.key.col,
-         layer_state|default_layer_state,
-         record->event.pressed,
-         get_mods(),
-         get_oneshot_mods(),
-         record->tap.count
-         );
-#endif
-// clang-format on
-#ifdef CASEMODES_ENABLE
-    // Process case modes
-    if (!process_case_modes(keycode, record)) {
-        return false;
-    }
+    uprintf("0x%04X\t%u\t%u\t0x%X\t%u\t0x%02X\t0x%02X\t%u\n", keycode, is_combo ? 254 : record->event.key.row, is_combo ? 254 : record->event.key.col, layer_state | default_layer_state, record->event.pressed, get_mods(), get_oneshot_mods(), record->tap.count);
 #endif
     if (record->event.pressed)
 #ifdef OLED_ENABLE
@@ -60,13 +44,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-#ifdef CASEMODES_ENABLE
-        case SNAKECASE:
-            if (record->event.pressed) {
-                enable_xcase_with(KC_UNDS);
-            }
-            return false;
-#endif
         case KC_LCTL:
         case KC_RCTL:
 #ifdef OCEAN_DREAM_ENABLE
