@@ -3,6 +3,7 @@
 #ifdef CONSOLE_ENABLE
 #    include "print.h"
 #endif
+
 // clang-format off
 #define LAYOUT_ferris_base( \
     K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, \

@@ -9,7 +9,6 @@ SWAP_HANDS_ENABLE = yes      # one-hand typing (+490)
 
 
 # External Features
-CASEMODES_ENABLE = yes           # +420
 
 
 #Optimize firmware size
@@ -19,5 +18,3 @@ GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no           # Enabled For VIA (+796)
 CONSOLE_ENABLE = yes         # Console for debug(+400)
 COMMAND_ENABLE = no         # Commands for debug and configuration
-# AUTO_SHIFT_ENABLE = yes   # +2596
-# LEADER_ENABLE = yes       # +1050
