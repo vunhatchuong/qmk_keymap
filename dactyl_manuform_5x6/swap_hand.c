@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+// clang-format off
 const keypos_t hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
     {{5, 6}, {4, 6}, {3, 6}, {2, 6}, {1, 6}, {0, 6}},
     {{5, 7}, {4, 7}, {3, 7}, {2, 7}, {1, 7}, {0, 7}},
@@ -14,3 +15,4 @@ const keypos_t hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
     {{5, 4}, {4, 4}, {3, 4}, {2, 4}, {1, 4}, {0, 4}},
     {{5, 5}, {4, 5}, {3, 5}, {2, 5}, {1, 5}, {0, 5}}
 };
+// clang-format on
