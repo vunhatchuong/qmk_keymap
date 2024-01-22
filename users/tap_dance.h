@@ -7,7 +7,6 @@ enum {
     QWERTY_TD,
     COLEMAKDH_TD,
     GAME_TD,
-    ARTSEY_TD,
 };
 #endif
 
@@ -15,4 +14,3 @@ enum {
 #define TD_QWERTY TD(QWERTY_TD)
 #define TD_COLEMAKDH TD(COLEMAKDH_TD)
 #define TD_GAME TD(GAME_TD)
-#define TD_ARTSEY TD(ARTSEY_TD)

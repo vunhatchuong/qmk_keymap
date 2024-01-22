@@ -1,42 +1,9 @@
-COMBO_REF_LAYER(_ARTSEY, _ARTSEY) // explicit reference to self instead of the default.
 DEFAULT_REF_LAYER(_QWERTY)
 //   NAME                            RESULT                         CHORD KEYS
 COMB(WE_ESC,                         KC_ESC,                        KC_W,    KC_E     )
 COMB(XC_TAB,                         KC_TAB,                        KC_X,    KC_C     )
 COMB(IO_BSPC,                        KC_BSPC,                       KC_I,    KC_O     )
 COMB(COMMDOT_DEL,                    KC_DEL,                        KC_COMM, KC_DOT   )
-COMB(LEADER,                         QK_LEAD,                       SYM,     NAV      )
-SUBS(EM_EMAIL,                       "ronnyvu321@gmail.com",        KC_E,    KC_M     )
-
-#ifdef STENO_LITE_ENABLE
-// Shamelessly steal from precondition steno-lite
-// https://github.com/precondition/dactyl-manuform-keymap/blob/main/combos.c
-
-SUBS(ENTEV_EVERY,                    "every",                       KC_ENT,  KC_E,KC_V  )
-SUBS(ENTU_YOU,                       "you",                         KC_ENT,  KC_U       )
-SUBS(ENTA_AND,                       "and",                         KC_ENT,  KC_A       )
-SUBS(ENTW_WITH,                      "with",                        KC_ENT,  KC_W       )
-SUBS(ENTF_FOR,                       "for",                         KC_ENT,  KC_F       )
-SUBS(ENTH_HERE,                      "here",                        KC_ENT,  KC_H       )
-SUBS(ENTT_THE,                       "the",                         KC_ENT,  KC_T       )
-SUBS(ENTM_MENT,                      "ment",                        KC_ENT,  KC_M       )
-SUBS(ENTG_ING,                       "ing",                         KC_ENT,  KC_G       )
-SUBS(ENTO_OUGH,                      "ough",                        KC_ENT,  KC_O       )
-SUBS(ENTOL_OULD,                     "ould",                        KC_ENT,  KC_O,KC_L  )
-SUBS(ENTI_ION,                       "ion",                         KC_ENT,  KC_I       )
-SUBS(ENTIS_IONS,                     "ions",                        KC_ENT,  KC_I,KC_S  )
-SUBS(ENTTA_THAT,                     "that",                        KC_ENT,  KC_T,KC_A  )
-SUBS(ENTK_KEY,                       "key",                         KC_ENT,  KC_K       )
-SUBS(ENTTS_THIS,                     "this",                        KC_ENT,  KC_T,KC_S  )
-SUBS(ENTDN_DONT,                     "don't",                       KC_ENT,  KC_D,KC_N  )
-SUBS(ENTIT_IN_THE,                   "in the",                      KC_ENT,  KC_I,KC_T  )
-
-// Additional steno-lite combos for common words and n-grams
-SUBS(HV_HAVE,                        "have",                        KC_H,    KC_V       )
-SUBS(QK_QMK,                         "qmk",                         KC_Q,    KC_K       )
-SUBS(KB_KEYBOARD,                    "keyboard",                    KC_K,    KC_B       )
-SUBS(WA_WHAT,                        "what",                        KC_W,    KC_A       )
-#endif
 
 #ifdef COMBO_SYMBOL_ENABLE
 //Right hand side
@@ -52,59 +19,4 @@ COMB(AZ_TILD,                        KC_TILD,                       KC_A,    KC_
     // Home-row version
 COMB(HOMEQA_GRV,                     KC_GRV,                        KC_Q,    GUI_A       )
 COMB(HOMEAZ_TILD,                    KC_TILD,                       GUI_A,   KC_Z        )
-#endif
-
-#if defined(ARTSEY_ENABLE) && !defined(NO_ACTION_ONESHOT)
-// Custom ARTSEY version with colemak https://github.com/purple-rw/artsey-keyboard
-
-//Letters
-COMB(ARTSEY_B,                        KC_B,                          KC_A,    KC_T)
-COMB(ARTSEY_C,                        KC_C,                          KC_S,    KC_T)
-COMB(ARTSEY_D,                        KC_D,                          KC_I,    KC_E,    KC_N)
-//COMB(combo_n,                      KC_N,                        KC_B3,     KC_B4)
-COMB(ARTSEY_F,                        KC_F,                          KC_E,    KC_N)
-COMB(ARTSEY_G,                        KC_G,                          KC_I,    KC_E)
-COMB(ARTSEY_H,                        KC_H,                          KC_R,    KC_T)
-COMB(ARTSEY_J,                        KC_J,                          KC_O,    KC_I)
-COMB(ARTSEY_K,                        KC_K,                          KC_A,    KC_S)
-COMB(ARTSEY_L,                        KC_L,                          KC_R,    KC_S,    KC_T)
-COMB(ARTSEY_M,                        KC_M,                          KC_A,    KC_R,    KC_S)
-COMB(ARTSEY_P,                        KC_P,                          KC_A,    KC_R,    KC_T)
-COMB(ARTSEY_Q,                        KC_Q,                          KC_O,    KC_I,    KC_N)
-COMB(ARTSEY_U,                        KC_U,                          KC_R,    KC_S)
-COMB(ARTSEY_V,                        KC_V,                          KC_O,    KC_E)
-COMB(ARTSEY_W,                        KC_W,                          KC_O,    KC_N)
-COMB(ARTSEY_X,                        KC_X,                          KC_O,    KC_I,    KC_E)
-COMB(ARTSEY_Z,                        KC_Z,                          KC_O,    KC_I,    KC_E,    KC_N)
-
-//Control
-COMB(ARTSEY_BSPC,                     KC_BSPC,                       KC_E,    KC_T)
-COMB(ARTSEY_DEL,                      KC_DEL,                        KC_E,    KC_R)
-COMB(ARTSEY_TAB,                      KC_TAB,                        KC_I,    KC_E,     KC_N,     KC_A)
-COMB(ARTSEY_SPACE,                    KC_SPACE,                      KC_A,    KC_R,     KC_S,     KC_T)
-
-//Mods
-COMB(ARTSEY_ENT,                      KC_ENT,                        KC_N,    KC_T)
-COMB(ARTSEY_LCTRL,                    OSM_LCTL,                      KC_O,    KC_T)
-COMB(ARTSEY_LGUI,                     OSM_LGUI,                      KC_O,    KC_S)
-COMB(ARTSEY_LALT,                     OSM_LALT,                      KC_O,    KC_R)
-COMB(ARTSEY_ESC,                      KC_ESC,                        KC_E,    KC_N,     KC_A)
-//COMB(combo_shift_lock,              LCK_SHIFT,                     KC_T2,   KC_B2                   )
-COMB(ARTSEY_LSFT,                     OSM_LSFT ,                     KC_O,    KC_I,     KC_E,     KC_T)
-COMB(ARTSEY_CAPS,                     KC_CAPS,                       KC_A,    KC_R,     KC_S,     KC_N)
-
-//Symbols
-COMB(ARTSEY_COMM,                     KC_COMM,                       KC_S,    KC_N)
-COMB(ARTSEY_DOT,                      KC_DOT,                        KC_R,    KC_N)
-COMB(ARTSEY_SLSH,                     KC_SLSH,                       KC_A,    KC_N)
-COMB(ARTSEY_QUOT,                     KC_QUOT,                       KC_R,    KC_S,     KC_N)
-COMB(ARTSEY_DQUO,                     KC_DQUO,                       KC_A,    KC_R,     KC_N)
-COMB(ARTSEY_QUES,                     KC_QUES,                       KC_I,    KC_N,     KC_A)
-COMB(ARTSEY_SCLN,                     KC_SCLN,                       KC_I,    KC_A)
-COMB(ARTSEY_COLN,                     KC_COLN,                       KC_E,    KC_A)
-COMB(ARTSEY_EXLM,                     KC_EXLM,                       KC_I,    KC_R)
-#endif
-
-#ifdef SECRET_COMBO_ENABLE
-#include "secrets_combo.def"
 #endif

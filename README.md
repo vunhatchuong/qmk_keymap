@@ -13,16 +13,6 @@ As of the Breaking Changes - 2023 May 28, combos in a separate file now doesn't 
 
 Combos.def still works.
 
-## Custom ARTSEY Colemak
-
-**Currently not able to make layer independent combos so it will conflict with other combos.**
-
-Taken from [purple](https://github.com/purple-rw/artsey-keyboard).
-
-[KLE](http://www.keyboard-layout-editor.com/#/gists/028a856fb6454e3ef3e8c133488c0abd)
-
-![KLE_image](artsey-mod-colemak.png)
-
 ## External softwares
 
 - [keymapviz](https://github.com/yskoht/keymapviz) to generate keymap.c ascii art.
