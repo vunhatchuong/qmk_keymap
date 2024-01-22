@@ -25,5 +25,5 @@ endif
 # Combos dictionary management, remember to add #include "g/keymap_combo.h" in keymap.c
 ifeq ($(strip $(COMBO_ENABLE)), yes)    ## +1888
     # VPATH +=  keyboards/gboards/
-    SRC += $(USER_PATH)/combo.c
+	INTROSPECTION_KEYMAP_C += combos.c
 endif
