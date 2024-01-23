@@ -12,14 +12,14 @@
     K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A  \
     ) \
     LAYOUT_dactyl_wrapper( \
-        KC_TAB,   ________________NUMBER_LEFT________________,              ________________NUMBER_RIGHT_______________,       KC_DEL,         \
-        CTL_ESC,  K01,      K02,      K03,      K04,      K05,              K06,     K07,     K08,     K09,     K0A,   KC_BSPC,        \
+        KC_TAB,   ________________NUMBER_LEFT________________,              ________________NUMBER_RIGHT_______________, KC_DEL,         \
+        CTL_ESC,  K01,      K02,      K03,      K04,      K05,              K06,     K07,     K08,     K09,     K0A,   _______,        \
         KC_LSFT , K11,      K12,      K13,      K14,      K15,              K16,     K17,     K18,     K19,     K1A,   KC_QUOT,        \
-        KC_LCTL,  K21,      K22,      K23,      K24,      K25,              K26,     K27,     K28,     K29,     K2A,   RSFT_T(KC_ENT), \
-                            KC_ALT,KC_LGUI,                                               KC_PLUS, KC_EQL, \
-                                            KC_ESC,KC_SPC,                  KC_BSPC, KC_ENT,              \
-                                            KC_TAB,KC_HOME,                 KC_END,  KC_DEL,            \
-                                            KC_BSPC, KC_GRV,                KC_LGUI, KC_LALT            \
+        KC_LCTL,  K21,      K22,      K23,      K24,      K25,              K26,     K27,     K28,     K29,     K2A,   KC_BSLS, \
+                            KC_LALT,KC_LGUI,                                               KC_MINS, KC_EQL, \
+                                            SYM,     KC_SPC,                  KC_ENT, KC_BSPC,              \
+                                            KC_GRV,  _______,                 NAV,    KC_DEL,            \
+                                            _______, KC_CAPS,                _______, _______            \
     )
 
 #define LAYOUT_dactyl_base_wrapper(...) LAYOUT_dactyl_base(__VA_ARGS__)
@@ -28,12 +28,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     /* ,-----------------------------------------.                    ,-----------------------------------------.
-    * | TAB  |  1   |  2   |  3   |  4   |  5   |                    |  6   |  7   |  8   |  9   |  0   |DEL⌦ |
+    * | TAB  |  1   |  2   |  3   |  4   |  5   |                    |  6   |  7   |  8   |  9   |  0   |DEL⌦  |
     * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-    * |ESC/⎈ |  Q   |  W   |  F   |  P   |  B   |                    |  j   |  l   |  u   |  Y   | : ;  |BSPC⌫|
+    * |ESC/⎈ |  Q   |  W   |  F   |  P   |  B   |                    |  j   |  l   |  u   |  Y   | : ;  |      |
     * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
     * |LSFT ⇧|  A   |  R   |  S   |  T   |  G   |,------.    ,------.|  M   |  N   |  E   |  I   |  O   | ' "  |
-    * |------+------+------+------+------+------|| MUTE |    |  ⏯   ||------+------+------+------+------+------|
+    * |------+------+------+------+------+------|| MUTE |    |  ⏯   |------+------+------+------+------+------|
     * |LCTL ⎈|  Z   |  X   |  C   |  D   |  V   |`------'    `------'|  K   |  H   | , <  | . >  |SLASH |SFTENT|
     * `-------------+------+------+------+-.------------.    ,------------.-+------+------+------+-------------'
     *               |LCTL ⎈|LALT⎇|LGUI◆|/ SYM   / SPC  /     \ ENT  \ NAV  \| - _  | ⧉   |  📋  |
@@ -88,7 +88,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,   ________________NUMBER_LEFT________________,                    ________________NUMBER_RIGHT_______________,  KC_BSPC,
         KC_TILD,  _________________SYMBOL_L2_________________,                    _________________SYMBOL_R2_________________,  KC_BSLS,
         _______,  _________________SYMBOL_L3_________________,                    _________________SYMBOL_R3_________________,  KC_PIPE,
-                  ___________________TRANS___________________,                    ___________________TRANS___________________
+                            KC_LALT,KC_LGUI,                                               KC_PLUS, KC_EQL, 
+                                            KC_ESC,KC_SPC,                  KC_BSPC, KC_ENT,              
+                                            KC_TAB,KC_HOME,                 KC_END,  KC_DEL,            
+                                            KC_BSPC, KC_GRV,                KC_LGUI, KC_LALT            
     ),
 
     /* ,-----------------------------------------.                    ,-----------------------------------------.
@@ -109,7 +112,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL,  __________________TAB_NAV__________________,                    _________________MOUSE_NAV_________________,  KC_WH_L,
         _______,  __________________WWW_NAV__________________,                    ___________________ARROW___________________,  KC_WH_R,
         _______,  ________________MOUSE_WHEEL________________,                    _________________VIM_ARROW_________________,  RSFT_T(KC_ENT),
-                  ___________________TRANS___________________,                    ___________________TRANS___________________
+                            KC_LALT,KC_LGUI,                                               KC_PLUS, KC_EQL,
+                                            KC_ESC,KC_SPC,                  KC_BSPC, KC_ENT,
+                                            KC_TAB,KC_HOME,                 KC_END,  KC_DEL,
+                                            KC_BSPC, KC_GRV,                KC_LGUI, KC_LALT
     ),
 
     /* ,-----------------------------------------.                    ,-----------------------------------------.
@@ -130,7 +136,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  ___________________EMPTY___________________,                    _________________ADJUST_R2_________________,  XXXXXXX,
         _______,  _________________ADJUST_L2_________________,                    ___________________ARROW___________________,  XXXXXXX,
         _______,  _________________ADJUST_L3_________________,                    _________________ADJUST_R3_________________,  _______,
-                  ___________________TRANS___________________,                    ___________________TRANS___________________
+                            KC_LALT,KC_LGUI,                                               KC_PLUS, KC_EQL,
+                                            KC_ESC,KC_SPC,                  KC_BSPC, KC_ENT,
+                                            KC_TAB,KC_HOME,                 KC_END,  KC_DEL,
+                                            KC_BSPC, KC_GRV,                KC_LGUI, KC_LALT
     )
 };
 // clang-format on
