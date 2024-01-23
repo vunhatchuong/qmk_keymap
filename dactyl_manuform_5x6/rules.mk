@@ -1,5 +1,5 @@
 # QMK Features
-MOUSEKEY_ENABLE = yes		# +4700
+MOUSEKEY_ENABLE = yes       # +4700
 EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
 VIA_ENABLE = no             # +2140
 TAP_DANCE_ENABLE = yes      # +544
@@ -9,8 +9,6 @@ SWAP_HANDS_ENABLE = yes      # one-hand typing (+490)
 
 
 # External Features
-CASEMODES_ENABLE = yes           # +420
-
 
 #Optimize firmware size
 LTO_ENABLE = yes
@@ -19,8 +17,6 @@ GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no           # Enabled For VIA (+796)
 CONSOLE_ENABLE = no         # Console for debug(+400)
 COMMAND_ENABLE = no         # Commands for debug and configuration
-# AUTO_SHIFT_ENABLE = yes   # +2596
-# LEADER_ENABLE = yes       # +1050
 
 ifeq ($(strip $(SWAP_HANDS_ENABLE)), yes)
   SRC += swap_hand.c
