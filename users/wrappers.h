@@ -33,10 +33,10 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ________________COLEMAK_DH_R2______________      KC_M,    KC_N,    KC_E,    KC_I,    KC_O
 #define ________________COLEMAK_DH_R3______________      KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLASH
 
-#define ____________QWERTY_HOME_MODE_L2____________      GUI_A,   ALT_S,   SFT_D,   CTL_F,   KC_G
-#define ____________QWERTY_HOME_MODE_R2____________      KC_H,    CTL_J,   SFT_K,   ALT_L,   GUI_SCLN
-#define __________COLEMAK_DH_HOME_MODE_L2__________      GUI_A,   ALT_R,   SFT_S,   HOME_T,  KC_G
-#define __________COLEMAK_DH_HOME_MODE_R2__________      KC_M,    CTL_N,   SFT_E,   ALT_I,   GUI_O
+#define _______________QWERTY_HMR_L2_______________      HRML(KC_A,   KC_S,   KC_D,   KC_F,   KC_G   )
+#define _______________QWERTY_HMR_R2_______________      HRMR(KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN)
+#define _____________COLEMAK_DH_HMR_L2_____________      HRML(KC_A,   KC_R,   KC_S,   KC_T,   KC_G   )
+#define _____________COLEMAK_DH_HMR_R2_____________      HRMR(KC_M,   KC_N,   KC_E,   KC_I,   KC_O   )
 
 #define ________________NUMBER_LEFT________________      KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define ________________NUMBER_RIGHT_______________      KC_6,    KC_7,    KC_8,    KC_9,    KC_0
