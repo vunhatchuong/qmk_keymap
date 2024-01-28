@@ -52,11 +52,11 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________FUNCPAD_R3_________________     XXXXXXX, KC_F9,   KC_F10,  KC_F11,  KC_F12
 
 #define _________________SYMBOL_L1_________________      ________________NUMBER_LEFT________________
-#define _________________SYMBOL_L2_________________      O_PRQOT, KC_LCBR, KC_LBRC, KC_LPRN, KC_EQL
+#define _________________SYMBOL_L2_________________      O_PRQOT, KC_LCBR, KC_LPRN, KC_LBRC, KC_EQL
 #define _________________SYMBOL_L3_________________      KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
 
 #define _________________SYMBOL_R1_________________      ________________NUMBER_RIGHT_______________
-#define _________________SYMBOL_R2_________________      KC_PLUS, KC_RPRN, KC_RBRC, KC_RCBR, C_PRQOT
+#define _________________SYMBOL_R2_________________      KC_PLUS, KC_RBRC, KC_RPRN, KC_RCBR, C_PRQOT
 #define _________________SYMBOL_R3_________________      KC_CIRC, KC_AMPR, KC_ASTR, O_BRQOT, C_BRQOT
 
 #define _________________RAISE_L1__________________      ________________NUMBER_LEFT________________
@@ -74,7 +74,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ___________________ARROW___________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGUP
 #define _________________VIM_ARROW_________________      VIM_B,   KC_END,  KC_HOME, VIM_W,   KC_PGDN
 
-#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH,   _______,  XXXXXXX
+#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH,   PANIC,  XXXXXXX
 #define _________________ADJUST_L2_________________      KC_NUM,  KC_SCRL,         KC_INS,   KC_PSCR,  CW_TOGG
 #define _________________ADJUST_L3_________________      UNDO,    REDO,               CUT,      COPY,    PASTE
 
