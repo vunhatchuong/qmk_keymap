@@ -53,7 +53,6 @@ bool oled_task_user(void) {
             print_status_narrow();
             render_wpm();
         }
-
     }
     return false;
 }
