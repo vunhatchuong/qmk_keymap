@@ -50,17 +50,3 @@ combo_t key_combos[] = {
     [AZ_TILD] = COMBO(A_Z_COMBO, KC_TILD),
 #endif
 };
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-#ifdef CONSOLE_ENABLE
-    combo_t *combo = &key_combos[combo_index];
-    uint8_t  idx   = 0;
-    uint16_t combo_keycode;
-    while ((combo_keycode = pgm_read_word(&combo->keys[idx])) != COMBO_END) {
-        uprintf("0x%04X\t%u\t%u\t0x%X\t%u\t0x%02X\t0x%02X\t0\n", combo_keycode, 254, 254, layer_state | default_layer_state, pressed, get_mods(), get_oneshot_mods()
-                /* tap_count==0 */
-        );
-        idx++;
-    }
-#endif
-};

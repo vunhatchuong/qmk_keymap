@@ -7,6 +7,8 @@
 #    undef TAPPING_TERM
 #endif
 #define TAPPING_TERM 150
+// This prevents accidental repeats of the tap-hold keys when typing quickly.
+#define QUICK_TAP_TERM_PER_KEY
 #undef PERMISSIVE_HOLD
 
 #ifdef MOUSEKEY_ENABLE

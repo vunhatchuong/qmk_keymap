@@ -1,8 +1,5 @@
 #include "ronny.h"
 // #include "g/keymap_combo.h"
-#ifdef CONSOLE_ENABLE
-#    include "print.h"
-#endif
 
 // clang-format off
 #define LAYOUT_ferris_base( \
