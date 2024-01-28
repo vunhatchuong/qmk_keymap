@@ -22,7 +22,6 @@ With `combos.def` I can't find a way to use `combo_should_trigger` and `combo_re
 
 These are the resources that inspired me to create these features, there might be too many to list all of them.
 
-- [Ocean Dream](https://github.com/qmk/qmk_firmware/tree/master/users/snowe) cool OLED.
 - [drashna](https://github.com/qmk/qmk_firmware/tree/master/users/drashna) - Wrapper and general setup.
 - [miryoku](https://github.com/manna-harbour/miryoku_qmk/tree/miryoku/users/manna-harbour_miryoku) - layer safe guard and general setup.
 - [precondition](https://github.com/precondition/dactyl-manuform-keymap) - general setup.

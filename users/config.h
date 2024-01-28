@@ -6,7 +6,7 @@
 #ifdef TAPPING_TERM
 #    undef TAPPING_TERM
 #endif
-#define TAPPING_TERM 150 // 175 or 170 seems popular default: 200
+#define TAPPING_TERM 150
 #undef PERMISSIVE_HOLD
 
 #ifdef MOUSEKEY_ENABLE

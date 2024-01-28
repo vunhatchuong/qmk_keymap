@@ -7,9 +7,7 @@ CAPS_WORD_ENABLE = yes       # Hit both keys to enable cap for one word | +482
 # COMBO_ENABLE = yes          # + 1888
 SWAP_HANDS_ENABLE = yes      # one-hand typing (+490)
 
-
 # External Features
-
 
 #Optimize firmware size
 LTO_ENABLE = yes

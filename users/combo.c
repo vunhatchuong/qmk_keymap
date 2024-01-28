@@ -6,7 +6,6 @@ enum combo_events {
     XC_TAB,
     UY_BSPC,
     COMMDOT_DEL,
-    LEADER,
 #ifdef COMBO_SYMBOL_ENABLE
     SCLNO_BSLS,
     OSLASH_PIPE,
@@ -21,7 +20,6 @@ const uint16_t PROGMEM W_F_COMBO[]      = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM X_C_COMBO[]      = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM U_Y_COMBO[]      = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM COMM_DOT_COMBO[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM LEADER_COMBO[]   = {SYM, NAV, COMBO_END};
 
 #ifdef COMBO_SYMBOL_ENABLE
 // Right hand side
@@ -41,7 +39,6 @@ combo_t key_combos[] = {
     [XC_TAB]      = COMBO(X_C_COMBO, KC_TAB),
     [UY_BSPC]     = COMBO(U_Y_COMBO, KC_BSPC),
     [COMMDOT_DEL] = COMBO(COMM_DOT_COMBO, KC_DEL),
-    [LEADER]      = COMBO(LEADER_COMBO, QK_LEAD),
 #ifdef COMBO_SYMBOL_ENABLE
     // Right hand side
     [SCLNO_BSLS]  = COMBO(SCLN_O_COMBO, KC_BSLS),

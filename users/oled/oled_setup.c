@@ -52,16 +52,7 @@ bool oled_task_user(void) {
         } else {
             print_status_narrow();
             render_wpm();
-#ifdef LUNA_ENABLE
-            led_usb_state = host_keyboard_led_state();
-            render_luna(0, 13);
-#endif
         }
-
-    } else {
-#ifdef OCEAN_DREAM_ENABLE
-        render_stars();
-#endif
     }
     return false;
 }
