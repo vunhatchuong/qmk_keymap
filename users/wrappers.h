@@ -33,10 +33,10 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ________________COLEMAK_DH_R2______________      KC_M,    KC_N,    KC_E,    KC_I,    KC_O
 #define ________________COLEMAK_DH_R3______________      KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLASH
 
-#define _______________QWERTY_HMR_L2_______________      HRML(KC_A,   KC_S,   KC_D,   KC_F,   KC_G   )
+#define _______________QWERTY_HMR_L2_______________      HRML(KC_A,   KC_S,   KC_D,   KC_F,   KC_G)
 #define _______________QWERTY_HMR_R2_______________      HRMR(KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN)
-#define _____________COLEMAK_DH_HMR_L2_____________      HRML(KC_A,   KC_R,   KC_S,   KC_T,   KC_G   )
-#define _____________COLEMAK_DH_HMR_R2_____________      HRMR(KC_M,   KC_N,   KC_E,   KC_I,   KC_O   )
+#define _____________COLEMAK_DH_HMR_L2_____________      HRML(KC_A,   KC_R,   KC_S,   KC_T,   KC_G)
+#define _____________COLEMAK_DH_HMR_R2_____________      HRMR(KC_M,   KC_N,   KC_E,   KC_I,   KC_O)
 
 #define ________________NUMBER_LEFT________________      KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define ________________NUMBER_RIGHT_______________      KC_6,    KC_7,    KC_8,    KC_9,    KC_0
@@ -74,12 +74,12 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ___________________ARROW___________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGUP
 #define _________________VIM_ARROW_________________      VIM_B,   KC_END,  KC_HOME, VIM_W,   KC_PGDN
 
-#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH,   TD_GAME,  XXXXXXX
+#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH,   _______,  XXXXXXX
 #define _________________ADJUST_L2_________________      KC_NUM,  KC_SCRL,         KC_INS,   KC_PSCR,  CW_TOGG
 #define _________________ADJUST_L3_________________      UNDO,    REDO,               CUT,      COPY,    PASTE
 
 #define _________________ADJUST_R1_________________      EE_CLR,  PANIC, _______, _______, _______
-#define _________________ADJUST_R2_________________      SNAKECASE, _______, _______, _______, _______
+#define _________________ADJUST_R2_________________      _______, _______, _______, _______, _______
 #define _________________ADJUST_R3_________________      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY
 
 #define __________________TAB_NAV__________________      CS_T,    CS_TAB,  C_T,     C_W,     C_TAB

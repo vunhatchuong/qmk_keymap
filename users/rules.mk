@@ -6,16 +6,6 @@ endif
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
     SRC += $(USER_PATH)/oled/oled_setup.c
-
-    ifeq ($(strip $(OCEAN_DREAM_ENABLE)), yes)  # +2804
-        SRC += $(USER_PATH)/oled/ocean_dream.c
-        OPT_DEFS += -DOCEAN_DREAM_ENABLE
-    endif
-
-    ifeq ($(strip $(LUNA_ENABLE)), yes)         # +1458
-        SRC += $(USER_PATH)/oled/luna.c
-        OPT_DEFS += -DLUNA_ENABLE
-    endif
 endif
 
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes) # +544

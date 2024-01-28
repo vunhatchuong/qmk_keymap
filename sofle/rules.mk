@@ -2,9 +2,6 @@ ENCODER_ENABLE = yes
 # OLED
 OLED_ENABLE = yes
 WPM_ENABLE = no
-OCEAN_DREAM_ENABLE = no     # +2804
-LUNA_ENABLE = no           # +1458
-
 
 # QMK Features
 MOUSEKEY_ENABLE = yes
@@ -15,9 +12,7 @@ CAPS_WORD_ENABLE = yes      # Hit both keys to enable cap for one word | +482
 # COMBO_ENABLE = yes          # + 1888
 SWAP_HANDS_ENABLE = no     # one-hand typing (+490)
 
-
 # External Features
-
 
 #Optimize firmware size
 LTO_ENABLE = yes
