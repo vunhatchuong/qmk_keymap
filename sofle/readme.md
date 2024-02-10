@@ -6,5 +6,4 @@ Layout in [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/#/gists
 
 ## Features
 
-- Move mouse with kinetic speed.
 - Encoder keymaps for each layer including Mouse Wheel and Media Control.

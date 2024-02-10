@@ -10,7 +10,7 @@ A lot of the code for my wrappers/keymaps came from other users, see the [Resour
 - Tap dance as a safe guard when do dangerous keycode like switch base layer, boot.
 - Uses `update_tri_layer_state` for better layer accessibility.
 - Combos to access modifier keys.
-- Leader key.
+- Move mouse with kinetic speed.
 
 ### Combos
 
