@@ -108,11 +108,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT_ferris_base_wrapper(
     /* ,----------------------------------.                  ,----------------------------------.
-    * | CS_T |CS_TAB| C_T  | C_W  |C_TAB |                  |MOUSE |MOUSE |MOUSE |MOUSE |      |
+    * |CS_T  |CS_TAB|C_T   |C_W   |C_TAB |                  |VIM_B |KC_END|KC_HOM|VIM_W |KC_PGD|
     * |------+------+------+------+------|                  |------+------+------+------+------|
-    * | WSCH | BACK |      |      | FWD  |                  | LEFT | DOWN |  UP  | RGHT | PGUP |
+    * |KC_WSC|KC_BAC|      |      |KC_FWD|                  |KC_LEF|KC_DOW|KC_UP |KC_RGH|KC_PGU|
     * |------+------+------+------+------|                  |------+------+------+------+------|
-    * | WH_L |WHEEL |WHEEL | WH_R |      |                  |VIM_B | END  | HOME |VIM_W | PGDN |
+    * |KC_WH_|WHEEL |WHEEL |KC_WH_|      |                  |MOUSE |MOUSE |MOUSE |MOUSE |      |
     * `-------------+------+------+-------------.    ,-------------+------+------+-------------'
     *                             | SYM  /SPC_FU/    \SPC_FU\ NAV  |
     *                             |     /      /      \      \     |
@@ -125,11 +125,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT_ferris_base_wrapper(
     /* ,----------------------------------.                  ,----------------------------------.
-    * |TD(BOO|TD(QWE|TD(COL|TD(GAM|      |                  |      |      |      |      |      |
+    * |TD(BOO|TD(QWE|TD(COL|PANIC |      |                  |EE_CLR|PANIC |      |      |      |
     * |------+------+------+------+------|                  |------+------+------+------+------|
-    * |NumLoc|ScrLoc| Ins  |PrintS|CW_TOG|                  | LEFT | DOWN |  UP  | RGHT | PGUP |
+    * |NumLoc|ScrLoc|Ins   |PrintS|CW_TOG|                  |      |      |      |      |      |
     * |------+------+------+------+------|                  |------+------+------+------+------|
-    * |  ↶   |  ↷   |  ✂   |  ⧉   | 📋 |                 |  ⏮   | VOLD | VOLU |  ⏭   |  ⏯   |
+    * |  ↶  |  ↷   |  ✂  |  ⧉   |  📋  |                  |  ⏮  |KC_VOL|KC_VOL|  ⏭  |  ⏯  |
     * `-------------+------+------+-------------.    ,-------------+------+------+-------------'
     *                             | SYM  /SPC_FU/    \SPC_FU\ NAV  |
     *                             |     /      /      \      \     |
