@@ -163,3 +163,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 // clang-format on
+
+void keyboard_post_init_user(void) {
+    default_layer_set((layer_state_t)1 << _COLEMAKDH);
+}
