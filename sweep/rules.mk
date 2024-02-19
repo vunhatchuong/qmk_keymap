@@ -1,5 +1,5 @@
 # QMK Features
-MOUSEKEY_ENABLE = yes		# +4700
+MOUSEKEY_ENABLE = yes       # +4700
 EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
 VIA_ENABLE = no             # +2140
 TAP_DANCE_ENABLE = yes      # +544
