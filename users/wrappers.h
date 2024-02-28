@@ -38,6 +38,14 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _____________COLEMAK_DH_HMR_L2_____________      HRML(KC_A,   KC_R,   KC_S,   KC_T,   KC_G)
 #define _____________COLEMAK_DH_HMR_R2_____________      HRMR(KC_M,   KC_N,   KC_E,   KC_I,   KC_O)
 
+#define _________________STENOG_L1_________________      STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_N5
+#define _________________STENOG_L2_________________      STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1
+#define _________________STENOG_L3_________________      STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2
+
+#define _________________STENOG_R1_________________      STN_N6,  STN_N7,  STN_N8,  STN_N9,  STN_NA
+#define _________________STENOG_R2_________________      STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR
+#define _________________STENOG_R3_________________      STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR
+
 #define ________________NUMBER_LEFT________________      KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define ________________NUMBER_RIGHT_______________      KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 
@@ -74,7 +82,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ___________________ARROW___________________      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGUP
 #define _________________VIM_ARROW_________________      VIM_B,   KC_END,  KC_HOME, VIM_W,   KC_PGDN
 
-#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH,   PANIC,  XXXXXXX
+#define _________________ADJUST_L1_________________      TD_BOOT, TD_QWERTY, TD_COLEMAKDH,     PANIC,  XXXXXXX
 #define _________________ADJUST_L2_________________      KC_NUM,  KC_SCRL,         KC_INS,   KC_PSCR,  CW_TOGG
 #define _________________ADJUST_L3_________________      UNDO,    REDO,               CUT,      COPY,    PASTE
 

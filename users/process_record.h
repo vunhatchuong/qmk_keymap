@@ -25,6 +25,8 @@ enum custom_keycodes {
 #define ADJUST      MO(_ADJUST)
 #define SPC_FUNC    LT(_FUNC, KC_SPC)
 #define ENT_NUMPAD  LT(_NUMPAD, KC_ENT)
+#define TAB_SYM     LT(_SYM, KC_TAB)
+#define ENT_NAV     LT(_NAV, KC_ENT)
 
 // ---
 // QWERTY home row mods
@@ -57,7 +59,7 @@ enum custom_keycodes {
 #define HRMR(k1,k2,k3,k4,k5)  k1, RCTL_T(k2), RSFT_T(k3), RALT_T(k4), RGUI_T(k5)
 
 // ----------------------------------------------------------------
-// Shorcuts
+// Shortcuts
 #define CTL_ESC     CTL_T(KC_ESC)
 
 #define UNDO        LCTL(KC_Z)
@@ -94,4 +96,7 @@ enum custom_keycodes {
 #define OS_RALT OSM(MOD_RALT)
 #define OS_MEH  OSM(MOD_MEH)
 #define OS_HYPR OSM(MOD_HYPR)
+
+// Others
+#define PLOVER TG(_PLOVER)
 // clang-format on

@@ -20,6 +20,9 @@ static void print_status_narrow(void) {
         case _COLEMAKDH:
             oled_write_ln_P(PSTR("CLMK"), false);
             break;
+        case _PLOVER:
+            oled_write_ln_P(PSTR("PLVR"), false);
+            break;
         case _SYM:
             oled_write_ln_P(PSTR("Syms"), false);
             break;

@@ -17,9 +17,9 @@
         KC_LSFT , K11,      K12,      K13,      K14,      K15,              K16,     K17,     K18,     K19,     K1A,   KC_QUOT,     \
         KC_LCTL,  K21,      K22,      K23,      K24,      K25,              K26,     K27,     K28,     K29,     K2A,   KC_BSLS,     \
                             KC_LALT,KC_LGUI,                                               KC_MINS, KC_RALT,    \
-                                            SYM,     KC_SPC,                  KC_ENT, KC_BSPC,  \
+                                            SYM,      KC_SPC,                 KC_ENT, KC_BSPC,  \
                                             KC_GRV,  _______,                 NAV,    KC_DEL,   \
-                                            _______, KC_CAPS,                _______, _______   \
+                                            PLOVER,  KC_CAPS,                 _______, _______  \
     )
 
 #define LAYOUT_dactyl_base_wrapper(...) LAYOUT_dactyl_base(__VA_ARGS__)
@@ -73,6 +73,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _________________QWERTY_L1_________________,                              _________________QWERTY_R1_________________,
         _________________QWERTY_L2_________________,                              _________________QWERTY_R2_________________,
         _________________QWERTY_L3_________________,                              _________________QWERTY_R3_________________
+    ),
+
+    [_PLOVER] = LAYOUT_dactyl_wrapper(
+        _______, _________________STENOG_L1_________________,    _________________STENOG_R1_________________, KC_BSPC,
+        _______, _________________STENOG_L2_________________,    _________________STENOG_R2_________________,  STN_DR,
+        _______, _________________STENOG_L3_________________,    _________________STENOG_R3_________________,  STN_ZR,
+        _______, OS_LGUI, OS_LALT, OS_LSFT, OS_LCTL, _______,    _______, OS_RCTL, OS_RSFT, OS_LALT, OS_RGUI, _______,
+                         _______,_______,                                   _______,_______,
+                                          STN_A,  STN_O,         STN_E,  STN_U,
+                                        _______,TAB_SYM,         ENT_NAV,_______,
+                                        PLOVER ,_______,         _______,_______
     ),
 
     /*                 ,------------------------------.                ,-------------------------------.
